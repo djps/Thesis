@@ -17,4 +17,11 @@ jobs:
         with:
           name: PDF
           path: Thesis.pdf
+      - name: Commit Thesis to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Thesis.pdf
+          git commit -m "Update Thesis.pdf" || exit 0
+          git push
           

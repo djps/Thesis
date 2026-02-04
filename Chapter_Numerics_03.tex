@@ -1,0 +1,347 @@
+\chapter{Numerical Analysis} \label{chap:numerics}
+%
+This appendix gives an overview of the numerical procedures outlined in chapter~\ref{chap:bifurcation}. The numerical analysis is comprised of two parts: the construction and the continuation of homoclinic solutions. Homoclinic solutions are constructed by using an approximation  about the equilibrium and exploiting the reversibilities of the system~\cite{Champneys93b}. From a given solution there are two principal methods of continuing solutions; projection boundary conditions~\cite{Beyn90a,Beyn90b,Beyn94,Lentini80} and explicit boundary conditions~\cite{Friedman91}. The explicit and projection boundary conditions are mathematically equivalent in that both procedures require a knowledge of the invariant subspace structure near the equilibria by stipulating that the solutions be in the linear subspaces which approximate the stable and unstable manifolds. 
+%
+\par
+In order to construct the homoclinics some preliminary results are necessary. 
+%
+\section{Preliminaries} \label{sec:preliminaries}
+%
+Let an even-dimension dynamical system take the form
+%
+\begin{equation}
+x^{\prime} = f_{0} \left( x, \mu \right), \quad x \in \mathbb{R}^{2n}, \quad \mu \in \mathbb{R}^{p} \quad \mbox{with} \quad s \in \left(-\infty,+\infty \right)
+\label{eq:vector_field}
+\end{equation}
+%
+\begin{defin} \label{defin:reversibilities}
+A dynamical system is reversible if there exists a pair of linear involutions $R_{1}$ and $R_{2}$ such that for each $R_{i}$,
+\begin{equation}
+R \circ f_{0}\left( x\right)  = - f_{0} \left(R \circ x \right), \quad R^{2} = \mathbb{I}^{2n}, \quad \mathcal{S}  = \mbox{\textnormal{fix}}\left(R\right) \cong \mathbb{R}^{n} \nonumber
+\end{equation}
+where the linear subspace $\mathcal{S}$ is defined as the symmetric section of the reversibility.
+\end{defin}
+%
+\begin{lem}
+Let $x^{*}$ be a fixed point so that $f_{0}\left(x^{*}\right)=0$ and without loss of generality assume $x^{*} = 0$ and that $f_{0}\left(x\right)$ is reversible then the spectrum of the eigenvalues of the linearised vector field $Df_{0}$ will also be reversible. 
+\end{lem}
+%
+\begin{proof}
+By the reversibility
+\begin{align}
+Df_{0}\left(x^{*}\right)\circ R_{i} & = -R_{i} \circ Df_{0}\left(x^{*}\right),\nonumber 
+\end{align}
+thus
+\begin{align}
+\left| Df_{0}\left(x^{*}\right) - \lambda\mathbb{I} \right| & = \left| - R_{i}\circ\left( Df_{0}\left(x^{*}\right)\circ R_{i} \right) - \lambda\mathbb{I} \right| =\left| Df_{0}\left(x^{*}\right) + \lambda\mathbb{I} \right|. \nonumber 
+\end{align}
+Hence all roots of the characteristic polynomial will occur in reversible pairs.
+\end{proof}
+%
+The Stable Manifold Theorem gives an insight into the structure of the invariant subspaces. For a dynamical system with a fixed point at the origin the following subspaces may be constructed
+%
+\begin{defin}
+\label{def:lin_subspace}
+The stable, centre and unstable subspaces of a linearised dynamical system are given by
+\begin{itemize}\addtolength{\itemsep}{-0.4\baselineskip}
+\item[(i)] $\mathcal{E}^{(s)}(0) \, = \, \mbox{\textnormal{Span}}\left\{v_{1}, v_{2}, \ldots , v_{k} \right\}$ where $\Re{\lambda_{1}}, \ldots, \Re{\lambda_{k}} \le 0$.
+\item[(ii)] $\mathcal{E}^{(c)}(0) \, = \, \mbox{\textnormal{Span}}\left\{v_{k+1}, v_{k+2}, \ldots , v_{k+l} \right\}$ where $\Re{\lambda_{k+1}}, \ldots, \Re{\lambda_{k+l}} = 0$. 
+\item[(iii)] $\mathcal{E}^{(u)}(0) \, = \, \mbox{\textnormal{Span}}\left\{v_{k+l+1}, v_{k+l+2}, \ldots , v_{k+l+m} \right\}$ where $\Re{\lambda_{k+l+1}}, \ldots, \Re{\lambda_{k+l+m}} \ge 0$. 
+\end{itemize}
+Where $\mathrm{dim}\,\mathcal{E}^{\left(s\right)}=k$, $\mathrm{dim}\,\mathcal{E}^{\left(c\right)}=l$ and $\mathrm{dim}\,\mathcal{E}^{\left(u\right)}=m$. Hence $2n = k + l + m$ and $\mathbb{R}^{2n} \, = \, \mathcal{E}^{(s)}(0) \oplus \mathcal{E}^{(c)}(0) \oplus \mathcal{E}^{(u)}(0)$.
+\end{defin}
+%
+If the system is reversible then $k=m$ and $l$ is even. Likewise, if the system is hyperbolic then $l=0$ and $k=m=n$. The linear subspaces can be related to the flow of the dynamical system by the Centre Manifold Theorem
+%
+\begin{thm}[The Centre Manifold Theorem] For a nonlinear dynamical system with a fixed point at the origin,
+\begin{itemize}\addtolength{\itemsep}{-0.4\baselineskip}
+\item[(i)] There exists local stable, centre and unstable manifolds $W^{s}$, $W^{c}$ and $W^{u}$ of dimension $k$, $l$ and $m$ respectively.
+\item[(ii)] The local stable, centre and unstable manifolds are tangent to the stable, centre and unstable subspaces of the linearised system at the fixed point. 
+\item[(iii)] The stable and unstable manifolds are uniquely defined but the centre manifold need not be.
+\end{itemize}
+\label{thm:stable_manifold}
+\end{thm}
+%
+Now, consider a perturbation to the vector field~\eqref{eq:vector_field} such that
+% 
+\begin{align}
+{x}^{\prime} & = f_{0}\left({x}\right) + \bar\epsilon f_{1}\left({x},s\right) + \mathcal{O}\left(\bar\epsilon^{2}\right) % \bar\epsilon^{2} f_{2}\left({x},s\right) + \mathcal{O}\left(\bar\epsilon^{3}\right), 
+\end{align}
+% 
+By the Centre Manifold Theorem, the flow of the perturbed vector field can be approximated near the stable and unstable manifolds. Thus for the unstable part
+%
+\begin{equation}
+x_{\bar\epsilon}^{u}\left(s_{0}^{},s_{0}^{}\right) = {x}_{0}^{}\left(0\right) + \bar\epsilon v_{1}^{} + \mathcal{O}\left(\bar\epsilon_{}^{2}\right) %\bar\epsilon^{2} v^{s}_{2} + \mathcal{O}\left(\bar\epsilon^{3}\right) 
+\end{equation}
+%
+which in general is
+% 
+\begin{align}
+{x}_{\bar\epsilon}^{u}\left(s,s_{0}^{}\right) & = {x}_{0}^{}\left(s-s_{0}^{}\right) + \bar\epsilon {x}_{1}^{u}\left(s,s_{0}^{}\right) +\mathcal{O}\left(\bar\epsilon_{}^{2}\right) % \bar\epsilon^{2} {x}_{2}^{s}\left(s,s_{0}\right) + \mathcal{O}\left(\bar\epsilon^{3}\right) 
+\end{align}
+%
+where
+% 
+\begin{equation}
+{x}_{1}^{s}\left(s_{0}^{},s_{0}^{}\right) = v_{1}^{}. %\quad \mbox{and} \quad {x}_{2}^{s}\left(s_{0},s_{0}\right) = v_{2}^{s}.
+\end{equation}
+% normalised orthogonal real eigenvectors spanning the unstable eigenspace of the linearised vector field
+Where $v_{1}$ is in the set of normalised orthogonal real eigenvectors spanning the unstable eigenspace of the linearised vector field. The terms of the expansion can be determined through a succession of variational equations, thus ${x}_{1}^{u}\left(s,s_{0}\right)$ can be found through
+%
+\begin{align}
+\dfrac{ \mathrm{d}}{\mathrm{d}s}{x}_{1}^{u} \left(s,s_{0}^{}\right) & = Df_{0}^{}\left({x}_{0}^{}\left(s-s_{0}^{}\right)\right) {x}_{1}^{s}\left(s,s_{0}^{}\right) + f_{1}^{}\left({x}_{0}^{}\left(s-s_{0}^{}\right),s\right).
+\end{align}
+% 
+Thus, through the Centre Manifold Theorem there are ways of approximating the flow of nonlinear systems near fixed points. Knowledge of the area about an equilibrium can be exploited to give a global description of the dynamics when the system admits homoclinic orbits.
+%
+\begin{defin}
+A homoclinic orbit $\gamma\left(s\right)$ connects the centre-stable and centre-unstable manifolds, that is
+\begin{align}
+\gamma & \subset W_{-}^{cs} \cap W_{+}^{cs}.
+\end{align}
+The homoclinic is isolated if at the tangent space at $z\left(s\right)$ the orbit satisfies
+\begin{align}
+\mathrm{Span} \left\{ z^{\prime}\left(s\right) \right\} & = T_{z\left(s\right)}\gamma\left(s\right) =  T_{z\left(s\right)}W_{-}^{cs} \cap T_{z\left(s\right)}W_{+}^{cs}.
+\end{align}
+The orbit is said to persist if the intersection is transversal, that is
+\begin{align}
+T_{z\left(s\right)}W_{-}^{cs} \oplus T_{z\left(s\right)}W_{+}^{cs} & = \mathbb{R}^{2n}.
+\end{align}
+\end{defin}
+% 
+It was assumed in~\eqref{eq:vector_field} was that the dynamical system is even-dimensional, which is not restrictive as the family of systems under consideration are Hamiltonian and so by theorem~\ref{thm:reduction} can be reduced to canonical form. However, it is often easier to deal with the full noncanonical systems rather than the reduced systems. The definition of reversibility does not require a Hamiltonian structure but in real world applications most reversible systems in are Hamiltonian and most Hamiltonian systems are reversible~\cite{Lamb98}. Thus the reduced systems Hamiltonian systems are reversible. 
+%
+\par
+For a general noncanonical system about an equilibrium the structure matrix can be decomposed, by Jordan block decomposition, into two (square) submatrices; one containing the nontrivial dynamics, the other the trivial dynamics.  The matrix of the trivial dynamics is the kernel of the linearised system and contains the linearised Casimirs. In reversible the nontrivial dynamics will be captured in an even-dimensional matrix. 
+%
+% \begin{lem}
+% For a linearly elastic system when the (generalised) force and moments are applied axially the nullspace of the Jacobian at a fixed point is spanned by gradients of the Casimirs.
+% \end{lem}
+%
+\section{Shooting for Homoclinic Orbits}\label{sec:shooting}
+%
+The exact computational of a homoclinic orbit over an infinite domain is impossible. Hence, it is necessary to truncate the arc-length to $s \in \left[0,\mathcal{T} \right]$ for a finite but arbitrarily large $\mathcal{T}$ in order to form an approximation of a homoclinic orbit. Consequently, the truncation produces singular end points and requires the system to be treated as a boundary-value problem which is solved via the shooting method. For reversible dynamical systems, the discrete symmetry can be exploited in order to simplify the calculations and avoid one of the singular end points. The left-hand side conditions are placed in the unstable mainfold of the trivial equilibrium and the right-hand side conditions are in the symmetric section. The boundary-value problem is then solved using a shooting method, where the Newton-Raphson method solves a variational equation with respect to the shooting parameters to find the values which satisfy the reversibility.  The method can be adapted to non-reversible systems and periodic systems~\cite{Bai96b}. 
+%
+\par
+For simplicity a reversible, hyperbolic system is considered. Without loss of generality let ${v}_{1}, {v}_{2}, \ldots {v}_{n}$ be normalised orthogonal real eigenvectors spanning the unstable eigenspace of the linearised vector field. A solution to the governing equation can be approximated by the linearised flow as
+%
+\begin{align}
+x \left(s\right) & = \bar{\varepsilon} {v}_{1} + \mathcal{O}\left(\bar{\varepsilon}^{2}\right) \quad \mbox{with} \quad s \in \left(0,s^{*}\right) \nonumber
+\end{align}
+%
+for $s^{*}$ and $\bar{\varepsilon}$ sufficiently small and where ${v} \in \mbox{ Span} \left\{ {v}_{1}, {v}_{2}, \ldots {v}_{n} \right\}$.  Now considering the truncated system as a boundary-value problem over the unit interval
+%
+\begin{align}
+{x}^{\prime} & = \mathcal{T} f_{0} \left( x, \mu \right), \quad x \in \mathbb{R}^{2n}, \quad  \mu \in \mathbb{R}^{p} \quad \mbox{with} \quad s \in \left[0, 1\right] \label{eq:ge}
+\end{align}
+%
+subject to the boundary conditions
+%
+\begin{subequations}
+\label{eq:bc}
+\begin{align}
+x \left( 0 \right) & =  \bar{\varepsilon} \left( a_{1}\left(\delta\right){v}_{1} + a_{2}\left(\delta\right){v}_{2} + \ldots + a_{n}\left(\delta\right){v}_{n} \right), \quad v \in \mathbb{R}^{2n}, \label{eq:lhs_numerics} \\
+x \left( 1 \right) & \in \mathcal{S}, \label{eq:rhs_numerics}
+\end{align}
+\end{subequations}
+%
+where $\mathcal{T}$ is the truncated total arclength and $\mathcal{S} \in \mathbb{R}^{n}$ is defined by the reversibilities of the system. The $a_{i}$ are functions of the shooting parameters $\delta$ and $\bar{\varepsilon}$ is a small perturbation. The basis functions $a_{i}\left(\delta\right)$ are subject to the normalisation constraint
+%
+\begin{align}
+\sum_{i=1}^{n} a_{i}^{2}\left(\delta\right) & = 1. \label{eq:shooting_norm_constraint}
+\end{align}
+%
+In order to construct a well-posed shooting problem there must be $n$ independent shooting parameters $\delta$, as the righthand boundary condition is a subspace of $\mathbb{R}^{n}$. However, the system~\eqref{eq:ge} with boundary conditions~\eqref{eq:bc} subject to the normalisation condition~\eqref{eq:shooting_norm_constraint} is ill-posed: there are more boundary conditions than independent shooting parameters. This is because the shooting parameters need to satisfy $n$ righthand boundary conditions but are formulated in terms of the initial conditions via $n$ basis functions $a_{i}$, however due to the normalisation condition only $n-1$ of the basis functions are independent. Thus, the truncationed length is treated as an additional variable that satisfies the equation
+%
+\begin{align}
+{\mathcal{T}}^{\prime} & = 0. \label{eq:truncation}
+\end{align}
+%
+Hence the boundary value problem for the governing equation~\eqref{eq:ge} satisfying boundary conditions~\eqref{eq:bc}, subject to the normalisation condition~\eqref{eq:shooting_norm_constraint} and with a constant but undetermined length~\eqref{eq:truncation} is now well-posed. Since the vectors $v_{i}$ form a basis to the unstable subspace, the perturbation~\eqref{eq:lhs_numerics} is tangential to the flow at the fixed point and hence is a good approximation for the initial trajectory of a homoclinic orbit.
+%
+\par
+Having constructed a well-posed boundary-value problem it is now necessary to solve the boundary conditions for the shooting parameters. Let the shooting parameters be denoted by ${y} \in \mathbb{R}^{n}$, where
+%
+\begin{align}
+{y} & = \left( \delta_{1}, \delta_{2}, \ldots ,\delta_{n-1}, \mathcal{T} \right). \label{eq:def_shooting_parameters}
+\end{align}
+%
+Hence the left-hand boundary condition~\eqref{eq:lhs_numerics} can be expressed as a function of the shooting parameters
+%
+\begin{align}
+x \left( 0 \right) & = \bar{\varepsilon}\left(\mathcal{T}\right) \left( a_{1}\left({\delta}\right) {v}_{1} + a_{2}\left({\delta}\right){v}_{2} + \ldots + a_{n}\left({\delta}\right){v}_{n} \right). \nonumber
+\end{align}
+%
+The basis functions $a_{i}$ are explicitly dependent on the shooting parameters $\delta$ whereas $\mathcal{T}$ is implicitly dependent on the perturbation $\bar{\varepsilon}$.  A solution $x\left(s\right)$ of the boundary-value problem will satisfy~\eqref{eq:rhs_numerics}, which may be reformulated as the function
+%
+\begin{align}
+{b}\left( x(1) \right) & = 0. \nonumber
+\end{align}
+%
+Suppose that ${w}\left(s;y\right)$ is a solution to the initial-value problem
+%
+\begin{subequations}
+\begin{align}
+w^{\prime}\left(s;y\right) & = \mathcal{T} f_{0} \left( w, \mu \right) \quad \mbox{for} \quad w \in \mathbb{R}^{2n}, \quad \mu \in \mathbb{R}^{p}, \quad y \in \mathbb{R}^{n}, \label{eq:init} \\
+w\left(0\right) & = \bar{\varepsilon} \left( a_{1}{v}_{1} + a_{2}{v}_{2} + \ldots + a_{n}{v}_{n} \right). \label{eq:init_init_cond}
+\end{align} 
+\end{subequations}
+%
+Now define the function
+%
+\begin{align}
+G \left( {y} \right) & =  \left. {b}\left( {w} \left(s;y\right) \right) \right|_{s=1}. \nonumber
+\end{align}
+%
+Given a good initial guess ${y}^{\left(0\right)}$, in order to solve the boundary-value problem it is necessary to generate a sequence of improved guesses $\left\{ {y}^{\left(1\right)}, {y}^{\left(2\right)}, \ldots \right\}$ such that 
+%
+\begin{align}
+\lim_{n \rightarrow \infty} G\left( {y}^{\left(n\right)} \right) & = 0 \nonumber 
+\end{align}
+%
+so that the righthand boundary condition will be satisfied by solutions of the initial-value problem. To generate the successive guesses the Newton-Raphson method is used
+%
+\begin{align}
+{y}^{\left( n+1 \right)} & = {y}^{\left( n \right)} - 
+\dfrac{G \left( {y}^{\left(n\right)} \right)}{DG\left( {y}^{\left(n\right)} \right) }, \label{eq:newton_method}
+\end{align}
+%
+where $DG$ is the Jacobian of $G$ with respect to the shooting parameters, explicitly given by
+%
+\begin{align}
+DG \left( {y}^{\left(n\right)} \right)_{i,j} & =  \left. \dfrac{\partial b_{i}\left( w(s;y) \right) }{\partial y_{j}} \right|_{s=1,\,{y}={y}^{\left(n\right)} } \nonumber \\
+& = \sum_{k=1}^{2n} \left. \dfrac{\partial b_{i} \left( w_{i}(s;y) \right) }{\partial w_{k}(s;y) } \cdot \dfrac{\partial w_{k}(s;y)}{\partial y_{j}} \right|_{s=1,\,{y}={y}^{\left(n\right)} }. 
+\label{eq:Jacobian0}
+\end{align}
+%
+In order to solve the Newton-Raphson equation for a guess $y^{\left(0\right)}$ a variational equation with respect to the shooting parameters is formed. Denoting the derivative of $w$ with respect to the shooting parameters $y$ to be 
+%
+\begin{align}
+z_{k,j} = \dfrac{\partial w_k(s;y)}{\partial y_j}. \label{eq:z}
+\end{align}
+%
+The Jacobian may now be written as 
+%
+\begin{align}
+DG \left( {y}^{\left(n\right)} \right)_{i,j} & = \sum_{k=1}^{2n} 
+\left. \dfrac{\partial b_{i} \left( w_{i}(s;y) \right) }{\partial w_{k}(s;y) } 
+z_{k,j} \right|_{s=1,\,{y}={y}^{\left(n\right)} }, 
+\label{eq:Jacobian1}
+\end{align}
+%
+where $z_{k,j}$ satisfies the auxiliary variational equations
+%
+\begin{subequations}
+\label{eq:vari}
+\begin{align}
+{z}_{k,j}^{\prime} & = \mathcal{T} \sum_{l=1}^{2n} \dfrac{\partial {f_{0}}_{k}^{}(w(s;y))}{\partial w_{l}^{}(s;y)} z_{l,j}^{} 
+\quad j = 1,2, \ldots n-1 \quad \mbox{and} \quad k = 1,2, \ldots 2n, \\
+{z}_{k,n}^{\prime} & = \mathcal{T} \sum_{l=1}^{2n} \dfrac{\partial {f_{0}}_{k}^{}(w(s;y))}{\partial w_{l}(s;y)} z_{l,n}^{} + {f_{0}}_{k}^{}( w(s;y) ) 
+\quad k = 1,2, \ldots 2n .
+\end{align}
+\end{subequations}
+%
+The auxiliary equations~\eqref{eq:vari} are found by differentiating~\eqref{eq:z} with respect to arc-length implicitly and using equation~\eqref{eq:init}. Similarly the auxiliary boundary conditions can be found by differentiating the boundary conditions~\eqref{eq:lhs_numerics} with respect to the shooting parameters
+%
+\begin{subequations}
+\label{eq:vari_init_cond}
+\begin{align}
+z_{k,j}(0,y) & = \bar{\varepsilon} \sum_{l=1}^{2n} \dfrac{\partial a_{l}( {\delta} )}{\partial \delta_{j}} v_{l,k} 
+\quad j = 1,2, \ldots, n-1 \quad \mbox{and} \quad k = 1,2, \ldots, 2n \\
+{z}_{k,n}(0,y) & = 0 \quad k = 1,2, \ldots, 2n.
+\end{align}
+\end{subequations}
+%
+The coupled equations~\eqref{eq:init} and~\eqref{eq:vari} with initial conditions~\eqref{eq:init_init_cond} and~\eqref{eq:vari_init_cond} constitute a well-posed initial-value problem. The initial-value problem can be integrated up to $s=1$ to find values of values $z_{k,j}( w( 1; y^{\left(p\right)} ) )$ which can then be substituted into the Newton-Raphson equation~\eqref{eq:newton_method} in order to compute the next iterate for the shooting parameters $y^{\left(p+1\right)}$, in turn creating a new initial-value problem. The successive solutions will then produce the correct shooting parameters for the boundary-value problem.
+%
+\par
+To show that this is a well-defined procedure amounts to showing that for a suitable initial guess $y^{\left(0\right)}$ the sequence generated $\left\{ y^{\left(0\right)}, y^{\left(1\right)}, \ldots \right\}$ is a Cauchy sequence. The sequence can be shown to be a Cauchy sequence by a contraction mapping principle~\cite[pg. 675]{Antman95} and proceeding in the same manner as the Fixed Point Theorem for a Banach space.
+%
+\begin{lem}
+The shooting method is well defined, that is the sequence of generated shooting parameters is a Cauchy sequence and converges to a solution.
+\end{lem}
+%
+\begin{proof}
+Let $y^{\left(m+1\right)} = F\left(y^{\left(m\right)}\right)$ then, with $\mathrm{d}\left(\cdot,\cdot\right)$ as a distance function
+\begin{align}
+\mathrm{d} \left( y^{\left(m+1\right)}, y^{\left(m\right)} \right) & = \mathrm{d} \left( F\left(y^{\left(m\right)}\right), F\left(y^{\left(m-1\right)}\right) \right) \nonumber \\
+& \le \alpha^{m} \mathrm{d}\left( y^{\left(0\right)}, y^{\left(1\right)} \right) \nonumber 
+\end{align}
+so
+\begin{align}
+\mathrm{d}\left( y^{\left(m\right)}, y^{\left(n\right)} \right) & \le \mathrm{d}\left( y^{\left(m\right)},y^{\left(m+1\right)} \right) + \mathrm{d}\left( y^{\left(m+1\right)},y^{\left(m+2\right)} \right) + \ldots + \mathrm{d}\left( y^{\left(n-1\right)}, y^{\left(n\right)} \right) \nonumber \\
+& = \left( \alpha^{m} + \alpha^{m+1} + \ldots + \alpha^{n-1} \right) \mathrm{d}\left( y^{\left(0\right)},y^{\left(1\right)}\right) \nonumber \\
+& = \frac{\alpha^{m}\left(1-\alpha^{n-m}\right)}{1-\alpha} \mathrm{d}\left( y^{\left(0\right)},y^{\left(1\right)} \right) \nonumber \\
+& \le \frac{\alpha^{m}}{1-\alpha} \mathrm{d}\left( y^{\left(0\right)},y^{\left(1\right)}\right)\nonumber 
+\end{align}
+So as $m \rightarrow \infty$ then ${\alpha^{m}}\slash{1-\alpha} \rightarrow 0$ hence $\mathrm{d}\left( y^{\left(0\right)},y^{\left(1\right)}\right) \rightarrow 0$ as $m\rightarrow \infty$.
+\end{proof}
+%
+\begin{rem}
+The method is fine for hyperbolic cases; when the system has a saddle-node, that is $\lambda = \nu \pm i \omega$, the magnitude of the real parts of the eigenvalues are equal whereas for saddle-saddle connections $\lambda = \nu_{1}$, $\nu_{2}$ and since one eigenvalue will be greater than the other the initial conditions need to be weighted accordingly. Rather than shooting from a circle we shoot from a ellipse.
+\end{rem}
+% 
+% \begin{rem}
+% When the system has a two-dimensional centre-space then the perturbation needs to be modified since the symmetric section is $\mathcal{S} \in \mathbb{R}^{n}$ but initially the homoclinic solution is in $\mathbb{R}^{n-1}$. In the construction of the variation problem the set of shooting parameters $y$ was the subset of the normalised shooting parameters and the truncated arc-length, c.f.~\eqref{eq:def_shooting_parameters}. Now the set of shooting parameters consists of a subset of normalised shooting parameters, the arclength and a parameter which controls the magnitude of the perturbation. There is a relationship between the truncated arclength and the magnitude of the perturbation. Since solutions can satisfy the symmetric solutions modulo $\left(1+\nu\right)\pi$ then $\mathcal{T}_{i+1}-\mathcal{T}_{i}=\left(1+\nu\right)\pi$. But for each orbit the associated perturbation yields $\varepsilon_{i+1}\slash \varepsilon_{i} \sim k$, where the size of $k$ depends on the problem parameters 
+% \end{rem}
+%
+\section{Continuation of Solutions} \label{sec:continuation_in_general}
+%
+Having computed a homoclinic solution, numerical continuation software can follow solutions under small changes in the parameters by specifying the correct boundary conditions. %
+% 
+% Continuation software discretises the solution and then under a slight change of a parameter uses the mesh points as suitable initial guesses for a Newton-Raphson type method to find new points. The solution is then reconstructed using a collocation algorithm. 
+% 
+As mentioned there are two types of boundary condition commonly employed to follow homoclinic solutions. The explicit boundary conditions require a smooth basis, while the projection boundary conditions require a smooth projection. The explicit boundary conditions require additional free parameters which increase the dimension of the problem but can accommodate a wider variety of connecting orbits.  
+%
+\subsection{Projection Boundary Conditions} \label{subsec:projection}
+%
+The projection vectors are the eigenvectors of the transpose of the linearised matrix about an equilibria. For a vector field such as that as described in definition~\ref{def:lin_subspace}, the projections onto the stable, unstable and centre manifolds are given by the three matrices $L_{s}\left( \mu \right)$, $L_{c}\left( \mu \right)$ and $L_{u}\left( \mu \right)$, where
+%
+\begin{subequations}
+\begin{align}
+L_{s}\left( \mu \right) \left( x \left(0\right) - x^{*} \right) & = 0, \quad L_{s}\left(\mu\right) \in \mathbb{R}^{k\times 2n}, \nonumber \\
+L_{u}\left( \mu \right) \left( x \left(1\right) - x^{*} \right) & = 0, \quad L_{u}\left(\mu\right) \in \mathbb{R}^{m\times 2n}, \nonumber \\
+L_{c}\left( \mu \right) \left( x \left(0\right) - x^{*} \right) & = L_{c}\left( \mu \right) \left( x \left(1\right) - x^{*} \right) = 0, \quad L_{c}\left(\mu\right) \in \mathbb{R}^{l\times 2n}. \nonumber 
+\end{align}
+\end{subequations}
+%
+The projection matrices satisfy $L_{s}+L_{c}+L_{u}=\mathbb{I}_{2n}$ and there exists constants $\alpha_{s}~<~-\alpha_{c}~<~0~<~\alpha_{c}~<~\alpha_{u}$ and $K > 0 $ such that the projection matrices have exponential trichotomies
+%
+\begin{equation}
+\begin{array}{lll}
+\left|| \Phi\left(s,\tau\right) L_{s}\left(\tau\right) \right||  \le K e^{\alpha_{s}\left(s-\tau\right)}, & \quad \left|| \Phi\left(s,\tau\right) L_{c}\left(\tau\right) \right||  \le K e^{\alpha_{c}\left(s-\tau\right)} & \quad s \ge \tau, \nonumber \\
+\left|| \Phi\left(s,\tau\right) L_{c}\left(\tau\right) \right||  \le K e^{-\alpha_{c}\left(s-\tau\right)}, & \quad \left|| \Phi\left(s,\tau\right) L_{u}\left(\tau\right) \right||  \le K e^{\alpha_{u}\left(s-\tau\right)} & \quad \tau \ge s. \nonumber 
+\end{array}
+\end{equation}
+%
+The existence of the exponential trichotomy means that solutions that start in the image of the stable projection decay exponentially, with an rate of at least $e^{-\alpha_{s}}$ as $s\rightarrow\infty$. A solution in the projection of the centre-space will not decay faster than $e^{-\alpha_{c}s}$ and will not increase faster than $e^{\alpha_{c}s}$. An important property of exponential trichotomies is that under small perturbations the resulting system also has exponential trichotomies. Thus,
+%
+\begin{lem} \label{lem:roughness}
+Let the linearised vector field associated with~\eqref{eq:vector_field} and an orbit $\gamma$, $x^{\prime} = Df_{0}\left( \gamma\left(s\right)\right)x$, have an exponential trichotomy on $\mathbb{R}^{+}$. Then
+\begin{equation}
+\mathrm{Image}\left( L_{s}\left(\mu\right) \right) = T_{\gamma\left(s\right)}W^{s}\left(0\right)
+\quad \mbox{and} \quad \mathrm{Image}\left( L_{s}\left(\mu\right) + L_{c}\left(\mu\right) \right) = T_{\gamma\left(s\right)}W^{cs}\left(0\right).
+\end{equation}
+\end{lem}
+%
+\begin{proof}
+See~\cite[Lemma 2.1]{Klaus03}.
+\end{proof}
+% 
+An analogous statement holds for projections on $\mathbb{R}^{-}$. Thus the projection conditions are stable under small perturbations and are suitable for continuation of homoclinic solutions. 
+%
+\subsection{Explicit Boundary Conditions} \label{subsec:explicit}
+%
+The geometric interpretation of the explicit boundary conditions is that the initial point of the orbit starts in the unstable tangent space of the equilibria and that the end point lies in the stable tangent space of the equilibria. The tangent spaces are spanned by the set of vectors of the linearised flow about an equilibria. The basic assumption is that the problem is generic in the sense that the boundary conditions perturb the homoclinic orbit transversally. As the only system which shall be investigated are reversible, the boundary conditions are
+%
+\begin{subequations}
+\begin{align}
+x\left(0\right) & = \bar{\varepsilon}\left( a_{1}v_{1} + a_{2}v_{2} + \ldots + a_{n}v_{n} \right), \\
+x\left(1\right) & \in \mathcal{S}.
+\end{align}
+\end{subequations}
+% 
+As in~\S\ref{sec:shooting} the normalised basis functions $a_{i}$ are parameterised by $n-1$ free parameters $\delta$ and $v_{i} \in \mathbb{R}^{2n}$ are vectors in the linearised subspace. As there are $3n$ boundary conditions for a $2n$-dimensional problem with $n-1$ free parameters, so once again it is necessary to allow $\mathcal{T}$ to be a free parameter in order for the system to be well-defined. Essentially using the explicit boundary conditions allows for an `adaptive' shooting procedure to be performed. 
+%
+\par
+Introducing the basis functions $a_{i}$ and increasing the number of continuation parameters of the problem is computationally expensive in comparison with the projection boundary conditions. Another drawback was that it was found that when approaching critical values the shooting parameters change dramatically, increasing computational speed and accuracy. Numerically the problems encountered as critical values are approached are similar to the existence of an boundary layer in singular perturbation problems. However, the explicit boundary conditions seem to provide a better approximation of the invariant subspaces as when using the explicit boundary conditions solutions can be continued closer to the bifurcation point than those continued using projection boundary conditions.

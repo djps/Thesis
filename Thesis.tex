@@ -1,0 +1,254 @@
+\documentclass[a4paper,oneside,11pt]{report}
+%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amscd}
+\usepackage{latexsym}
+\usepackage[dvips]{graphics}
+\usepackage[pdf]{graphicx}
+\usepackage{geometry}
+\usepackage{epsfig}
+\usepackage{fancyhdr}
+\usepackage{color} 
+% \usepackage[ps2pdf=true,colorlinks]{hyperref}
+\usepackage{pstricks}
+\usepackage{indentfirst}
+% \usepackage{draftcopy}
+\usepackage{subfigure}
+\usepackage{psfrag}
+% % % % \usepackage[square, comma, sort&compress]{natbib}
+\usepackage{makeidx}
+\usepackage{showidx}  
+\usepackage{ifthen} 
+\usepackage{eso-pic} 
+\usepackage[all]{xy}
+% \usepackage{showkeys}
+\usepackage[small,normal,bf,up]{caption} 
+\usepackage{losymbol}
+\usepackage{rotating}
+\usepackage{setspace}
+% % 
+% \renewcommand{\captionfont}{\small}
+% % 
+% \definecolor{gray}{cmyk}{0.0,0.0,0.0,0.5} 
+% %
+% \def\RCS$#1: #2 ${\expandafter\def\csname RCS#1\endcsname{#2}} 
+% %
+% %\newcommand{\labelcx}{50pt} 
+% %\newcommand{\labelcy}{250pt} 
+% \newcommand{\draftcommand}{ \huge{ \textcolor{gray}{ 
+% \selectfont{Draft version 
+% \ifx\RCSId\Undefined of \today 
+% \else 
+% 	(\texttt{\RCSId}) 
+% \fi  
+% } 
+% }
+% }
+% } 
+% \makeatletter 
+% \AddToShipoutPicture*{\setlength{\@tempdimb}{ 
+% \ifx\labelcx\Undefined 
+% 	.075\paperwidth 
+% \else\labelcx 
+% \fi 
+% } 
+% \setlength{\@tempdimc}{
+% \ifx\labelcy\Undefined 
+% 	.5\paperheight 
+% \else\labelcy 
+% \fi 
+% } 
+% \put(\strip@pt\@tempdimb, \strip@pt\@tempdimc){\makebox(0, 0){\rotatebox{90}{\draftcommand}} } 
+% } 
+% \makeatother
+% %
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead{}                          
+\renewcommand{\chaptermark}[1]{\markboth{    \bf{ \thechapter.\ #1} }{} } 
+\renewcommand{\sectionmark}[1]{\markright{ \emph{ \thesection.\ #1} }   } 
+\fancyhead[L]{\rightmark}
+\fancyhead[R]{\leftmark}
+\fancyfoot[R]{\thepage} 
+%
+\fancypagestyle{fancyplain}{
+\fancyhf{} 
+\fancyfoot[R]{\thepage} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+} 
+% 
+%\input amssym.def
+%\input amssym.tex
+%
+\frenchspacing
+\sloppy
+% \parskip               0.0pt
+% \abovedisplayskip      0.0pt
+% \abovedisplayshortskip 0.0pt
+% \belowdisplayskip      0.0pt
+% \belowdisplayshortskip 0.0pt
+%
+%
+% if \hoffset = 25.4mm + extra and the requirement is on 40mm
+%
+\setlength{\hoffset}{8mm} 
+\setlength{\voffset}{8mm}
+% \setlength{\oddsidemargin}{15mm}
+% \setlength{\evensidemargin}{75mm}    % by default 70pt
+% \setlength{\topmargin}{-5mm}         % by default 22pt
+% % \setlength{\topmargin}{22pt}
+% \setlength{\headheight}{14pt}
+% \setlength{\headsep}{22pt}
+% % \setlength{\textheight}{620pt}
+% % \setlength{\textwidth}{360pt}
+% \setlength{\marginparsep}{0.0mm}
+% \setlength{\marginparwidth}{0.0mm} % by default 106pt
+\setlength{\footskip}{30pt}
+% % 
+% \setlength{\parindent}{5.0mm}
+% \setlength{\marginparpush}{5pt}
+% %
+% \newcommand{\ShortArticleName}[1]{{Thesis}}
+% \newcommand{\AuthorNameForHeading}[1]{{Me}}
+% % 
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{defin}[thm]{Definition}
+\newtheorem{cla}[thm]{Claim}
+\newtheorem{example}[thm]{Example}
+\newtheorem{note}[thm]{Note}
+% 
+\renewcommand{\contentsname}{Table of Contents}
+% 
+\begin{document}
+%
+\thispagestyle{empty}
+\vspace*{1.5cm} 
+\begin{center}
+\Huge{Integrability, localisation and bifurcation of an elastic conducting rod in a uniform magnetic field} \\
+\vspace{1.2cm}
+\huge{David Sinden} \\
+\vspace{1.2cm}
+\large{Centre for Nonlinear Dynamics,} \\
+\vspace{0.5cm}
+\large{Department of Civil, Environmental \& Geomatic Engineering,} \\
+\vspace{0.5cm}
+\large{University College London, \\
+Gower Street, \\
+London, \\
+\sc{wc1e 6bt}} \\
+\vspace{2.0cm}
+\today \\
+\vspace{2.0cm}
+\large{Submitted to University College London in partial fulfillment \\
+of the requirements for the degree of \\
+Doctor of Philsophy, \\
+2008.}
+
+\end{center}
+% 
+\setcounter{page}{2}
+\pagenumbering{arabic}
+%
+\baselineskip=1.5\normalbaselineskip
+\newpage
+\thispagestyle{fancyplain}
+\begin{quotation}
+\input{Declaration_01.tex}
+\end{quotation}
+% 
+\newpage
+\thispagestyle{fancyplain}
+\vspace*{-2.0cm} 
+\begin{center}
+\textbf{Acknowledgements}
+\end{center}
+\input{Acknowledgements_01.tex}
+% 
+\newpage
+\baselineskip=1.5\normalbaselineskip
+\thispagestyle{fancyplain}
+\addcontentsline{toc}{chapter}{Abstract}
+\vspace*{-2.0cm} 
+\begin{center}
+\textbf{Abstract} \label{abstract}
+\end{center}
+\input{Abstract_02.tex}
+
+
+\newpage
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[R]{\thepage} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+ 
+\pagestyle{plain}
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents \label{toc}
+\thispagestyle{plain}
+\pagestyle{plain}
+% 
+\newpage
+\pagestyle{plain}
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures \label{lof}
+%
+\newpage
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables \label{lot}
+%
+\newpage
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead{}                          
+\renewcommand{\chaptermark}[1]{\markboth{    \bf{ \thechapter.\ #1} }{} } 
+\renewcommand{\sectionmark}[1]{\markright{ \emph{ \thesection.\ #1} }   } 
+\fancyhead[L]{\rightmark}
+\fancyhead[R]{\leftmark}
+\fancyfoot[R]{\thepage} 
+\renewcommand{\headrulewidth}{0.5pt}
+\pagestyle{fancy} 
+%
+\input{Chapter_Introduction_04.tex}
+%
+\input{Chapter_Lie_Poisson_05.tex} 
+%
+\input{Chapter_Equation_04.tex}
+%
+\input{Chapter_Kirchhoff_04.tex}
+%
+\input{Chapter_Reduction_02c.tex}
+%
+\input{Chapter_Bifurcation_03.tex}
+%
+\input{Chapter_Conclusion_04.tex}
+%
+\appendix
+\input{Chapter_Parameterisation_03.tex}
+\input{Chapter_Numerics_03.tex}
+%
+\newpage
+\baselineskip=1.0\normalbaselineskip
+\pagestyle{fancyplain}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{amsplain}
+\bibliography{Bibliography1}   
+%
+% \pagestyle{plain}
+% \addcontentsline{toc}{chapter}{Index}
+% \printindex
+%
+\end{document}

@@ -1,0 +1,12800 @@
+%%!PS-Adobe-3.0 EPSF-3.0
+%%Title: (/home/dave/Tex_Bibtex_Images/Images/epslatex/lambda_P1_config.eps)
+%%Creator: gnuplot 4.0 patchlevel 0
+%%CreationDate: Mon Apr  7 18:34:18 2008
+%%BoundingBox: 72 72 432 288
+%%EndComments
+/Gpdict 100 dict def
+Gpdict begin
+/Color true def
+/Dashed true def
+/Gplinewidth 20.000 def
+/hpt_ 100.000 def
+/vpt_ 100.000 def
+ /hpt hpt_ def  
+ /vpt vpt_ def  
+ /Gppointsize_ 1 def 
+ /Gplinewidth_ 1 def 
+  
+ /ArrowDict 25 dict def  
+  
+ /M /moveto load def  
+ /L /lineto load def  
+ /R /rmoveto load def  
+ /V /rlineto load def  
+ /N {newpath moveto} bind def  
+ /f {rlineto fill} bind def  
+ /ED { exch def} bind def  
+  
+ /Atan {/atan load stopped {pop pop 0} if } def  
+ /Div {dup 0 eq { pop } { div } ifelse } def  
+ /Pyth {dup mul exch dup mul add sqrt} def  
+  
+ %Sizes  
+ /Gpsetlinewidth  
+ { 
+   dup 
+ %  /Gplinewidth_ ED %save 
+   Gplinewidth mul setlinewidth 
+ } def  
+  
+ /Gpsetpointsize   
+ {  
+   dup  
+   /Gppointsize_ ED %save 
+   dup  
+   vpt_ mul /vpt ED 
+   hpt_ mul /hpt ED  
+ } def  
+      
+ %Color  
+ /SetHsbColor { Color {sethsbcolor} {pop pop pop} ifelse } def  
+ /SetCmykColor { Color {setcmykcolor} {pop pop pop pop} ifelse } def  
+ /SimpleSetColor {6 div 1 1 SetHsbColor} def  
+ /Black {0 0 0 0 SetCmykColor} def  
+ /Red {0 SimpleSetColor} def  
+ /Blue {1 1 0 0 SetCmykColor} def  
+ /Cyan {1 0 0 0 SetCmykColor} def  
+ /Magenta {0 1 0 0 SetCmykColor} def 
+  
+ %Stroking  
+ /PathLength@ % z = z + sqrt{(x-xlast)^2 + (y-ylast)^2}  
+  {  
+    /z   
+    z  
+    y ylast sub  
+    x xlast sub  
+    Pyth  
+    add  
+    def   
+    /ylast y def  
+    /xlast x def  
+  } def  
+      
+  /PathLength  
+  {  
+    flattenpath  
+    /z 0 def  
+    { %move  
+      /ystart ED  
+      /xstart ED  
+      /xlast xstart def  
+      /ylast ystart def  
+    }  
+    { %line  
+      /y ED  
+      /x ED  
+      PathLength@  
+    }  
+    { %curve  
+    }  
+    { %close  
+      /x xstart def  
+      /y ystart def  
+      PathLength@   
+    }  
+    /pathforall load  
+    stopped {pop pop pop pop} if  
+    z  
+  } def  
+    
+ %dotsep DotLine  
+ /DotLine   
+ {  
+   PathLength /b ED   
+   /z ED   
+   /y currentlinewidth def   
+   /z y z add def   
+   [ 0 b b z Div round Div dup 0 le { pop 1 } if] 0 setdash   
+   1 setlinecap  
+ } def  
+  
+ /DashLine   
+  {  
+    PathLength /b ED   
+    /x ED   
+    /y ED   
+    /z y x add def   
+    b y sub z Div round z mul y add b exch Div 
+    dup  
+    y mul /y ED   
+    x mul /x ED   
+    x 0 gt y 0 gt and   
+    { [ y x ] 0 }  
+    { [ 1 0 ] 0 }  
+    ifelse  
+    setdash  
+  } def  
+  
+ /DashLineTwo 
+  {  
+    PathLength /b ED   
+    /u ED 
+    /v ED 
+    /x ED   
+    /y ED 
+    /z y x add u add v add def   
+    b y sub z Div round z mul y add b exch Div 
+    dup  
+    y mul /y ED   
+    x mul /x ED   
+    x 0 gt y 0 gt and   
+    { [ y x v u] 0 }  
+    { [ 1 0 ] 0 }  
+    ifelse  
+    setdash  
+  } def  
+      
+  
+ /DotLineStroke   
+ {  
+   gsave  
+     Dashed {currentlinewidth 2 mul DotLine} if  
+     stroke  
+   grestore  
+ } def  
+    
+ /SolidLineStroke  
+ {  
+   gsave  
+     [] 0 setdash  
+     stroke  
+   grestore  
+ } def  
+    
+ /DashLineStroke  
+ {  
+   gsave   
+     Dashed {Gplinewidth 8 mul Gplinewidth 5 mul DashLine} if  
+     stroke  
+   grestore  
+ } def  
+   
+ /DashDotLineStroke  
+ {  
+   gsave   
+     Dashed {Gplinewidth 8 mul Gplinewidth 5 mul 0 Gplinewidth 5 mul DashLineTwo} if  
+     stroke  
+   grestore  
+ } def  
+    
+ /DashShortLineStroke  
+ {  
+   gsave   
+     Dashed {Gplinewidth 4 mul dup DashLine} if  
+     stroke  
+   grestore  
+ } def  
+    
+ /ArrowHead  
+ {   
+   currentlinewidth mul add dup 2 div /w ED  
+   mul dup /h ED  
+   mul /a ED   
+   w neg h moveto   
+   0 0 L   
+   w h L   
+   w neg a neg rlineto   
+   gsave fill grestore   
+ } def  
+    
+  %/DrawArrowHead {1 dup scale 0.2 1.4 50 3 ArrowHead} def  
+  %%%%%  
+  %inset length dim num  
+  %arrowwidth = dim + num*linewidth  
+  %arrowlength = length*arrowwidth  
+  %arrowinset = width * inset  
+    
+  /DrawArrowHead {0.2 1.4 Gplinewidth 3 mul 4 ArrowHead} def  
+    
+  /Arrow  
+  {  
+    currentpoint  
+    4 2 roll  
+    ArrowDict  
+    begin  
+      /@mtrx matrix currentmatrix def  
+      gsave  
+        2 copy translate  
+        2 index sub neg exch  
+        3 index sub exch Atan  
+        rotate  
+        newpath  
+        DrawArrowHead  
+        @mtrx setmatrix  
+        currentpoint  
+      grestore  
+    end %ArrowDicht  
+    lineto  
+    Gpstroke  
+  } def  
+    
+  %axis  
+  /LTa   
+  {  
+    Gpstroke      
+    newpath  
+    0 setgray  
+    /Gpstroke {DotLineStroke newpath} def  
+  } def  
+    
+  %border  
+  /LTb  
+  {  
+    Gpstroke      
+    newpath  
+    0 setgray  
+    /Gpstroke {SolidLineStroke newpath} def  
+  } def  
+    
+  /LT0  
+  {  
+    Gpstroke      
+    newpath  
+    Red  
+    /Gpstroke {SolidLineStroke newpath} def  
+  } def  
+    
+  /LT1  
+  {  
+    Gpstroke      
+    newpath  
+    Blue  
+    /Gpstroke {DashLineStroke newpath} def  
+  } def  
+    
+  /LT2   
+  {  
+    Gpstroke  
+    newpath  
+    Cyan  
+    /Gpstroke {DashShortLineStroke newpath} def  
+  } def  
+  
+  /LT3   
+  {  
+    Gpstroke  
+    newpath  
+    Magenta  
+    /Gpstroke {DashDotLineStroke newpath} def  
+  } def  
+    
+  /Pnt  
+  {  
+    gsave   
+      [] 0 setdash  
+      1 setlinecap   
+      Gplinewidth Gppointsize_ mul setlinewidth 
+      M  
+      0 0 V  
+      stroke  
+    grestore  
+  } def  
+    
+  /DiaPath  
+  {  
+      [] 0 setdash  
+      Gplinewidth setlinewidth  
+      2 copy   
+      newpath  
+      vpt add moveto  
+      hpt neg vpt neg rlineto   
+      hpt vpt neg rlineto  
+      hpt vpt rlineto   
+      hpt neg vpt rlineto  
+      closepath  
+  } def  
+    
+  /Dia   
+  {   
+    gsave  
+      DiaPath  
+      stroke  
+    grestore  
+  } def  
+    
+  /DaF  
+  {  
+    gsave  
+      DiaPath  
+      fill  
+    grestore  
+  } def  
+    
+  /Crc  
+  {  
+    gsave  
+      [] 0 setdash  
+      Gplinewidth setlinewidth  
+      newpath  
+      vpt 0.85 mul 0 360 arc  
+      closepath  
+      stroke  
+    grestore  
+  } def  
+        
+    
+  /Crs  
+  {  
+    gsave  
+      [] 0 setdash  
+      Gplinewidth setlinewidth  
+      0 setlinecap  
+      newpath  
+      vpt sub  
+      moveto  
+      0 vpt 2 mul rlineto  
+      hpt vpt neg rmoveto  
+      hpt 2 mul neg 0 rlineto  
+      stroke  
+    grestore  
+  } def  
+    
+  /CrX  
+  {  
+  gsave  
+   translate  
+   45 rotate  
+   0 0 Crs  
+  grestore  
+  } def  
+    
+  /CcF  
+  {  
+    gsave  
+      [] 0 setdash  
+      Gplinewidth setlinewidth  
+      newpath  
+      vpt 0.85 mul 0 360 arc  
+      closepath  
+      fill  
+    grestore  
+  } def  
+    
+  /Box  
+  {  
+     gsave  
+       translate  
+       45 rotate  
+       0 0 DiaPath  
+       stroke  
+     grestore  
+  } def  
+    
+  /BxF  
+  {  
+     gsave  
+       translate  
+       45 rotate  
+       0 0 DiaPath  
+       fill  
+     grestore  
+  } def  
+    
+  /Gpstroke {stroke} def  
+  1 setlinecap  
+  1 setlinejoin 
+ %
+ % PostScript level 2 pattern fill definitions
+ % Ethan A Merritt April 2003
+ %
+ % Level-1 compatible emulation for rectfill
+  /RF { gsave newpath 4 -2 roll moveto dup 0 exch rlineto
+    exch 0 rlineto neg 0 exch rlineto closepath fill grestore
+  } bind def
+  /BoxFill { gsave RF fill grestore } def 
+  /Blank { 0 0 M 0 8 L 8 8 L 8 0 L 0 0 L
+           1.0 setgray fill 0.0 setgray 0.5 setlinewidth } bind def
+  /Tile8x8 { /PaintType 1 def /PatternType 1 def /TilingType 1 def
+             /BBox [0 0 8 8] def /XStep 8 def /YStep 8 def
+  } bind def
+  /P1D 12 dict def P1D begin
+      Tile8x8 /PaintProc { Blank 0 0 M 8 8 L 0 8 M 8 0 L stroke } def
+  end P1D matrix makepattern
+  /Pattern1 exch def
+  /P2D 12 dict def P2D begin
+      Tile8x8 /PaintProc { Blank 0 0 M 8 8 L 0 8 M 8 0 L stroke
+                           0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke } def
+  end P2D matrix makepattern
+  /Pattern2 exch def
+  /P3D 12 dict def P3D begin
+      Tile8x8 /PaintProc { Blank 0 0 M 0 8 L
+                          8 8 L 8 0 L 0 0 L fill } def
+  end P3D matrix makepattern
+  /Pattern3 exch def
+  /P4D 12 dict def P4D begin
+      Tile8x8 /PaintProc { Blank -4 8 M 8 -4 L
+                          0 12 M 12 0 L stroke } def
+  end P4D matrix makepattern
+  /Pattern4 exch def
+  /P5D 12 dict def P5D begin
+      Tile8x8 /PaintProc { Blank -4 0 M 8 12 L
+                          0 -4 M 12 8 L stroke } def
+  end P5D matrix makepattern
+  /Pattern5 exch def
+  /P6D 12 dict def P6D begin
+      Tile8x8 /PaintProc { Blank -2 8 M 4 -4 L
+                          0 12 M 8 -4 L 4 12 M 10 0 L stroke } def
+  end P6D matrix makepattern
+  /Pattern6 exch def
+  /P7D 12 dict def P7D begin
+      Tile8x8 /PaintProc { Blank -2 0 M 4 12 L
+                          0 -4 M 8 12 L 4 -4 M 10 8 L stroke } def
+  end P7D matrix makepattern
+  /Pattern7 exch def
+  /P8D 12 dict def P8D begin
+      Tile8x8 /PaintProc { Blank 8 -2 M -4 4 L
+                          12 0 M -4 8 L 12 4 M 0 10 L stroke } def
+  end P8D matrix makepattern
+  /Pattern8 exch def
+  /P9D 12 dict def P9D begin
+      Tile8x8 /PaintProc { Blank 0 -2 M 12 4 L
+                          -4 0 M 12 8 L -4 4 M 8 10 L stroke } def
+  end P9D matrix makepattern
+  /Pattern9 exch def
+ 
+end
+%%%%EndProlog
+Gpdict begin
+gsave
+72 72 translate
+0.0200 0.0200 scale
+0 setgray
+newpath
+1.000 Gpsetpointsize
+1.000 Gpsetlinewidth
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+2812 4142 M
+8440 1038 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15188 2954 M
+11252 5180 L
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+2812 4142 M
+0 4254 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+6748 1916 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+7170 1968 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+7592 2020 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+8014 2072 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+8436 2123 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+8858 2175 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+9279 2227 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+9701 2279 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+10123 2331 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+10546 2383 M
+-121 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+10968 2435 M
+-241 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+11390 2487 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+11812 2539 M
+-241 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+12234 2591 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+12656 2643 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+13078 2694 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+13500 2746 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+13922 2798 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+14344 2850 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+14766 2902 M
+-120 68 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+15188 2954 M
+-240 136 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+6748 1916 M
+272 33 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+6502 2055 M
+136 17 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+6256 2194 M
+272 34 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+6010 2333 M
+136 17 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+5764 2472 M
+272 34 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+5518 2612 M
+136 16 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+5272 2751 M
+272 33 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+5026 2890 M
+136 17 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+4780 3029 M
+272 33 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+4534 3168 M
+136 17 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+4288 3307 M
+272 34 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+4042 3446 M
+136 17 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+3796 3586 M
+272 33 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+3550 3725 M
+136 16 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+3304 3864 M
+272 33 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+3058 4003 M
+136 17 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+2812 4142 M
+272 34 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+2812 5560 M
+300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+2812 6505 M
+300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+2812 7450 M
+300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+2812 8396 M
+300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+LTb
+1.000 Gpsetpointsize
+1.000 Gpsetlinewidth
+LT0
+4779 6337 M
+2 1 V
+Gpstroke
+4781 6338 M
+2 0 V
+Gpstroke
+4783 6338 M
+2 0 V
+Gpstroke
+4785 6338 M
+2 0 V
+Gpstroke
+4787 6338 M
+2 1 V
+Gpstroke
+4789 6339 M
+2 0 V
+Gpstroke
+4791 6339 M
+3 0 V
+Gpstroke
+4794 6339 M
+2 0 V
+Gpstroke
+4796 6339 M
+2 1 V
+Gpstroke
+4798 6340 M
+2 0 V
+Gpstroke
+4800 6340 M
+2 0 V
+Gpstroke
+4802 6340 M
+2 0 V
+Gpstroke
+4804 6340 M
+2 1 V
+Gpstroke
+4806 6341 M
+2 0 V
+Gpstroke
+4808 6341 M
+2 0 V
+Gpstroke
+4810 6341 M
+3 0 V
+Gpstroke
+4813 6341 M
+2 1 V
+Gpstroke
+4815 6342 M
+2 0 V
+Gpstroke
+4817 6342 M
+2 0 V
+Gpstroke
+4819 6342 M
+2 0 V
+Gpstroke
+4821 6342 M
+2 1 V
+Gpstroke
+4823 6343 M
+2 0 V
+Gpstroke
+4825 6343 M
+2 0 V
+Gpstroke
+4827 6343 M
+2 1 V
+Gpstroke
+4829 6344 M
+3 0 V
+Gpstroke
+4832 6344 M
+2 0 V
+Gpstroke
+4834 6344 M
+2 0 V
+Gpstroke
+4836 6344 M
+2 1 V
+Gpstroke
+4838 6345 M
+2 0 V
+Gpstroke
+4840 6345 M
+2 0 V
+Gpstroke
+4842 6345 M
+2 0 V
+Gpstroke
+4844 6345 M
+2 1 V
+Gpstroke
+4846 6346 M
+2 0 V
+Gpstroke
+4848 6346 M
+3 0 V
+Gpstroke
+4851 6346 M
+2 0 V
+Gpstroke
+4853 6346 M
+2 1 V
+Gpstroke
+4855 6347 M
+2 0 V
+Gpstroke
+4857 6347 M
+2 0 V
+Gpstroke
+4859 6347 M
+2 0 V
+Gpstroke
+4861 6347 M
+2 1 V
+Gpstroke
+4863 6348 M
+2 0 V
+Gpstroke
+4865 6348 M
+2 0 V
+Gpstroke
+4867 6348 M
+3 0 V
+Gpstroke
+4870 6348 M
+2 1 V
+Gpstroke
+4872 6349 M
+2 0 V
+Gpstroke
+4874 6349 M
+2 0 V
+Gpstroke
+4876 6349 M
+2 0 V
+Gpstroke
+4878 6349 M
+2 1 V
+Gpstroke
+4880 6350 M
+2 0 V
+Gpstroke
+4882 6350 M
+2 0 V
+Gpstroke
+4884 6350 M
+2 1 V
+Gpstroke
+4886 6351 M
+3 0 V
+Gpstroke
+4889 6351 M
+2 0 V
+Gpstroke
+4891 6351 M
+2 0 V
+Gpstroke
+4893 6351 M
+2 1 V
+Gpstroke
+4895 6352 M
+2 0 V
+Gpstroke
+4897 6352 M
+2 0 V
+Gpstroke
+4899 6352 M
+2 0 V
+Gpstroke
+4901 6352 M
+2 1 V
+Gpstroke
+4903 6353 M
+2 0 V
+Gpstroke
+4905 6353 M
+3 0 V
+Gpstroke
+4908 6353 M
+2 0 V
+Gpstroke
+4910 6353 M
+2 1 V
+Gpstroke
+4912 6354 M
+2 0 V
+Gpstroke
+4914 6354 M
+2 0 V
+Gpstroke
+4916 6354 M
+2 0 V
+Gpstroke
+4918 6354 M
+2 1 V
+Gpstroke
+4920 6355 M
+2 0 V
+Gpstroke
+4922 6355 M
+2 0 V
+Gpstroke
+4924 6355 M
+3 0 V
+Gpstroke
+4927 6355 M
+2 1 V
+Gpstroke
+4929 6356 M
+2 0 V
+Gpstroke
+4931 6356 M
+2 0 V
+Gpstroke
+4933 6356 M
+2 1 V
+Gpstroke
+4935 6357 M
+2 0 V
+Gpstroke
+4937 6357 M
+2 0 V
+Gpstroke
+4939 6357 M
+2 0 V
+Gpstroke
+4941 6357 M
+2 1 V
+Gpstroke
+4943 6358 M
+3 0 V
+Gpstroke
+4946 6358 M
+2 0 V
+Gpstroke
+4948 6358 M
+2 0 V
+Gpstroke
+4950 6358 M
+2 1 V
+Gpstroke
+4952 6359 M
+2 0 V
+Gpstroke
+4954 6359 M
+2 0 V
+Gpstroke
+4956 6359 M
+2 0 V
+Gpstroke
+4958 6359 M
+2 1 V
+Gpstroke
+4960 6360 M
+2 0 V
+Gpstroke
+4962 6360 M
+3 0 V
+Gpstroke
+4965 6360 M
+2 0 V
+Gpstroke
+4967 6360 M
+2 1 V
+Gpstroke
+4969 6361 M
+2 0 V
+Gpstroke
+4971 6361 M
+2 0 V
+Gpstroke
+4973 6361 M
+2 0 V
+Gpstroke
+4975 6361 M
+2 1 V
+Gpstroke
+4977 6362 M
+2 0 V
+Gpstroke
+4979 6362 M
+2 0 V
+Gpstroke
+4981 6362 M
+3 0 V
+Gpstroke
+4984 6362 M
+2 1 V
+Gpstroke
+4986 6363 M
+2 0 V
+Gpstroke
+4988 6363 M
+2 0 V
+Gpstroke
+4990 6363 M
+2 1 V
+Gpstroke
+4992 6364 M
+2 0 V
+Gpstroke
+4994 6364 M
+2 0 V
+Gpstroke
+4996 6364 M
+2 0 V
+Gpstroke
+4998 6364 M
+2 1 V
+Gpstroke
+5000 6365 M
+3 0 V
+Gpstroke
+5003 6365 M
+2 0 V
+Gpstroke
+5005 6365 M
+2 0 V
+Gpstroke
+5007 6365 M
+2 1 V
+Gpstroke
+5009 6366 M
+2 0 V
+Gpstroke
+5011 6366 M
+2 0 V
+Gpstroke
+5013 6366 M
+2 0 V
+Gpstroke
+5015 6366 M
+2 1 V
+Gpstroke
+5017 6367 M
+2 0 V
+Gpstroke
+5019 6367 M
+3 0 V
+Gpstroke
+5022 6367 M
+2 0 V
+Gpstroke
+5024 6367 M
+2 1 V
+Gpstroke
+5026 6368 M
+2 0 V
+Gpstroke
+5028 6368 M
+2 0 V
+Gpstroke
+5030 6368 M
+2 0 V
+Gpstroke
+5032 6368 M
+2 1 V
+Gpstroke
+5034 6369 M
+2 0 V
+Gpstroke
+5036 6369 M
+2 0 V
+Gpstroke
+5038 6369 M
+3 0 V
+Gpstroke
+5041 6369 M
+2 1 V
+Gpstroke
+5043 6370 M
+2 0 V
+Gpstroke
+5045 6370 M
+2 0 V
+Gpstroke
+5047 6370 M
+2 1 V
+Gpstroke
+5049 6371 M
+2 0 V
+Gpstroke
+5051 6371 M
+2 0 V
+Gpstroke
+5053 6371 M
+2 0 V
+Gpstroke
+5055 6371 M
+2 1 V
+Gpstroke
+5057 6372 M
+3 0 V
+Gpstroke
+5060 6372 M
+2 0 V
+Gpstroke
+5062 6372 M
+2 0 V
+Gpstroke
+5064 6372 M
+2 1 V
+Gpstroke
+5066 6373 M
+2 0 V
+Gpstroke
+5068 6373 M
+2 0 V
+Gpstroke
+5070 6373 M
+2 0 V
+Gpstroke
+5072 6373 M
+2 1 V
+Gpstroke
+5074 6374 M
+2 0 V
+Gpstroke
+5076 6374 M
+3 0 V
+Gpstroke
+5079 6374 M
+2 0 V
+Gpstroke
+5081 6374 M
+2 1 V
+Gpstroke
+5083 6375 M
+2 0 V
+Gpstroke
+5085 6375 M
+2 0 V
+Gpstroke
+5087 6375 M
+2 0 V
+Gpstroke
+5089 6375 M
+2 1 V
+Gpstroke
+5091 6376 M
+2 0 V
+Gpstroke
+5093 6376 M
+2 0 V
+Gpstroke
+5095 6376 M
+2 1 V
+Gpstroke
+5097 6377 M
+3 0 V
+Gpstroke
+5100 6377 M
+2 0 V
+Gpstroke
+5102 6377 M
+2 0 V
+Gpstroke
+5104 6377 M
+2 1 V
+Gpstroke
+5106 6378 M
+2 0 V
+Gpstroke
+5108 6378 M
+2 0 V
+Gpstroke
+5110 6378 M
+2 0 V
+Gpstroke
+5112 6378 M
+2 1 V
+Gpstroke
+5114 6379 M
+2 0 V
+Gpstroke
+5116 6379 M
+3 0 V
+Gpstroke
+5119 6379 M
+2 0 V
+Gpstroke
+5121 6379 M
+2 1 V
+Gpstroke
+5123 6380 M
+2 0 V
+Gpstroke
+5125 6380 M
+2 0 V
+Gpstroke
+5127 6380 M
+2 0 V
+Gpstroke
+5129 6380 M
+2 1 V
+Gpstroke
+5131 6381 M
+2 0 V
+Gpstroke
+5133 6381 M
+2 0 V
+Gpstroke
+5135 6381 M
+3 0 V
+Gpstroke
+5138 6381 M
+2 1 V
+Gpstroke
+5140 6382 M
+2 0 V
+Gpstroke
+5142 6382 M
+2 0 V
+Gpstroke
+5144 6382 M
+2 1 V
+Gpstroke
+5146 6383 M
+2 0 V
+Gpstroke
+5148 6383 M
+2 0 V
+Gpstroke
+5150 6383 M
+2 0 V
+Gpstroke
+5152 6383 M
+2 1 V
+Gpstroke
+5154 6384 M
+3 0 V
+Gpstroke
+5157 6384 M
+2 0 V
+Gpstroke
+5159 6384 M
+2 0 V
+Gpstroke
+5161 6384 M
+2 1 V
+Gpstroke
+5163 6385 M
+2 0 V
+Gpstroke
+5165 6385 M
+2 0 V
+Gpstroke
+5167 6385 M
+2 0 V
+Gpstroke
+5169 6385 M
+2 1 V
+Gpstroke
+5171 6386 M
+2 0 V
+Gpstroke
+5173 6386 M
+3 0 V
+Gpstroke
+5176 6386 M
+2 0 V
+Gpstroke
+5178 6386 M
+2 1 V
+Gpstroke
+5180 6387 M
+2 0 V
+Gpstroke
+5182 6387 M
+2 0 V
+Gpstroke
+5184 6387 M
+2 0 V
+Gpstroke
+5186 6387 M
+2 1 V
+Gpstroke
+5188 6388 M
+2 0 V
+Gpstroke
+5190 6388 M
+2 0 V
+Gpstroke
+5192 6388 M
+3 0 V
+Gpstroke
+5195 6388 M
+2 1 V
+Gpstroke
+5197 6389 M
+2 0 V
+Gpstroke
+5199 6389 M
+2 0 V
+Gpstroke
+5201 6389 M
+2 1 V
+Gpstroke
+5203 6390 M
+2 0 V
+Gpstroke
+5205 6390 M
+2 0 V
+Gpstroke
+5207 6390 M
+2 0 V
+Gpstroke
+5209 6390 M
+2 1 V
+Gpstroke
+5211 6391 M
+3 0 V
+Gpstroke
+5214 6391 M
+2 0 V
+Gpstroke
+5216 6391 M
+2 0 V
+Gpstroke
+5218 6391 M
+2 1 V
+Gpstroke
+5220 6392 M
+2 0 V
+Gpstroke
+5222 6392 M
+2 0 V
+Gpstroke
+5224 6392 M
+2 0 V
+Gpstroke
+5226 6392 M
+2 1 V
+Gpstroke
+5228 6393 M
+2 0 V
+Gpstroke
+5230 6393 M
+3 0 V
+Gpstroke
+5233 6393 M
+2 0 V
+Gpstroke
+5235 6393 M
+2 1 V
+Gpstroke
+5237 6394 M
+2 0 V
+Gpstroke
+5239 6394 M
+2 0 V
+Gpstroke
+5241 6394 M
+2 0 V
+Gpstroke
+5243 6394 M
+2 1 V
+Gpstroke
+5245 6395 M
+2 0 V
+Gpstroke
+5247 6395 M
+2 0 V
+Gpstroke
+5249 6395 M
+2 1 V
+Gpstroke
+5251 6396 M
+3 0 V
+Gpstroke
+5254 6396 M
+2 0 V
+Gpstroke
+5256 6396 M
+2 0 V
+Gpstroke
+5258 6396 M
+2 1 V
+Gpstroke
+5260 6397 M
+2 0 V
+Gpstroke
+5262 6397 M
+2 0 V
+Gpstroke
+5264 6397 M
+2 0 V
+Gpstroke
+5266 6397 M
+2 1 V
+Gpstroke
+5268 6398 M
+2 0 V
+Gpstroke
+5270 6398 M
+3 0 V
+Gpstroke
+5273 6398 M
+2 0 V
+Gpstroke
+5275 6398 M
+2 1 V
+Gpstroke
+5277 6399 M
+2 0 V
+Gpstroke
+5279 6399 M
+2 0 V
+Gpstroke
+5281 6399 M
+2 0 V
+Gpstroke
+5283 6399 M
+2 1 V
+Gpstroke
+5285 6400 M
+2 0 V
+Gpstroke
+5287 6400 M
+2 0 V
+Gpstroke
+5289 6400 M
+3 0 V
+Gpstroke
+5292 6400 M
+2 1 V
+Gpstroke
+5294 6401 M
+2 0 V
+Gpstroke
+5296 6401 M
+2 0 V
+Gpstroke
+5298 6401 M
+2 0 V
+Gpstroke
+5300 6401 M
+2 1 V
+Gpstroke
+5302 6402 M
+2 0 V
+Gpstroke
+5304 6402 M
+2 0 V
+Gpstroke
+5306 6402 M
+2 1 V
+Gpstroke
+5308 6403 M
+3 0 V
+Gpstroke
+5311 6403 M
+2 0 V
+Gpstroke
+5313 6403 M
+2 0 V
+Gpstroke
+5315 6403 M
+2 1 V
+Gpstroke
+5317 6404 M
+2 0 V
+Gpstroke
+5319 6404 M
+2 0 V
+Gpstroke
+5321 6404 M
+2 0 V
+Gpstroke
+5323 6404 M
+2 1 V
+Gpstroke
+5325 6405 M
+2 0 V
+Gpstroke
+5327 6405 M
+3 0 V
+Gpstroke
+5330 6405 M
+2 0 V
+Gpstroke
+5332 6405 M
+2 1 V
+Gpstroke
+5334 6406 M
+2 0 V
+Gpstroke
+5336 6406 M
+2 0 V
+Gpstroke
+5338 6406 M
+2 0 V
+Gpstroke
+5340 6406 M
+2 1 V
+Gpstroke
+5342 6407 M
+2 0 V
+Gpstroke
+5344 6407 M
+2 0 V
+Gpstroke
+5346 6407 M
+3 0 V
+Gpstroke
+5349 6407 M
+2 1 V
+Gpstroke
+5351 6408 M
+2 0 V
+Gpstroke
+5353 6408 M
+2 0 V
+Gpstroke
+5355 6408 M
+2 1 V
+Gpstroke
+5357 6409 M
+2 0 V
+Gpstroke
+5359 6409 M
+2 0 V
+Gpstroke
+5361 6409 M
+2 0 V
+Gpstroke
+5363 6409 M
+2 1 V
+Gpstroke
+5365 6410 M
+2 0 V
+Gpstroke
+5367 6410 M
+3 0 V
+Gpstroke
+5370 6410 M
+2 0 V
+Gpstroke
+5372 6410 M
+2 1 V
+Gpstroke
+5374 6411 M
+2 0 V
+Gpstroke
+5376 6411 M
+2 0 V
+Gpstroke
+5378 6411 M
+2 0 V
+Gpstroke
+5380 6411 M
+2 1 V
+Gpstroke
+5382 6412 M
+2 0 V
+Gpstroke
+5384 6412 M
+2 0 V
+Gpstroke
+5386 6412 M
+3 0 V
+Gpstroke
+5389 6412 M
+2 1 V
+Gpstroke
+5391 6413 M
+2 0 V
+Gpstroke
+5393 6413 M
+2 0 V
+Gpstroke
+5395 6413 M
+2 0 V
+Gpstroke
+5397 6413 M
+2 1 V
+Gpstroke
+5399 6414 M
+2 0 V
+Gpstroke
+5401 6414 M
+2 0 V
+Gpstroke
+5403 6414 M
+2 0 V
+Gpstroke
+5405 6414 M
+3 1 V
+Gpstroke
+5408 6415 M
+2 0 V
+Gpstroke
+5410 6415 M
+2 0 V
+Gpstroke
+5412 6415 M
+2 1 V
+Gpstroke
+5414 6416 M
+2 0 V
+Gpstroke
+5416 6416 M
+2 0 V
+Gpstroke
+5418 6416 M
+2 0 V
+Gpstroke
+5420 6416 M
+2 1 V
+Gpstroke
+5422 6417 M
+2 0 V
+Gpstroke
+5424 6417 M
+3 0 V
+Gpstroke
+5427 6417 M
+2 0 V
+Gpstroke
+5429 6417 M
+2 1 V
+Gpstroke
+5431 6418 M
+2 0 V
+Gpstroke
+5433 6418 M
+2 0 V
+Gpstroke
+5435 6418 M
+2 0 V
+Gpstroke
+5437 6418 M
+2 1 V
+Gpstroke
+5439 6419 M
+2 0 V
+Gpstroke
+5441 6419 M
+2 0 V
+Gpstroke
+5443 6419 M
+3 0 V
+Gpstroke
+5446 6419 M
+2 1 V
+Gpstroke
+5448 6420 M
+2 0 V
+Gpstroke
+5450 6420 M
+2 0 V
+Gpstroke
+5452 6420 M
+2 0 V
+Gpstroke
+5454 6420 M
+2 1 V
+Gpstroke
+5456 6421 M
+2 0 V
+Gpstroke
+5458 6421 M
+2 0 V
+Gpstroke
+5460 6421 M
+2 0 V
+Gpstroke
+5462 6421 M
+3 1 V
+Gpstroke
+5465 6422 M
+2 0 V
+Gpstroke
+5467 6422 M
+2 0 V
+Gpstroke
+5469 6422 M
+2 1 V
+Gpstroke
+5471 6423 M
+2 0 V
+Gpstroke
+5473 6423 M
+2 0 V
+Gpstroke
+5475 6423 M
+2 0 V
+Gpstroke
+5477 6423 M
+2 1 V
+Gpstroke
+5479 6424 M
+2 0 V
+Gpstroke
+5481 6424 M
+2 0 V
+Gpstroke
+5483 6424 M
+3 0 V
+Gpstroke
+5486 6424 M
+2 1 V
+Gpstroke
+5488 6425 M
+2 0 V
+Gpstroke
+5490 6425 M
+2 0 V
+Gpstroke
+5492 6425 M
+2 0 V
+Gpstroke
+5494 6425 M
+2 1 V
+Gpstroke
+5496 6426 M
+2 0 V
+Gpstroke
+5498 6426 M
+2 0 V
+Gpstroke
+5500 6426 M
+2 0 V
+Gpstroke
+5502 6426 M
+3 1 V
+Gpstroke
+5505 6427 M
+2 0 V
+Gpstroke
+5507 6427 M
+2 0 V
+Gpstroke
+5509 6427 M
+2 0 V
+Gpstroke
+5511 6427 M
+2 1 V
+Gpstroke
+5513 6428 M
+2 0 V
+Gpstroke
+5515 6428 M
+2 0 V
+Gpstroke
+5517 6428 M
+2 0 V
+Gpstroke
+5519 6428 M
+2 1 V
+Gpstroke
+5521 6429 M
+3 0 V
+Gpstroke
+5524 6429 M
+2 0 V
+Gpstroke
+5526 6429 M
+2 1 V
+Gpstroke
+5528 6430 M
+2 0 V
+Gpstroke
+5530 6430 M
+2 0 V
+Gpstroke
+5532 6430 M
+2 0 V
+Gpstroke
+5534 6430 M
+2 1 V
+Gpstroke
+5536 6431 M
+2 0 V
+Gpstroke
+5538 6431 M
+2 0 V
+Gpstroke
+5540 6431 M
+3 0 V
+Gpstroke
+5543 6431 M
+2 1 V
+Gpstroke
+5545 6432 M
+2 0 V
+Gpstroke
+5547 6432 M
+2 0 V
+Gpstroke
+5549 6432 M
+2 0 V
+Gpstroke
+5551 6432 M
+2 1 V
+Gpstroke
+5553 6433 M
+2 0 V
+Gpstroke
+5555 6433 M
+2 0 V
+Gpstroke
+5557 6433 M
+2 0 V
+Gpstroke
+5559 6433 M
+3 1 V
+Gpstroke
+5562 6434 M
+2 0 V
+Gpstroke
+5564 6434 M
+2 0 V
+Gpstroke
+5566 6434 M
+2 0 V
+Gpstroke
+5568 6434 M
+2 1 V
+Gpstroke
+5570 6435 M
+2 0 V
+Gpstroke
+5572 6435 M
+2 0 V
+Gpstroke
+5574 6435 M
+2 0 V
+Gpstroke
+5576 6435 M
+2 1 V
+Gpstroke
+5578 6436 M
+3 0 V
+Gpstroke
+5581 6436 M
+2 0 V
+Gpstroke
+5583 6436 M
+2 0 V
+Gpstroke
+5585 6436 M
+2 1 V
+Gpstroke
+5587 6437 M
+2 0 V
+Gpstroke
+5589 6437 M
+2 0 V
+Gpstroke
+5591 6437 M
+2 1 V
+Gpstroke
+5593 6438 M
+2 0 V
+Gpstroke
+5595 6438 M
+2 0 V
+Gpstroke
+5597 6438 M
+3 0 V
+Gpstroke
+5600 6438 M
+2 1 V
+Gpstroke
+5602 6439 M
+2 0 V
+Gpstroke
+5604 6439 M
+2 0 V
+Gpstroke
+5606 6439 M
+2 0 V
+Gpstroke
+5608 6439 M
+2 1 V
+Gpstroke
+5610 6440 M
+2 0 V
+Gpstroke
+5612 6440 M
+2 0 V
+Gpstroke
+5614 6440 M
+2 0 V
+Gpstroke
+5616 6440 M
+3 1 V
+Gpstroke
+5619 6441 M
+2 0 V
+Gpstroke
+5621 6441 M
+2 0 V
+Gpstroke
+5623 6441 M
+2 0 V
+Gpstroke
+5625 6441 M
+2 1 V
+Gpstroke
+5627 6442 M
+2 0 V
+Gpstroke
+5629 6442 M
+2 0 V
+Gpstroke
+5631 6442 M
+2 0 V
+Gpstroke
+5633 6442 M
+2 1 V
+Gpstroke
+5635 6443 M
+3 0 V
+Gpstroke
+5638 6443 M
+2 0 V
+Gpstroke
+5640 6443 M
+2 0 V
+Gpstroke
+5642 6443 M
+2 1 V
+Gpstroke
+5644 6444 M
+2 0 V
+Gpstroke
+5646 6444 M
+2 0 V
+Gpstroke
+5648 6444 M
+2 0 V
+Gpstroke
+5650 6444 M
+2 1 V
+Gpstroke
+5652 6445 M
+2 0 V
+Gpstroke
+5654 6445 M
+3 0 V
+Gpstroke
+5657 6445 M
+2 0 V
+Gpstroke
+5659 6445 M
+2 1 V
+Gpstroke
+5661 6446 M
+2 0 V
+Gpstroke
+5663 6446 M
+2 0 V
+Gpstroke
+5665 6446 M
+2 1 V
+Gpstroke
+5667 6447 M
+2 0 V
+Gpstroke
+5669 6447 M
+2 0 V
+Gpstroke
+5671 6447 M
+2 0 V
+Gpstroke
+5673 6447 M
+3 1 V
+Gpstroke
+5676 6448 M
+2 0 V
+Gpstroke
+5678 6448 M
+2 0 V
+Gpstroke
+5680 6448 M
+2 0 V
+Gpstroke
+5682 6448 M
+2 1 V
+Gpstroke
+5684 6449 M
+2 0 V
+Gpstroke
+5686 6449 M
+2 0 V
+Gpstroke
+5688 6449 M
+2 0 V
+Gpstroke
+5690 6449 M
+3 1 V
+Gpstroke
+5693 6450 M
+2 0 V
+Gpstroke
+5695 6450 M
+2 0 V
+Gpstroke
+5697 6450 M
+2 0 V
+Gpstroke
+5699 6450 M
+2 1 V
+Gpstroke
+5701 6451 M
+2 0 V
+Gpstroke
+5703 6451 M
+2 0 V
+Gpstroke
+5705 6451 M
+2 0 V
+Gpstroke
+5707 6451 M
+2 1 V
+Gpstroke
+5709 6452 M
+3 0 V
+Gpstroke
+5712 6452 M
+2 0 V
+Gpstroke
+5714 6452 M
+2 0 V
+Gpstroke
+5716 6452 M
+2 1 V
+Gpstroke
+5718 6453 M
+2 0 V
+Gpstroke
+5720 6453 M
+2 0 V
+Gpstroke
+5722 6453 M
+2 0 V
+Gpstroke
+5724 6453 M
+2 1 V
+Gpstroke
+5726 6454 M
+2 0 V
+Gpstroke
+5728 6454 M
+3 0 V
+Gpstroke
+5731 6454 M
+2 0 V
+Gpstroke
+5733 6454 M
+2 1 V
+Gpstroke
+5735 6455 M
+2 0 V
+Gpstroke
+5737 6455 M
+2 0 V
+Gpstroke
+5739 6455 M
+2 0 V
+Gpstroke
+5741 6455 M
+2 1 V
+Gpstroke
+5743 6456 M
+2 0 V
+Gpstroke
+5745 6456 M
+2 0 V
+Gpstroke
+5747 6456 M
+3 1 V
+Gpstroke
+5750 6457 M
+2 0 V
+Gpstroke
+5752 6457 M
+2 0 V
+Gpstroke
+5754 6457 M
+2 0 V
+Gpstroke
+5756 6457 M
+2 1 V
+Gpstroke
+5758 6458 M
+2 0 V
+Gpstroke
+5760 6458 M
+2 0 V
+Gpstroke
+5762 6458 M
+2 0 V
+Gpstroke
+5764 6458 M
+3 1 V
+Gpstroke
+5767 6459 M
+2 0 V
+Gpstroke
+5769 6459 M
+2 0 V
+Gpstroke
+5771 6459 M
+2 0 V
+Gpstroke
+5773 6459 M
+2 1 V
+Gpstroke
+5775 6460 M
+2 0 V
+Gpstroke
+5777 6460 M
+2 0 V
+Gpstroke
+5779 6460 M
+2 0 V
+Gpstroke
+5781 6460 M
+2 1 V
+Gpstroke
+5783 6461 M
+3 0 V
+Gpstroke
+5786 6461 M
+2 0 V
+Gpstroke
+5788 6461 M
+2 0 V
+Gpstroke
+5790 6461 M
+2 1 V
+Gpstroke
+5792 6462 M
+2 0 V
+Gpstroke
+5794 6462 M
+2 0 V
+Gpstroke
+5796 6462 M
+2 0 V
+Gpstroke
+5798 6462 M
+2 1 V
+Gpstroke
+5800 6463 M
+2 0 V
+Gpstroke
+5802 6463 M
+3 0 V
+Gpstroke
+5805 6463 M
+2 0 V
+Gpstroke
+5807 6463 M
+2 1 V
+Gpstroke
+5809 6464 M
+2 0 V
+Gpstroke
+5811 6464 M
+2 0 V
+Gpstroke
+5813 6464 M
+2 0 V
+Gpstroke
+5815 6464 M
+2 1 V
+Gpstroke
+5817 6465 M
+2 0 V
+Gpstroke
+5819 6465 M
+3 0 V
+Gpstroke
+5822 6465 M
+2 0 V
+Gpstroke
+5824 6465 M
+2 1 V
+Gpstroke
+5826 6466 M
+2 0 V
+Gpstroke
+5828 6466 M
+2 0 V
+Gpstroke
+5830 6466 M
+2 0 V
+Gpstroke
+5832 6466 M
+2 1 V
+Gpstroke
+5834 6467 M
+2 0 V
+Gpstroke
+5836 6467 M
+2 0 V
+Gpstroke
+5838 6467 M
+3 1 V
+Gpstroke
+5841 6468 M
+2 0 V
+Gpstroke
+5843 6468 M
+2 0 V
+Gpstroke
+5845 6468 M
+2 0 V
+Gpstroke
+5847 6468 M
+2 1 V
+Gpstroke
+5849 6469 M
+2 0 V
+Gpstroke
+5851 6469 M
+2 0 V
+Gpstroke
+5853 6469 M
+2 0 V
+Gpstroke
+5855 6469 M
+3 1 V
+Gpstroke
+5858 6470 M
+2 0 V
+Gpstroke
+5860 6470 M
+2 0 V
+Gpstroke
+5862 6470 M
+2 0 V
+Gpstroke
+5864 6470 M
+2 1 V
+Gpstroke
+5866 6471 M
+2 0 V
+Gpstroke
+5868 6471 M
+2 0 V
+Gpstroke
+5870 6471 M
+2 0 V
+Gpstroke
+5872 6471 M
+2 1 V
+Gpstroke
+5874 6472 M
+3 0 V
+Gpstroke
+5877 6472 M
+2 0 V
+Gpstroke
+5879 6472 M
+2 0 V
+Gpstroke
+5881 6472 M
+2 1 V
+Gpstroke
+5883 6473 M
+2 0 V
+Gpstroke
+5885 6473 M
+2 0 V
+Gpstroke
+5887 6473 M
+2 0 V
+Gpstroke
+5889 6473 M
+2 1 V
+Gpstroke
+5891 6474 M
+3 0 V
+Gpstroke
+5894 6474 M
+2 0 V
+Gpstroke
+5896 6474 M
+2 0 V
+Gpstroke
+5898 6474 M
+2 1 V
+Gpstroke
+5900 6475 M
+2 0 V
+Gpstroke
+5902 6475 M
+2 0 V
+Gpstroke
+5904 6475 M
+2 0 V
+Gpstroke
+5906 6475 M
+2 1 V
+Gpstroke
+5908 6476 M
+2 0 V
+Gpstroke
+5910 6476 M
+3 0 V
+Gpstroke
+5913 6476 M
+2 1 V
+Gpstroke
+5915 6477 M
+2 0 V
+Gpstroke
+5917 6477 M
+2 0 V
+Gpstroke
+5919 6477 M
+2 0 V
+Gpstroke
+5921 6477 M
+2 1 V
+Gpstroke
+5923 6478 M
+2 0 V
+Gpstroke
+5925 6478 M
+2 0 V
+Gpstroke
+5927 6478 M
+3 0 V
+Gpstroke
+5930 6478 M
+2 1 V
+Gpstroke
+5932 6479 M
+2 0 V
+Gpstroke
+5934 6479 M
+2 0 V
+Gpstroke
+5936 6479 M
+2 0 V
+Gpstroke
+5938 6479 M
+2 1 V
+Gpstroke
+5940 6480 M
+2 0 V
+Gpstroke
+5942 6480 M
+2 0 V
+Gpstroke
+5944 6480 M
+2 0 V
+Gpstroke
+5946 6480 M
+3 1 V
+Gpstroke
+5949 6481 M
+2 0 V
+Gpstroke
+5951 6481 M
+2 0 V
+Gpstroke
+5953 6481 M
+2 0 V
+Gpstroke
+5955 6481 M
+2 1 V
+Gpstroke
+5957 6482 M
+2 0 V
+Gpstroke
+5959 6482 M
+2 0 V
+Gpstroke
+5961 6482 M
+2 0 V
+Gpstroke
+5963 6482 M
+2 1 V
+Gpstroke
+5965 6483 M
+3 0 V
+Gpstroke
+5968 6483 M
+2 0 V
+Gpstroke
+5970 6483 M
+2 1 V
+Gpstroke
+5972 6484 M
+2 0 V
+Gpstroke
+5974 6484 M
+2 0 V
+Gpstroke
+5976 6484 M
+2 0 V
+Gpstroke
+5978 6484 M
+2 1 V
+Gpstroke
+5980 6485 M
+2 0 V
+Gpstroke
+5982 6485 M
+3 0 V
+Gpstroke
+5985 6485 M
+2 0 V
+Gpstroke
+5987 6485 M
+2 1 V
+Gpstroke
+5989 6486 M
+2 0 V
+Gpstroke
+5991 6486 M
+2 0 V
+Gpstroke
+5993 6486 M
+2 0 V
+Gpstroke
+5995 6486 M
+2 1 V
+Gpstroke
+5997 6487 M
+2 0 V
+Gpstroke
+5999 6487 M
+2 0 V
+Gpstroke
+6001 6487 M
+3 0 V
+Gpstroke
+6004 6487 M
+2 1 V
+Gpstroke
+6006 6488 M
+2 0 V
+Gpstroke
+6008 6488 M
+2 0 V
+Gpstroke
+6010 6488 M
+2 0 V
+Gpstroke
+6012 6488 M
+2 1 V
+Gpstroke
+6014 6489 M
+2 0 V
+Gpstroke
+6016 6489 M
+2 0 V
+Gpstroke
+6018 6489 M
+2 1 V
+Gpstroke
+6020 6490 M
+3 0 V
+Gpstroke
+6023 6490 M
+2 0 V
+Gpstroke
+6025 6490 M
+2 0 V
+Gpstroke
+6027 6490 M
+2 1 V
+Gpstroke
+6029 6491 M
+2 0 V
+Gpstroke
+6031 6491 M
+2 0 V
+Gpstroke
+6033 6491 M
+2 0 V
+Gpstroke
+6035 6491 M
+2 1 V
+Gpstroke
+6037 6492 M
+3 0 V
+Gpstroke
+6040 6492 M
+2 0 V
+Gpstroke
+6042 6492 M
+2 0 V
+Gpstroke
+6044 6492 M
+2 1 V
+Gpstroke
+6046 6493 M
+2 0 V
+Gpstroke
+6048 6493 M
+2 0 V
+Gpstroke
+6050 6493 M
+2 0 V
+Gpstroke
+6052 6493 M
+2 1 V
+Gpstroke
+6054 6494 M
+2 0 V
+Gpstroke
+6056 6494 M
+3 0 V
+Gpstroke
+6059 6494 M
+2 1 V
+Gpstroke
+6061 6495 M
+2 0 V
+Gpstroke
+6063 6495 M
+2 0 V
+Gpstroke
+6065 6495 M
+2 0 V
+Gpstroke
+6067 6495 M
+2 1 V
+Gpstroke
+6069 6496 M
+2 0 V
+Gpstroke
+6071 6496 M
+2 0 V
+Gpstroke
+6073 6496 M
+2 0 V
+Gpstroke
+6075 6496 M
+3 1 V
+Gpstroke
+6078 6497 M
+2 0 V
+Gpstroke
+6080 6497 M
+2 0 V
+Gpstroke
+6082 6497 M
+2 0 V
+Gpstroke
+6084 6497 M
+2 1 V
+Gpstroke
+6086 6498 M
+2 0 V
+Gpstroke
+6088 6498 M
+2 0 V
+Gpstroke
+6090 6498 M
+2 1 V
+Gpstroke
+6092 6499 M
+2 0 V
+Gpstroke
+6094 6499 M
+3 0 V
+Gpstroke
+6097 6499 M
+2 0 V
+Gpstroke
+6099 6499 M
+2 1 V
+Gpstroke
+6101 6500 M
+2 0 V
+Gpstroke
+6103 6500 M
+2 0 V
+Gpstroke
+6105 6500 M
+2 0 V
+Gpstroke
+6107 6500 M
+2 1 V
+Gpstroke
+6109 6501 M
+2 0 V
+Gpstroke
+6111 6501 M
+2 0 V
+Gpstroke
+6113 6501 M
+2 0 V
+Gpstroke
+6115 6501 M
+3 1 V
+Gpstroke
+6118 6502 M
+2 0 V
+Gpstroke
+6120 6502 M
+2 0 V
+Gpstroke
+6122 6502 M
+2 1 V
+Gpstroke
+6124 6503 M
+2 0 V
+Gpstroke
+6126 6503 M
+2 0 V
+Gpstroke
+6128 6503 M
+2 0 V
+Gpstroke
+6130 6503 M
+2 1 V
+Gpstroke
+6132 6504 M
+2 0 V
+Gpstroke
+6134 6504 M
+3 0 V
+Gpstroke
+6137 6504 M
+2 0 V
+Gpstroke
+6139 6504 M
+2 1 V
+Gpstroke
+6141 6505 M
+2 0 V
+Gpstroke
+6143 6505 M
+2 0 V
+Gpstroke
+6145 6505 M
+2 0 V
+Gpstroke
+6147 6505 M
+2 1 V
+Gpstroke
+6149 6506 M
+2 0 V
+Gpstroke
+6151 6506 M
+2 0 V
+Gpstroke
+6153 6506 M
+2 1 V
+Gpstroke
+6155 6507 M
+3 0 V
+Gpstroke
+6158 6507 M
+2 0 V
+Gpstroke
+6160 6507 M
+2 0 V
+Gpstroke
+6162 6507 M
+2 1 V
+Gpstroke
+6164 6508 M
+2 0 V
+Gpstroke
+6166 6508 M
+2 0 V
+Gpstroke
+6168 6508 M
+2 0 V
+Gpstroke
+6170 6508 M
+2 1 V
+Gpstroke
+6172 6509 M
+2 0 V
+Gpstroke
+6174 6509 M
+3 0 V
+Gpstroke
+6177 6509 M
+2 1 V
+Gpstroke
+6179 6510 M
+2 0 V
+Gpstroke
+6181 6510 M
+2 0 V
+Gpstroke
+6183 6510 M
+2 0 V
+Gpstroke
+6185 6510 M
+2 1 V
+Gpstroke
+6187 6511 M
+2 0 V
+Gpstroke
+6189 6511 M
+2 0 V
+Gpstroke
+6191 6511 M
+2 0 V
+Gpstroke
+6193 6511 M
+2 1 V
+Gpstroke
+6195 6512 M
+3 0 V
+Gpstroke
+6198 6512 M
+2 0 V
+Gpstroke
+6200 6512 M
+2 1 V
+Gpstroke
+6202 6513 M
+2 0 V
+Gpstroke
+6204 6513 M
+2 0 V
+Gpstroke
+6206 6513 M
+2 0 V
+Gpstroke
+6208 6513 M
+2 1 V
+Gpstroke
+6210 6514 M
+2 0 V
+Gpstroke
+6212 6514 M
+2 0 V
+Gpstroke
+6214 6514 M
+2 0 V
+Gpstroke
+6216 6514 M
+3 1 V
+Gpstroke
+6219 6515 M
+2 0 V
+Gpstroke
+6221 6515 M
+2 0 V
+Gpstroke
+6223 6515 M
+2 1 V
+Gpstroke
+6225 6516 M
+2 0 V
+Gpstroke
+6227 6516 M
+2 0 V
+Gpstroke
+6229 6516 M
+2 0 V
+Gpstroke
+6231 6516 M
+2 1 V
+Gpstroke
+6233 6517 M
+2 0 V
+Gpstroke
+6235 6517 M
+2 0 V
+Gpstroke
+6237 6517 M
+2 0 V
+Gpstroke
+6239 6517 M
+3 1 V
+Gpstroke
+6242 6518 M
+2 0 V
+Gpstroke
+6244 6518 M
+2 0 V
+Gpstroke
+6246 6518 M
+2 1 V
+Gpstroke
+6248 6519 M
+2 0 V
+Gpstroke
+6250 6519 M
+2 0 V
+Gpstroke
+6252 6519 M
+2 0 V
+Gpstroke
+6254 6519 M
+2 1 V
+Gpstroke
+6256 6520 M
+2 0 V
+Gpstroke
+6258 6520 M
+2 0 V
+Gpstroke
+6260 6520 M
+2 0 V
+Gpstroke
+6262 6520 M
+3 1 V
+Gpstroke
+6265 6521 M
+2 0 V
+Gpstroke
+6267 6521 M
+2 0 V
+Gpstroke
+6269 6521 M
+2 1 V
+Gpstroke
+6271 6522 M
+2 0 V
+Gpstroke
+6273 6522 M
+2 0 V
+Gpstroke
+6275 6522 M
+2 0 V
+Gpstroke
+6277 6522 M
+2 1 V
+Gpstroke
+6279 6523 M
+2 0 V
+Gpstroke
+6281 6523 M
+2 0 V
+Gpstroke
+6283 6523 M
+2 1 V
+Gpstroke
+6285 6524 M
+3 0 V
+Gpstroke
+6288 6524 M
+2 0 V
+Gpstroke
+6290 6524 M
+2 0 V
+Gpstroke
+6292 6524 M
+2 1 V
+Gpstroke
+6294 6525 M
+2 0 V
+Gpstroke
+6296 6525 M
+2 0 V
+Gpstroke
+6298 6525 M
+2 0 V
+Gpstroke
+6300 6525 M
+2 1 V
+Gpstroke
+6302 6526 M
+2 0 V
+Gpstroke
+6304 6526 M
+2 0 V
+Gpstroke
+6306 6526 M
+2 1 V
+Gpstroke
+6308 6527 M
+3 0 V
+Gpstroke
+6311 6527 M
+2 0 V
+Gpstroke
+6313 6527 M
+2 0 V
+Gpstroke
+6315 6527 M
+2 1 V
+Gpstroke
+6317 6528 M
+2 0 V
+Gpstroke
+6319 6528 M
+2 0 V
+Gpstroke
+6321 6528 M
+2 0 V
+Gpstroke
+6323 6528 M
+2 1 V
+Gpstroke
+6325 6529 M
+2 0 V
+Gpstroke
+6327 6529 M
+2 0 V
+Gpstroke
+6329 6529 M
+2 1 V
+Gpstroke
+6331 6530 M
+2 0 V
+Gpstroke
+6333 6530 M
+3 0 V
+Gpstroke
+6336 6530 M
+2 0 V
+Gpstroke
+6338 6530 M
+2 1 V
+Gpstroke
+6340 6531 M
+2 0 V
+Gpstroke
+6342 6531 M
+2 0 V
+Gpstroke
+6344 6531 M
+2 1 V
+Gpstroke
+6346 6532 M
+2 0 V
+Gpstroke
+6348 6532 M
+2 0 V
+Gpstroke
+6350 6532 M
+2 0 V
+Gpstroke
+6352 6532 M
+2 1 V
+Gpstroke
+6354 6533 M
+2 0 V
+Gpstroke
+6356 6533 M
+2 0 V
+Gpstroke
+6358 6533 M
+3 0 V
+Gpstroke
+6361 6533 M
+2 1 V
+Gpstroke
+6363 6534 M
+2 0 V
+Gpstroke
+6365 6534 M
+2 0 V
+Gpstroke
+6367 6534 M
+2 1 V
+Gpstroke
+6369 6535 M
+2 0 V
+Gpstroke
+6371 6535 M
+2 0 V
+Gpstroke
+6373 6535 M
+2 0 V
+Gpstroke
+6375 6535 M
+2 1 V
+Gpstroke
+6377 6536 M
+2 0 V
+Gpstroke
+6379 6536 M
+2 0 V
+Gpstroke
+6381 6536 M
+2 0 V
+Gpstroke
+6383 6536 M
+2 1 V
+Gpstroke
+6385 6537 M
+3 0 V
+Gpstroke
+6388 6537 M
+2 0 V
+Gpstroke
+6390 6537 M
+2 1 V
+Gpstroke
+6392 6538 M
+2 0 V
+Gpstroke
+6394 6538 M
+2 0 V
+Gpstroke
+6396 6538 M
+2 0 V
+Gpstroke
+6398 6538 M
+2 1 V
+Gpstroke
+6400 6539 M
+2 0 V
+Gpstroke
+6402 6539 M
+2 0 V
+Gpstroke
+6404 6539 M
+2 0 V
+Gpstroke
+6406 6539 M
+2 1 V
+Gpstroke
+6408 6540 M
+2 0 V
+Gpstroke
+6410 6540 M
+3 0 V
+Gpstroke
+6413 6540 M
+2 1 V
+Gpstroke
+6415 6541 M
+2 0 V
+Gpstroke
+6417 6541 M
+2 0 V
+Gpstroke
+6419 6541 M
+2 0 V
+Gpstroke
+6421 6541 M
+2 1 V
+Gpstroke
+6423 6542 M
+2 0 V
+Gpstroke
+6425 6542 M
+2 0 V
+Gpstroke
+6427 6542 M
+2 0 V
+Gpstroke
+6429 6542 M
+2 1 V
+Gpstroke
+6431 6543 M
+2 0 V
+Gpstroke
+6433 6543 M
+2 0 V
+Gpstroke
+6435 6543 M
+2 1 V
+Gpstroke
+6437 6544 M
+3 0 V
+Gpstroke
+6440 6544 M
+2 0 V
+Gpstroke
+6442 6544 M
+2 0 V
+Gpstroke
+6444 6544 M
+2 1 V
+Gpstroke
+6446 6545 M
+2 0 V
+Gpstroke
+6448 6545 M
+2 0 V
+Gpstroke
+6450 6545 M
+2 0 V
+Gpstroke
+6452 6545 M
+2 1 V
+Gpstroke
+6454 6546 M
+2 0 V
+Gpstroke
+6456 6546 M
+2 0 V
+Gpstroke
+6458 6546 M
+2 0 V
+Gpstroke
+6460 6546 M
+2 1 V
+Gpstroke
+6462 6547 M
+2 0 V
+Gpstroke
+6464 6547 M
+3 0 V
+Gpstroke
+6467 6547 M
+2 1 V
+Gpstroke
+6469 6548 M
+2 0 V
+Gpstroke
+6471 6548 M
+2 0 V
+Gpstroke
+6473 6548 M
+2 0 V
+Gpstroke
+6475 6548 M
+2 1 V
+Gpstroke
+6477 6549 M
+2 0 V
+Gpstroke
+6479 6549 M
+2 0 V
+Gpstroke
+6481 6549 M
+2 0 V
+Gpstroke
+6483 6549 M
+2 1 V
+Gpstroke
+6485 6550 M
+2 0 V
+Gpstroke
+6487 6550 M
+2 0 V
+Gpstroke
+6489 6550 M
+3 0 V
+Gpstroke
+6492 6550 M
+2 1 V
+Gpstroke
+6494 6551 M
+2 0 V
+Gpstroke
+6496 6551 M
+2 0 V
+Gpstroke
+6498 6551 M
+2 0 V
+Gpstroke
+6500 6551 M
+2 1 V
+Gpstroke
+6502 6552 M
+2 0 V
+Gpstroke
+6504 6552 M
+2 0 V
+Gpstroke
+6506 6552 M
+2 1 V
+Gpstroke
+6508 6553 M
+2 0 V
+Gpstroke
+6510 6553 M
+2 0 V
+Gpstroke
+6512 6553 M
+2 0 V
+Gpstroke
+6514 6553 M
+3 1 V
+Gpstroke
+6517 6554 M
+2 0 V
+Gpstroke
+6519 6554 M
+2 0 V
+Gpstroke
+6521 6554 M
+2 0 V
+Gpstroke
+6523 6554 M
+2 1 V
+Gpstroke
+6525 6555 M
+2 0 V
+Gpstroke
+6527 6555 M
+2 0 V
+Gpstroke
+6529 6555 M
+2 0 V
+Gpstroke
+6531 6555 M
+2 1 V
+Gpstroke
+6533 6556 M
+2 0 V
+Gpstroke
+6535 6556 M
+2 0 V
+Gpstroke
+6537 6556 M
+2 0 V
+Gpstroke
+6539 6556 M
+3 1 V
+Gpstroke
+6542 6557 M
+2 0 V
+Gpstroke
+6544 6557 M
+2 0 V
+Gpstroke
+6546 6557 M
+2 0 V
+Gpstroke
+6548 6557 M
+2 1 V
+Gpstroke
+6550 6558 M
+2 0 V
+Gpstroke
+6552 6558 M
+2 0 V
+Gpstroke
+6554 6558 M
+2 0 V
+Gpstroke
+6556 6558 M
+2 1 V
+Gpstroke
+6558 6559 M
+2 0 V
+Gpstroke
+6560 6559 M
+2 0 V
+Gpstroke
+6562 6559 M
+3 0 V
+Gpstroke
+6565 6559 M
+2 1 V
+Gpstroke
+6567 6560 M
+2 0 V
+Gpstroke
+6569 6560 M
+2 0 V
+Gpstroke
+6571 6560 M
+2 0 V
+Gpstroke
+6573 6560 M
+2 1 V
+Gpstroke
+6575 6561 M
+2 0 V
+Gpstroke
+6577 6561 M
+2 0 V
+Gpstroke
+6579 6561 M
+2 0 V
+Gpstroke
+6581 6561 M
+2 1 V
+Gpstroke
+6583 6562 M
+3 0 V
+Gpstroke
+6586 6562 M
+2 0 V
+Gpstroke
+6588 6562 M
+2 0 V
+Gpstroke
+6590 6562 M
+2 0 V
+Gpstroke
+6592 6562 M
+2 1 V
+Gpstroke
+6594 6563 M
+2 0 V
+Gpstroke
+6596 6563 M
+2 0 V
+Gpstroke
+6598 6563 M
+2 0 V
+Gpstroke
+6600 6563 M
+2 1 V
+Gpstroke
+6602 6564 M
+2 0 V
+Gpstroke
+6604 6564 M
+3 0 V
+Gpstroke
+6607 6564 M
+2 0 V
+Gpstroke
+6609 6564 M
+2 1 V
+Gpstroke
+6611 6565 M
+2 0 V
+Gpstroke
+6613 6565 M
+2 0 V
+Gpstroke
+6615 6565 M
+2 0 V
+Gpstroke
+6617 6565 M
+2 1 V
+Gpstroke
+6619 6566 M
+2 0 V
+Gpstroke
+6621 6566 M
+2 0 V
+Gpstroke
+6623 6566 M
+2 0 V
+Gpstroke
+6625 6566 M
+3 0 V
+Gpstroke
+6628 6566 M
+2 1 V
+Gpstroke
+6630 6567 M
+2 0 V
+Gpstroke
+6632 6567 M
+2 0 V
+Gpstroke
+6634 6567 M
+2 0 V
+Gpstroke
+6636 6567 M
+2 1 V
+Gpstroke
+6638 6568 M
+2 0 V
+Gpstroke
+6640 6568 M
+2 0 V
+Gpstroke
+6642 6568 M
+3 0 V
+Gpstroke
+6645 6568 M
+2 0 V
+Gpstroke
+6647 6568 M
+2 1 V
+Gpstroke
+6649 6569 M
+2 0 V
+Gpstroke
+6651 6569 M
+2 0 V
+Gpstroke
+6653 6569 M
+2 0 V
+Gpstroke
+6655 6569 M
+2 1 V
+Gpstroke
+6657 6570 M
+2 0 V
+Gpstroke
+6659 6570 M
+3 0 V
+Gpstroke
+6662 6570 M
+2 0 V
+Gpstroke
+6664 6570 M
+2 0 V
+Gpstroke
+6666 6570 M
+2 1 V
+Gpstroke
+6668 6571 M
+2 0 V
+Gpstroke
+6670 6571 M
+2 0 V
+Gpstroke
+6672 6571 M
+2 0 V
+Gpstroke
+6674 6571 M
+2 1 V
+Gpstroke
+6676 6572 M
+3 0 V
+Gpstroke
+6679 6572 M
+2 0 V
+Gpstroke
+6681 6572 M
+2 0 V
+Gpstroke
+6683 6572 M
+2 0 V
+Gpstroke
+6685 6572 M
+2 1 V
+Gpstroke
+6687 6573 M
+2 0 V
+Gpstroke
+6689 6573 M
+2 0 V
+Gpstroke
+6691 6573 M
+3 0 V
+Gpstroke
+6694 6573 M
+2 0 V
+Gpstroke
+6696 6573 M
+2 1 V
+Gpstroke
+6698 6574 M
+2 0 V
+Gpstroke
+6700 6574 M
+2 0 V
+Gpstroke
+6702 6574 M
+2 0 V
+Gpstroke
+6704 6574 M
+2 0 V
+Gpstroke
+6706 6574 M
+3 1 V
+Gpstroke
+6709 6575 M
+2 0 V
+Gpstroke
+6711 6575 M
+2 0 V
+Gpstroke
+6713 6575 M
+2 0 V
+Gpstroke
+6715 6575 M
+2 0 V
+Gpstroke
+6717 6575 M
+2 1 V
+Gpstroke
+6719 6576 M
+2 0 V
+Gpstroke
+6721 6576 M
+3 0 V
+Gpstroke
+6724 6576 M
+2 0 V
+Gpstroke
+6726 6576 M
+2 0 V
+Gpstroke
+6728 6576 M
+2 1 V
+Gpstroke
+6730 6577 M
+2 0 V
+Gpstroke
+6732 6577 M
+2 0 V
+Gpstroke
+6734 6577 M
+3 0 V
+Gpstroke
+6737 6577 M
+2 0 V
+Gpstroke
+6739 6577 M
+2 1 V
+Gpstroke
+6741 6578 M
+2 0 V
+Gpstroke
+6743 6578 M
+2 0 V
+Gpstroke
+6745 6578 M
+2 0 V
+Gpstroke
+6747 6578 M
+3 0 V
+Gpstroke
+6750 6578 M
+2 1 V
+Gpstroke
+6752 6579 M
+2 0 V
+Gpstroke
+6754 6579 M
+2 0 V
+Gpstroke
+6756 6579 M
+2 0 V
+Gpstroke
+6758 6579 M
+2 0 V
+Gpstroke
+6760 6579 M
+3 1 V
+Gpstroke
+6763 6580 M
+2 0 V
+Gpstroke
+6765 6580 M
+2 0 V
+Gpstroke
+6767 6580 M
+2 0 V
+Gpstroke
+6769 6580 M
+2 0 V
+Gpstroke
+6771 6580 M
+2 1 V
+Gpstroke
+6773 6581 M
+3 0 V
+Gpstroke
+6776 6581 M
+2 0 V
+Gpstroke
+6778 6581 M
+2 0 V
+Gpstroke
+6780 6581 M
+2 0 V
+Gpstroke
+6782 6581 M
+2 0 V
+Gpstroke
+6784 6581 M
+3 1 V
+Gpstroke
+6787 6582 M
+2 0 V
+Gpstroke
+6789 6582 M
+2 0 V
+Gpstroke
+6791 6582 M
+2 0 V
+Gpstroke
+6793 6582 M
+2 0 V
+Gpstroke
+6795 6582 M
+3 1 V
+Gpstroke
+6798 6583 M
+2 0 V
+Gpstroke
+6800 6583 M
+2 0 V
+Gpstroke
+6802 6583 M
+2 0 V
+Gpstroke
+6804 6583 M
+2 0 V
+Gpstroke
+6806 6583 M
+3 1 V
+Gpstroke
+6809 6584 M
+2 0 V
+Gpstroke
+6811 6584 M
+2 0 V
+Gpstroke
+6813 6584 M
+2 0 V
+Gpstroke
+6815 6584 M
+2 0 V
+Gpstroke
+6817 6584 M
+3 0 V
+Gpstroke
+6820 6584 M
+2 1 V
+Gpstroke
+6822 6585 M
+2 0 V
+Gpstroke
+6824 6585 M
+2 0 V
+Gpstroke
+6826 6585 M
+2 0 V
+Gpstroke
+6828 6585 M
+3 0 V
+Gpstroke
+6831 6585 M
+2 1 V
+Gpstroke
+6833 6586 M
+2 0 V
+Gpstroke
+6835 6586 M
+2 0 V
+Gpstroke
+6837 6586 M
+2 0 V
+Gpstroke
+6839 6586 M
+3 0 V
+Gpstroke
+6842 6586 M
+2 0 V
+Gpstroke
+6844 6586 M
+2 1 V
+Gpstroke
+6846 6587 M
+2 0 V
+Gpstroke
+6848 6587 M
+3 0 V
+Gpstroke
+6851 6587 M
+2 0 V
+Gpstroke
+6853 6587 M
+2 0 V
+Gpstroke
+6855 6587 M
+2 1 V
+Gpstroke
+6857 6588 M
+3 0 V
+Gpstroke
+6860 6588 M
+2 0 V
+Gpstroke
+6862 6588 M
+2 0 V
+Gpstroke
+6864 6588 M
+2 0 V
+Gpstroke
+6866 6588 M
+2 0 V
+Gpstroke
+6868 6588 M
+3 1 V
+Gpstroke
+6871 6589 M
+2 0 V
+Gpstroke
+6873 6589 M
+2 0 V
+Gpstroke
+6875 6589 M
+2 0 V
+Gpstroke
+6877 6589 M
+3 0 V
+Gpstroke
+6880 6589 M
+2 0 V
+Gpstroke
+6882 6589 M
+2 1 V
+Gpstroke
+6884 6590 M
+2 0 V
+Gpstroke
+6886 6590 M
+3 0 V
+Gpstroke
+6889 6590 M
+2 0 V
+Gpstroke
+6891 6590 M
+2 0 V
+Gpstroke
+6893 6590 M
+2 1 V
+Gpstroke
+6895 6591 M
+3 0 V
+Gpstroke
+6898 6591 M
+2 0 V
+Gpstroke
+6900 6591 M
+2 0 V
+Gpstroke
+6902 6591 M
+2 0 V
+Gpstroke
+6904 6591 M
+2 0 V
+Gpstroke
+6906 6591 M
+3 1 V
+Gpstroke
+6909 6592 M
+2 0 V
+Gpstroke
+6911 6592 M
+2 0 V
+Gpstroke
+6913 6592 M
+2 0 V
+Gpstroke
+6915 6592 M
+3 0 V
+Gpstroke
+6918 6592 M
+2 1 V
+Gpstroke
+6920 6593 M
+2 0 V
+Gpstroke
+6922 6593 M
+3 0 V
+Gpstroke
+6925 6593 M
+2 0 V
+Gpstroke
+6927 6593 M
+2 0 V
+Gpstroke
+6929 6593 M
+2 1 V
+Gpstroke
+6931 6594 M
+3 0 V
+Gpstroke
+6934 6594 M
+2 0 V
+Gpstroke
+6936 6594 M
+2 0 V
+Gpstroke
+6938 6594 M
+2 0 V
+Gpstroke
+6940 6594 M
+3 0 V
+Gpstroke
+6943 6594 M
+2 1 V
+Gpstroke
+6945 6595 M
+2 0 V
+Gpstroke
+6947 6595 M
+2 0 V
+Gpstroke
+6949 6595 M
+3 0 V
+Gpstroke
+6952 6595 M
+2 0 V
+Gpstroke
+6954 6595 M
+2 1 V
+Gpstroke
+6956 6596 M
+2 0 V
+Gpstroke
+6958 6596 M
+3 0 V
+Gpstroke
+6961 6596 M
+2 0 V
+Gpstroke
+6963 6596 M
+2 0 V
+Gpstroke
+6965 6596 M
+2 1 V
+Gpstroke
+6967 6597 M
+3 0 V
+Gpstroke
+6970 6597 M
+2 0 V
+Gpstroke
+6972 6597 M
+2 0 V
+Gpstroke
+6974 6597 M
+2 0 V
+Gpstroke
+6976 6597 M
+3 1 V
+Gpstroke
+6979 6598 M
+2 0 V
+Gpstroke
+6981 6598 M
+2 0 V
+Gpstroke
+6983 6598 M
+3 0 V
+Gpstroke
+6986 6598 M
+2 0 V
+Gpstroke
+6988 6598 M
+2 1 V
+Gpstroke
+6990 6599 M
+2 0 V
+Gpstroke
+6992 6599 M
+3 0 V
+Gpstroke
+6995 6599 M
+2 0 V
+Gpstroke
+6997 6599 M
+2 1 V
+Gpstroke
+6999 6600 M
+2 0 V
+Gpstroke
+7001 6600 M
+3 0 V
+Gpstroke
+7004 6600 M
+2 0 V
+Gpstroke
+7006 6600 M
+2 0 V
+Gpstroke
+7008 6600 M
+2 1 V
+Gpstroke
+7010 6601 M
+3 0 V
+Gpstroke
+7013 6601 M
+2 0 V
+Gpstroke
+7015 6601 M
+2 0 V
+Gpstroke
+7017 6601 M
+2 1 V
+Gpstroke
+7019 6602 M
+3 0 V
+Gpstroke
+7022 6602 M
+2 0 V
+Gpstroke
+7024 6602 M
+2 0 V
+Gpstroke
+7026 6602 M
+2 0 V
+Gpstroke
+7028 6602 M
+3 1 V
+Gpstroke
+7031 6603 M
+2 0 V
+Gpstroke
+7033 6603 M
+2 0 V
+Gpstroke
+7035 6603 M
+2 0 V
+Gpstroke
+7037 6603 M
+3 1 V
+Gpstroke
+7040 6604 M
+2 0 V
+Gpstroke
+7042 6604 M
+2 0 V
+Gpstroke
+7044 6604 M
+3 0 V
+Gpstroke
+7047 6604 M
+2 1 V
+Gpstroke
+7049 6605 M
+2 0 V
+Gpstroke
+7051 6605 M
+2 0 V
+Gpstroke
+7053 6605 M
+3 0 V
+Gpstroke
+7056 6605 M
+2 1 V
+Gpstroke
+7058 6606 M
+2 0 V
+Gpstroke
+7060 6606 M
+2 0 V
+Gpstroke
+7062 6606 M
+2 0 V
+Gpstroke
+7064 6606 M
+3 1 V
+Gpstroke
+7067 6607 M
+2 0 V
+Gpstroke
+7069 6607 M
+2 0 V
+Gpstroke
+7071 6607 M
+2 0 V
+Gpstroke
+7073 6607 M
+3 1 V
+Gpstroke
+7076 6608 M
+2 0 V
+Gpstroke
+7078 6608 M
+2 0 V
+Gpstroke
+7080 6608 M
+2 1 V
+Gpstroke
+7082 6609 M
+3 0 V
+Gpstroke
+7085 6609 M
+2 0 V
+Gpstroke
+7087 6609 M
+2 0 V
+Gpstroke
+7089 6609 M
+2 1 V
+Gpstroke
+7091 6610 M
+3 0 V
+Gpstroke
+7094 6610 M
+2 0 V
+Gpstroke
+7096 6610 M
+2 1 V
+Gpstroke
+7098 6611 M
+2 0 V
+Gpstroke
+7100 6611 M
+2 0 V
+Gpstroke
+7102 6611 M
+3 0 V
+Gpstroke
+7105 6611 M
+2 1 V
+Gpstroke
+7107 6612 M
+2 0 V
+Gpstroke
+7109 6612 M
+2 0 V
+Gpstroke
+7111 6612 M
+3 1 V
+Gpstroke
+7114 6613 M
+2 0 V
+Gpstroke
+7116 6613 M
+2 0 V
+Gpstroke
+7118 6613 M
+2 1 V
+Gpstroke
+7120 6614 M
+2 0 V
+Gpstroke
+7122 6614 M
+3 0 V
+Gpstroke
+7125 6614 M
+2 1 V
+Gpstroke
+7127 6615 M
+2 0 V
+Gpstroke
+7129 6615 M
+2 0 V
+Gpstroke
+7131 6615 M
+2 1 V
+Gpstroke
+7133 6616 M
+3 0 V
+Gpstroke
+7136 6616 M
+2 0 V
+Gpstroke
+7138 6616 M
+2 1 V
+Gpstroke
+7140 6617 M
+2 0 V
+Gpstroke
+7142 6617 M
+2 0 V
+Gpstroke
+7144 6617 M
+2 1 V
+Gpstroke
+7146 6618 M
+3 0 V
+Gpstroke
+7149 6618 M
+2 0 V
+Gpstroke
+7151 6618 M
+2 1 V
+Gpstroke
+7153 6619 M
+2 0 V
+Gpstroke
+7155 6619 M
+2 0 V
+Gpstroke
+7157 6619 M
+2 1 V
+Gpstroke
+7159 6620 M
+3 0 V
+Gpstroke
+7162 6620 M
+2 0 V
+Gpstroke
+7164 6620 M
+2 1 V
+Gpstroke
+7166 6621 M
+2 0 V
+Gpstroke
+7168 6621 M
+2 1 V
+Gpstroke
+7170 6622 M
+2 0 V
+Gpstroke
+7172 6622 M
+2 0 V
+Gpstroke
+7174 6622 M
+3 1 V
+Gpstroke
+7177 6623 M
+2 0 V
+Gpstroke
+7179 6623 M
+2 0 V
+Gpstroke
+7181 6623 M
+2 1 V
+Gpstroke
+7183 6624 M
+2 0 V
+Gpstroke
+7185 6624 M
+2 1 V
+Gpstroke
+7187 6625 M
+2 0 V
+Gpstroke
+7189 6625 M
+2 0 V
+Gpstroke
+7191 6625 M
+2 1 V
+Gpstroke
+7193 6626 M
+3 0 V
+Gpstroke
+7196 6626 M
+2 1 V
+Gpstroke
+7198 6627 M
+2 0 V
+Gpstroke
+7200 6627 M
+2 0 V
+Gpstroke
+7202 6627 M
+2 1 V
+Gpstroke
+7204 6628 M
+2 0 V
+Gpstroke
+7206 6628 M
+2 1 V
+Gpstroke
+7208 6629 M
+2 0 V
+Gpstroke
+7210 6629 M
+2 1 V
+Gpstroke
+7212 6630 M
+2 0 V
+Gpstroke
+7214 6630 M
+2 0 V
+Gpstroke
+7216 6630 M
+2 1 V
+Gpstroke
+7218 6631 M
+3 0 V
+Gpstroke
+7221 6631 M
+2 1 V
+Gpstroke
+7223 6632 M
+2 0 V
+Gpstroke
+7225 6632 M
+2 1 V
+Gpstroke
+7227 6633 M
+2 0 V
+Gpstroke
+7229 6633 M
+2 1 V
+Gpstroke
+7231 6634 M
+2 0 V
+Gpstroke
+7233 6634 M
+2 1 V
+Gpstroke
+7235 6635 M
+2 0 V
+Gpstroke
+7237 6635 M
+2 1 V
+Gpstroke
+7239 6636 M
+2 0 V
+Gpstroke
+7241 6636 M
+2 0 V
+Gpstroke
+7243 6636 M
+2 1 V
+Gpstroke
+7245 6637 M
+2 0 V
+Gpstroke
+7247 6637 M
+2 1 V
+Gpstroke
+7249 6638 M
+2 0 V
+Gpstroke
+7251 6638 M
+2 1 V
+Gpstroke
+7253 6639 M
+2 0 V
+Gpstroke
+7255 6639 M
+2 1 V
+Gpstroke
+7257 6640 M
+2 0 V
+Gpstroke
+7259 6640 M
+2 1 V
+Gpstroke
+7261 6641 M
+2 0 V
+Gpstroke
+7263 6641 M
+2 1 V
+Gpstroke
+7265 6642 M
+1 0 V
+Gpstroke
+7266 6642 M
+2 1 V
+Gpstroke
+7268 6643 M
+2 0 V
+Gpstroke
+7270 6643 M
+2 1 V
+Gpstroke
+7272 6644 M
+2 0 V
+Gpstroke
+7274 6644 M
+2 1 V
+Gpstroke
+7276 6645 M
+2 1 V
+Gpstroke
+7278 6646 M
+2 0 V
+Gpstroke
+7280 6646 M
+2 1 V
+Gpstroke
+7282 6647 M
+2 0 V
+Gpstroke
+7284 6647 M
+2 1 V
+Gpstroke
+7286 6648 M
+2 0 V
+Gpstroke
+7288 6648 M
+1 1 V
+Gpstroke
+7289 6649 M
+2 0 V
+Gpstroke
+7291 6649 M
+2 1 V
+Gpstroke
+7293 6650 M
+2 0 V
+Gpstroke
+7295 6650 M
+2 1 V
+Gpstroke
+7297 6651 M
+2 1 V
+Gpstroke
+7299 6652 M
+2 0 V
+Gpstroke
+7301 6652 M
+1 1 V
+Gpstroke
+7302 6653 M
+2 0 V
+Gpstroke
+7304 6653 M
+2 1 V
+Gpstroke
+7306 6654 M
+2 0 V
+Gpstroke
+7308 6654 M
+2 1 V
+Gpstroke
+7310 6655 M
+2 1 V
+Gpstroke
+7312 6656 M
+1 0 V
+Gpstroke
+7313 6656 M
+2 1 V
+Gpstroke
+7315 6657 M
+2 0 V
+Gpstroke
+7317 6657 M
+2 1 V
+Gpstroke
+7319 6658 M
+2 0 V
+Gpstroke
+7321 6658 M
+1 1 V
+Gpstroke
+7322 6659 M
+2 1 V
+Gpstroke
+7324 6660 M
+2 0 V
+Gpstroke
+7326 6660 M
+2 1 V
+Gpstroke
+7328 6661 M
+1 0 V
+Gpstroke
+7329 6661 M
+2 1 V
+Gpstroke
+7331 6662 M
+2 1 V
+Gpstroke
+7333 6663 M
+2 0 V
+Gpstroke
+7335 6663 M
+1 1 V
+Gpstroke
+7336 6664 M
+2 0 V
+Gpstroke
+7338 6664 M
+2 1 V
+Gpstroke
+7340 6665 M
+2 1 V
+Gpstroke
+7342 6666 M
+1 0 V
+Gpstroke
+7343 6666 M
+2 1 V
+Gpstroke
+7345 6667 M
+2 0 V
+Gpstroke
+7347 6667 M
+1 1 V
+Gpstroke
+7348 6668 M
+2 1 V
+Gpstroke
+7350 6669 M
+2 0 V
+Gpstroke
+7352 6669 M
+2 1 V
+Gpstroke
+7354 6670 M
+1 1 V
+Gpstroke
+7355 6671 M
+2 0 V
+Gpstroke
+7357 6671 M
+2 1 V
+Gpstroke
+7359 6672 M
+1 0 V
+Gpstroke
+7360 6672 M
+2 1 V
+Gpstroke
+7362 6673 M
+2 1 V
+Gpstroke
+7364 6674 M
+1 0 V
+Gpstroke
+7365 6674 M
+2 1 V
+Gpstroke
+7367 6675 M
+1 1 V
+Gpstroke
+7368 6676 M
+2 0 V
+Gpstroke
+7370 6676 M
+2 1 V
+Gpstroke
+7372 6677 M
+1 1 V
+Gpstroke
+7373 6678 M
+2 0 V
+Gpstroke
+7375 6678 M
+2 1 V
+Gpstroke
+7377 6679 M
+1 0 V
+Gpstroke
+7378 6679 M
+2 1 V
+Gpstroke
+7380 6680 M
+1 1 V
+Gpstroke
+7381 6681 M
+2 0 V
+Gpstroke
+7383 6681 M
+1 1 V
+Gpstroke
+7384 6682 M
+2 1 V
+Gpstroke
+7386 6683 M
+2 0 V
+Gpstroke
+7388 6683 M
+1 1 V
+Gpstroke
+7389 6684 M
+2 1 V
+Gpstroke
+7391 6685 M
+1 0 V
+Gpstroke
+7392 6685 M
+2 1 V
+Gpstroke
+7394 6686 M
+1 0 V
+Gpstroke
+7395 6686 M
+2 1 V
+Gpstroke
+7397 6687 M
+1 1 V
+Gpstroke
+7398 6688 M
+2 0 V
+Gpstroke
+7400 6688 M
+1 1 V
+Gpstroke
+7401 6689 M
+2 1 V
+Gpstroke
+7403 6690 M
+2 0 V
+Gpstroke
+7405 6690 M
+1 1 V
+Gpstroke
+7406 6691 M
+2 1 V
+Gpstroke
+7408 6692 M
+1 0 V
+Gpstroke
+7409 6692 M
+2 1 V
+Gpstroke
+7411 6693 M
+1 0 V
+Gpstroke
+7412 6693 M
+1 1 V
+Gpstroke
+7413 6694 M
+2 1 V
+Gpstroke
+7415 6695 M
+1 0 V
+Gpstroke
+7416 6695 M
+2 1 V
+Gpstroke
+7418 6696 M
+1 1 V
+Gpstroke
+7419 6697 M
+2 0 V
+Gpstroke
+7421 6697 M
+1 1 V
+Gpstroke
+7422 6698 M
+2 1 V
+Gpstroke
+7424 6699 M
+1 0 V
+Gpstroke
+7425 6699 M
+2 1 V
+Gpstroke
+7427 6700 M
+1 0 V
+Gpstroke
+7428 6700 M
+2 1 V
+Gpstroke
+7430 6701 M
+1 1 V
+Gpstroke
+7431 6702 M
+1 0 V
+Gpstroke
+7432 6702 M
+2 1 V
+Gpstroke
+7434 6703 M
+1 0 V
+Gpstroke
+7435 6703 M
+2 1 V
+Gpstroke
+7437 6704 M
+1 1 V
+Gpstroke
+7438 6705 M
+2 0 V
+Gpstroke
+7440 6705 M
+1 1 V
+Gpstroke
+7441 6706 M
+1 0 V
+Gpstroke
+7442 6706 M
+2 1 V
+Gpstroke
+7444 6707 M
+1 1 V
+Gpstroke
+7445 6708 M
+2 0 V
+Gpstroke
+7447 6708 M
+1 1 V
+Gpstroke
+7448 6709 M
+1 0 V
+Gpstroke
+7449 6709 M
+2 1 V
+Gpstroke
+7451 6710 M
+1 0 V
+Gpstroke
+7452 6710 M
+2 1 V
+Gpstroke
+7454 6711 M
+1 1 V
+Gpstroke
+7455 6712 M
+1 0 V
+Gpstroke
+7456 6712 M
+2 1 V
+Gpstroke
+7458 6713 M
+1 0 V
+Gpstroke
+7459 6713 M
+2 1 V
+Gpstroke
+7461 6714 M
+1 0 V
+Gpstroke
+7462 6714 M
+1 1 V
+Gpstroke
+7463 6715 M
+2 0 V
+Gpstroke
+7465 6715 M
+1 1 V
+Gpstroke
+7466 6716 M
+2 0 V
+Gpstroke
+7468 6716 M
+1 1 V
+Gpstroke
+7469 6717 M
+1 0 V
+Gpstroke
+7470 6717 M
+2 1 V
+Gpstroke
+7472 6718 M
+1 1 V
+Gpstroke
+7473 6719 M
+1 0 V
+Gpstroke
+7474 6719 M
+2 1 V
+Gpstroke
+7476 6720 M
+1 0 V
+Gpstroke
+7477 6720 M
+2 0 V
+Gpstroke
+7479 6720 M
+1 1 V
+Gpstroke
+7480 6721 M
+1 0 V
+Gpstroke
+7481 6721 M
+2 1 V
+Gpstroke
+7483 6722 M
+1 0 V
+Gpstroke
+7484 6722 M
+2 1 V
+Gpstroke
+7486 6723 M
+1 0 V
+Gpstroke
+7487 6723 M
+1 1 V
+Gpstroke
+7488 6724 M
+2 0 V
+Gpstroke
+7490 6724 M
+1 1 V
+Gpstroke
+7491 6725 M
+2 0 V
+Gpstroke
+7493 6725 M
+1 0 V
+Gpstroke
+7494 6725 M
+1 1 V
+Gpstroke
+7495 6726 M
+2 0 V
+Gpstroke
+7497 6726 M
+1 1 V
+Gpstroke
+7498 6727 M
+2 0 V
+Gpstroke
+7500 6727 M
+1 0 V
+Gpstroke
+7501 6727 M
+1 1 V
+Gpstroke
+7502 6728 M
+2 0 V
+Gpstroke
+7504 6728 M
+1 0 V
+Gpstroke
+7505 6728 M
+2 1 V
+Gpstroke
+7507 6729 M
+1 0 V
+Gpstroke
+7508 6729 M
+1 0 V
+Gpstroke
+7509 6729 M
+2 1 V
+Gpstroke
+7511 6730 M
+1 0 V
+Gpstroke
+7512 6730 M
+2 0 V
+Gpstroke
+7514 6730 M
+1 1 V
+Gpstroke
+7515 6731 M
+2 0 V
+Gpstroke
+7517 6731 M
+1 0 V
+Gpstroke
+7518 6731 M
+2 1 V
+Gpstroke
+7520 6732 M
+1 0 V
+Gpstroke
+7521 6732 M
+1 0 V
+Gpstroke
+7522 6732 M
+2 0 V
+Gpstroke
+7524 6732 M
+1 1 V
+Gpstroke
+7525 6733 M
+2 0 V
+Gpstroke
+7527 6733 M
+1 0 V
+Gpstroke
+7528 6733 M
+2 0 V
+Gpstroke
+7530 6733 M
+1 0 V
+Gpstroke
+7531 6733 M
+2 1 V
+Gpstroke
+7533 6734 M
+1 0 V
+Gpstroke
+7534 6734 M
+2 0 V
+Gpstroke
+7536 6734 M
+2 0 V
+Gpstroke
+7538 6734 M
+1 0 V
+Gpstroke
+7539 6734 M
+2 0 V
+Gpstroke
+7541 6734 M
+1 1 V
+Gpstroke
+7542 6735 M
+2 0 V
+Gpstroke
+7544 6735 M
+1 0 V
+Gpstroke
+7545 6735 M
+2 0 V
+Gpstroke
+7547 6735 M
+1 0 V
+Gpstroke
+7548 6735 M
+2 0 V
+Gpstroke
+7550 6735 M
+2 0 V
+Gpstroke
+7552 6735 M
+1 0 V
+Gpstroke
+7553 6735 M
+2 0 V
+Gpstroke
+7555 6735 M
+2 0 V
+Gpstroke
+7557 6735 M
+1 0 V
+Gpstroke
+7558 6735 M
+2 0 V
+Gpstroke
+7560 6735 M
+2 0 V
+Gpstroke
+7562 6735 M
+1 0 V
+Gpstroke
+7563 6735 M
+2 0 V
+Gpstroke
+7565 6735 M
+2 0 V
+Gpstroke
+7567 6735 M
+1 0 V
+Gpstroke
+7568 6735 M
+2 0 V
+Gpstroke
+7570 6735 M
+2 0 V
+Gpstroke
+7572 6735 M
+1 0 V
+Gpstroke
+7573 6735 M
+2 0 V
+Gpstroke
+7575 6735 M
+2 0 V
+Gpstroke
+7577 6735 M
+2 0 V
+Gpstroke
+7579 6735 M
+2 -1 V
+Gpstroke
+7581 6734 M
+1 0 V
+Gpstroke
+7582 6734 M
+2 0 V
+Gpstroke
+7584 6734 M
+2 0 V
+Gpstroke
+7586 6734 M
+2 0 V
+Gpstroke
+7588 6734 M
+2 0 V
+Gpstroke
+7590 6734 M
+2 -1 V
+Gpstroke
+7592 6733 M
+1 0 V
+Gpstroke
+7593 6733 M
+2 0 V
+Gpstroke
+7595 6733 M
+2 0 V
+Gpstroke
+7597 6733 M
+2 -1 V
+Gpstroke
+7599 6732 M
+2 0 V
+Gpstroke
+7601 6732 M
+2 0 V
+Gpstroke
+7603 6732 M
+2 -1 V
+Gpstroke
+7605 6731 M
+2 0 V
+Gpstroke
+7607 6731 M
+2 0 V
+Gpstroke
+7609 6731 M
+2 -1 V
+Gpstroke
+7611 6730 M
+2 0 V
+Gpstroke
+7613 6730 M
+2 0 V
+Gpstroke
+7615 6730 M
+2 -1 V
+Gpstroke
+7617 6729 M
+2 0 V
+Gpstroke
+7619 6729 M
+2 0 V
+Gpstroke
+7621 6729 M
+3 -1 V
+Gpstroke
+7624 6728 M
+2 0 V
+Gpstroke
+7626 6728 M
+2 -1 V
+Gpstroke
+7628 6727 M
+2 0 V
+Gpstroke
+7630 6727 M
+2 -1 V
+Gpstroke
+7632 6726 M
+2 0 V
+Gpstroke
+7634 6726 M
+3 -1 V
+Gpstroke
+7637 6725 M
+2 0 V
+Gpstroke
+7639 6725 M
+2 -1 V
+Gpstroke
+7641 6724 M
+3 0 V
+Gpstroke
+7644 6724 M
+2 -1 V
+Gpstroke
+7646 6723 M
+2 0 V
+Gpstroke
+7648 6723 M
+2 -1 V
+Gpstroke
+7650 6722 M
+3 -1 V
+Gpstroke
+7653 6721 M
+2 0 V
+Gpstroke
+7655 6721 M
+3 -1 V
+Gpstroke
+7658 6720 M
+2 -1 V
+Gpstroke
+7660 6719 M
+3 0 V
+Gpstroke
+7663 6719 M
+2 -1 V
+Gpstroke
+7665 6718 M
+2 -1 V
+Gpstroke
+7667 6717 M
+3 0 V
+Gpstroke
+7670 6717 M
+3 -1 V
+Gpstroke
+7673 6716 M
+2 -1 V
+Gpstroke
+7675 6715 M
+3 -1 V
+Gpstroke
+7678 6714 M
+2 0 V
+Gpstroke
+7680 6714 M
+3 -1 V
+Gpstroke
+7683 6713 M
+2 -1 V
+Gpstroke
+7685 6712 M
+3 -1 V
+Gpstroke
+7688 6711 M
+3 -1 V
+Gpstroke
+7691 6710 M
+3 0 V
+Gpstroke
+7694 6710 M
+2 -1 V
+Gpstroke
+7696 6709 M
+3 -1 V
+Gpstroke
+7699 6708 M
+3 -1 V
+Gpstroke
+7702 6707 M
+3 -1 V
+Gpstroke
+7705 6706 M
+2 -1 V
+Gpstroke
+7707 6705 M
+3 -1 V
+Gpstroke
+7710 6704 M
+3 -1 V
+Gpstroke
+7713 6703 M
+3 -1 V
+Gpstroke
+7716 6702 M
+3 -1 V
+Gpstroke
+7719 6701 M
+3 -1 V
+Gpstroke
+7722 6700 M
+3 0 V
+Gpstroke
+7725 6700 M
+3 -2 V
+Gpstroke
+7728 6698 M
+3 -1 V
+Gpstroke
+7731 6697 M
+3 -1 V
+Gpstroke
+7734 6696 M
+3 -1 V
+Gpstroke
+7737 6695 M
+3 -1 V
+Gpstroke
+7740 6694 M
+3 -1 V
+Gpstroke
+7743 6693 M
+3 -1 V
+Gpstroke
+7746 6692 M
+4 -1 V
+Gpstroke
+7750 6691 M
+3 -1 V
+Gpstroke
+7753 6690 M
+3 -1 V
+Gpstroke
+7756 6689 M
+3 -1 V
+Gpstroke
+7759 6688 M
+3 -1 V
+Gpstroke
+7762 6687 M
+4 -2 V
+Gpstroke
+7766 6685 M
+3 -1 V
+Gpstroke
+7769 6684 M
+3 -1 V
+Gpstroke
+7772 6683 M
+4 -1 V
+Gpstroke
+7776 6682 M
+3 -1 V
+Gpstroke
+7779 6681 M
+4 -1 V
+Gpstroke
+7783 6680 M
+3 -2 V
+Gpstroke
+7786 6678 M
+4 -1 V
+Gpstroke
+7790 6677 M
+3 -1 V
+Gpstroke
+7793 6676 M
+4 -1 V
+Gpstroke
+7797 6675 M
+3 -2 V
+Gpstroke
+7800 6673 M
+4 -1 V
+Gpstroke
+7804 6672 M
+3 -1 V
+Gpstroke
+7807 6671 M
+4 -2 V
+Gpstroke
+7811 6669 M
+4 -1 V
+Gpstroke
+7815 6668 M
+3 -1 V
+Gpstroke
+7818 6667 M
+4 -2 V
+Gpstroke
+7822 6665 M
+4 -1 V
+Gpstroke
+7826 6664 M
+4 -1 V
+Gpstroke
+7830 6663 M
+3 -2 V
+Gpstroke
+7833 6661 M
+4 -1 V
+Gpstroke
+7837 6660 M
+4 -1 V
+Gpstroke
+7841 6659 M
+4 -2 V
+Gpstroke
+7845 6657 M
+4 -1 V
+Gpstroke
+7849 6656 M
+4 -2 V
+Gpstroke
+7853 6654 M
+4 -1 V
+Gpstroke
+7857 6653 M
+4 -1 V
+Gpstroke
+7861 6652 M
+4 -2 V
+Gpstroke
+7865 6650 M
+4 -1 V
+Gpstroke
+7869 6649 M
+4 -2 V
+Gpstroke
+7873 6647 M
+4 -1 V
+Gpstroke
+7877 6646 M
+4 -2 V
+Gpstroke
+7881 6644 M
+4 -1 V
+Gpstroke
+7885 6643 M
+5 -2 V
+Gpstroke
+7890 6641 M
+4 -1 V
+Gpstroke
+7894 6640 M
+4 -2 V
+Gpstroke
+7898 6638 M
+4 -1 V
+Gpstroke
+7902 6637 M
+5 -2 V
+Gpstroke
+7907 6635 M
+4 -1 V
+Gpstroke
+7911 6634 M
+4 -2 V
+Gpstroke
+7915 6632 M
+5 -1 V
+Gpstroke
+7920 6631 M
+4 -2 V
+Gpstroke
+7924 6629 M
+4 -1 V
+Gpstroke
+7928 6628 M
+5 -2 V
+Gpstroke
+7933 6626 M
+4 -1 V
+Gpstroke
+7937 6625 M
+5 -2 V
+Gpstroke
+7942 6623 M
+4 -1 V
+Gpstroke
+7946 6622 M
+5 -2 V
+Gpstroke
+7951 6620 M
+4 -1 V
+Gpstroke
+7955 6619 M
+5 -2 V
+Gpstroke
+7960 6617 M
+5 -1 V
+Gpstroke
+7965 6616 M
+4 -2 V
+Gpstroke
+7969 6614 M
+5 -2 V
+Gpstroke
+7974 6612 M
+5 -1 V
+Gpstroke
+7979 6611 M
+4 -2 V
+Gpstroke
+7983 6609 M
+5 -1 V
+Gpstroke
+7988 6608 M
+5 -2 V
+Gpstroke
+7993 6606 M
+5 -1 V
+Gpstroke
+7998 6605 M
+5 -2 V
+Gpstroke
+8003 6603 M
+4 -1 V
+Gpstroke
+8007 6602 M
+5 -2 V
+Gpstroke
+8012 6600 M
+5 -1 V
+Gpstroke
+8017 6599 M
+5 -2 V
+Gpstroke
+8022 6597 M
+5 -2 V
+Gpstroke
+8027 6595 M
+5 -1 V
+Gpstroke
+8032 6594 M
+5 -2 V
+Gpstroke
+8037 6592 M
+5 -1 V
+Gpstroke
+8042 6591 M
+5 -2 V
+Gpstroke
+8047 6589 M
+5 -1 V
+Gpstroke
+8052 6588 M
+5 -2 V
+Gpstroke
+8057 6586 M
+5 -1 V
+Gpstroke
+8062 6585 M
+5 -2 V
+Gpstroke
+8067 6583 M
+5 -1 V
+Gpstroke
+8072 6582 M
+5 -2 V
+Gpstroke
+8077 6580 M
+6 -1 V
+Gpstroke
+8083 6579 M
+5 -2 V
+Gpstroke
+8088 6577 M
+5 -1 V
+Gpstroke
+8093 6576 M
+5 -2 V
+Gpstroke
+8098 6574 M
+5 -1 V
+Gpstroke
+8103 6573 M
+6 -1 V
+Gpstroke
+8109 6572 M
+5 -2 V
+Gpstroke
+8114 6570 M
+5 -1 V
+Gpstroke
+8119 6569 M
+6 -2 V
+Gpstroke
+8125 6567 M
+5 -1 V
+Gpstroke
+8130 6566 M
+5 -2 V
+Gpstroke
+8135 6564 M
+6 -1 V
+Gpstroke
+8141 6563 M
+5 -1 V
+Gpstroke
+8146 6562 M
+5 -2 V
+Gpstroke
+8151 6560 M
+6 -1 V
+Gpstroke
+8157 6559 M
+5 -1 V
+Gpstroke
+8162 6558 M
+5 -2 V
+Gpstroke
+8167 6556 M
+6 -1 V
+Gpstroke
+8173 6555 M
+5 -1 V
+Gpstroke
+8178 6554 M
+6 -1 V
+Gpstroke
+8184 6553 M
+5 -2 V
+Gpstroke
+8189 6551 M
+6 -1 V
+Gpstroke
+8195 6550 M
+5 -1 V
+Gpstroke
+8200 6549 M
+6 -1 V
+Gpstroke
+8206 6548 M
+5 -2 V
+Gpstroke
+8211 6546 M
+6 -1 V
+Gpstroke
+8217 6545 M
+5 -1 V
+Gpstroke
+8222 6544 M
+6 -1 V
+Gpstroke
+8228 6543 M
+5 -1 V
+Gpstroke
+8233 6542 M
+6 -1 V
+Gpstroke
+8239 6541 M
+5 -1 V
+Gpstroke
+8244 6540 M
+6 -1 V
+Gpstroke
+8250 6539 M
+5 -1 V
+Gpstroke
+8255 6538 M
+6 -1 V
+Gpstroke
+8261 6537 M
+5 -1 V
+Gpstroke
+8266 6536 M
+6 -1 V
+Gpstroke
+8272 6535 M
+5 -1 V
+Gpstroke
+8277 6534 M
+6 -1 V
+Gpstroke
+8283 6533 M
+6 -1 V
+Gpstroke
+8289 6532 M
+5 -1 V
+Gpstroke
+8294 6531 M
+6 -1 V
+Gpstroke
+8300 6530 M
+5 -1 V
+Gpstroke
+8305 6529 M
+6 0 V
+Gpstroke
+8311 6529 M
+5 -1 V
+Gpstroke
+8316 6528 M
+6 -1 V
+Gpstroke
+8322 6527 M
+5 -1 V
+Gpstroke
+8327 6526 M
+6 0 V
+Gpstroke
+8333 6526 M
+5 -1 V
+Gpstroke
+8338 6525 M
+6 0 V
+Gpstroke
+8344 6525 M
+6 -1 V
+Gpstroke
+8350 6524 M
+5 -1 V
+Gpstroke
+8355 6523 M
+6 0 V
+Gpstroke
+8361 6523 M
+5 -1 V
+Gpstroke
+8366 6522 M
+6 0 V
+Gpstroke
+8372 6522 M
+5 0 V
+Gpstroke
+8377 6522 M
+5 -1 V
+Gpstroke
+8382 6521 M
+6 0 V
+Gpstroke
+8388 6521 M
+5 -1 V
+Gpstroke
+8393 6520 M
+6 0 V
+Gpstroke
+8399 6520 M
+5 0 V
+Gpstroke
+8404 6520 M
+6 0 V
+Gpstroke
+8410 6520 M
+5 0 V
+Gpstroke
+8415 6520 M
+5 -1 V
+Gpstroke
+8420 6519 M
+6 0 V
+Gpstroke
+8426 6519 M
+5 0 V
+Gpstroke
+8431 6519 M
+5 0 V
+Gpstroke
+8436 6519 M
+6 0 V
+Gpstroke
+8442 6519 M
+5 0 V
+Gpstroke
+8447 6519 M
+5 0 V
+Gpstroke
+8452 6519 M
+5 0 V
+Gpstroke
+8457 6519 M
+5 1 V
+Gpstroke
+8462 6520 M
+6 0 V
+Gpstroke
+8468 6520 M
+5 0 V
+Gpstroke
+8473 6520 M
+5 0 V
+Gpstroke
+8478 6520 M
+5 1 V
+Gpstroke
+8483 6521 M
+5 0 V
+Gpstroke
+8488 6521 M
+5 1 V
+Gpstroke
+8493 6522 M
+5 0 V
+Gpstroke
+8498 6522 M
+5 1 V
+Gpstroke
+8503 6523 M
+5 0 V
+Gpstroke
+8508 6523 M
+5 1 V
+Gpstroke
+8513 6524 M
+5 0 V
+Gpstroke
+8518 6524 M
+5 1 V
+Gpstroke
+8523 6525 M
+4 1 V
+Gpstroke
+8527 6526 M
+5 1 V
+Gpstroke
+8532 6527 M
+5 1 V
+Gpstroke
+8537 6528 M
+5 1 V
+Gpstroke
+8542 6529 M
+4 0 V
+Gpstroke
+8546 6529 M
+5 1 V
+Gpstroke
+8551 6530 M
+4 2 V
+Gpstroke
+8555 6532 M
+5 1 V
+Gpstroke
+8560 6533 M
+4 1 V
+Gpstroke
+8564 6534 M
+5 1 V
+Gpstroke
+8569 6535 M
+4 1 V
+Gpstroke
+8573 6536 M
+5 2 V
+Gpstroke
+8578 6538 M
+4 1 V
+Gpstroke
+8582 6539 M
+4 1 V
+Gpstroke
+8586 6540 M
+4 2 V
+Gpstroke
+8590 6542 M
+5 1 V
+Gpstroke
+8595 6543 M
+4 2 V
+Gpstroke
+8599 6545 M
+4 2 V
+Gpstroke
+8603 6547 M
+4 1 V
+Gpstroke
+8607 6548 M
+4 2 V
+Gpstroke
+8611 6550 M
+4 2 V
+Gpstroke
+8615 6552 M
+4 2 V
+Gpstroke
+8619 6554 M
+3 2 V
+Gpstroke
+8622 6556 M
+4 2 V
+Gpstroke
+8626 6558 M
+4 2 V
+Gpstroke
+8630 6560 M
+3 2 V
+Gpstroke
+8633 6562 M
+4 2 V
+Gpstroke
+8637 6564 M
+3 2 V
+Gpstroke
+8640 6566 M
+4 2 V
+Gpstroke
+8644 6568 M
+3 3 V
+Gpstroke
+8647 6571 M
+3 2 V
+Gpstroke
+8650 6573 M
+4 3 V
+Gpstroke
+8654 6576 M
+3 2 V
+Gpstroke
+8657 6578 M
+3 3 V
+Gpstroke
+8660 6581 M
+3 2 V
+Gpstroke
+8663 6583 M
+3 3 V
+Gpstroke
+8666 6586 M
+3 3 V
+Gpstroke
+8669 6589 M
+3 3 V
+Gpstroke
+8672 6592 M
+2 3 V
+Gpstroke
+8674 6595 M
+3 2 V
+Gpstroke
+8677 6597 M
+3 4 V
+Gpstroke
+8680 6601 M
+2 3 V
+Gpstroke
+8682 6604 M
+3 3 V
+Gpstroke
+8685 6607 M
+2 3 V
+Gpstroke
+8687 6610 M
+2 3 V
+Gpstroke
+8689 6613 M
+3 4 V
+Gpstroke
+8692 6617 M
+2 3 V
+Gpstroke
+8694 6620 M
+2 3 V
+Gpstroke
+8696 6623 M
+2 4 V
+Gpstroke
+8698 6627 M
+2 3 V
+Gpstroke
+8700 6630 M
+1 4 V
+Gpstroke
+8701 6634 M
+2 4 V
+Gpstroke
+8703 6638 M
+2 4 V
+Gpstroke
+8705 6642 M
+1 3 V
+Gpstroke
+8706 6645 M
+2 4 V
+Gpstroke
+8708 6649 M
+1 4 V
+Gpstroke
+8709 6653 M
+2 4 V
+Gpstroke
+8711 6657 M
+1 4 V
+Gpstroke
+8712 6661 M
+1 5 V
+Gpstroke
+8713 6666 M
+1 4 V
+Gpstroke
+8714 6670 M
+1 4 V
+Gpstroke
+8715 6674 M
+1 5 V
+Gpstroke
+8716 6679 M
+0 4 V
+Gpstroke
+8716 6683 M
+1 4 V
+Gpstroke
+8717 6687 M
+0 5 V
+Gpstroke
+8717 6692 M
+1 5 V
+Gpstroke
+8718 6697 M
+0 4 V
+Gpstroke
+8718 6701 M
+1 5 V
+Gpstroke
+8719 6706 M
+0 5 V
+Gpstroke
+8719 6711 M
+0 5 V
+Gpstroke
+8719 6716 M
+0 5 V
+Gpstroke
+8719 6721 M
+-1 5 V
+Gpstroke
+8718 6726 M
+0 5 V
+Gpstroke
+8718 6731 M
+0 5 V
+Gpstroke
+8718 6736 M
+-1 5 V
+Gpstroke
+8717 6741 M
+0 5 V
+Gpstroke
+8717 6746 M
+-1 6 V
+Gpstroke
+8716 6752 M
+-1 5 V
+Gpstroke
+8715 6757 M
+-1 6 V
+Gpstroke
+8714 6763 M
+-1 5 V
+Gpstroke
+8713 6768 M
+-1 6 V
+Gpstroke
+8712 6774 M
+-1 5 V
+Gpstroke
+8711 6779 M
+-1 6 V
+Gpstroke
+8710 6785 M
+-2 6 V
+Gpstroke
+8708 6791 M
+-1 6 V
+Gpstroke
+8707 6797 M
+-2 6 V
+Gpstroke
+8705 6803 M
+-2 6 V
+Gpstroke
+8703 6809 M
+-1 6 V
+Gpstroke
+8702 6815 M
+-2 6 V
+Gpstroke
+8700 6821 M
+-3 6 V
+Gpstroke
+8697 6827 M
+-2 6 V
+Gpstroke
+8695 6833 M
+-2 6 V
+Gpstroke
+8693 6839 M
+-3 7 V
+Gpstroke
+8690 6846 M
+-2 6 V
+Gpstroke
+8688 6852 M
+-3 6 V
+Gpstroke
+8685 6858 M
+-3 7 V
+Gpstroke
+8682 6865 M
+-3 6 V
+Gpstroke
+8679 6871 M
+-3 7 V
+Gpstroke
+8676 6878 M
+-3 7 V
+Gpstroke
+8673 6885 M
+-3 6 V
+Gpstroke
+8670 6891 M
+-3 7 V
+Gpstroke
+8667 6898 M
+-4 7 V
+Gpstroke
+8663 6905 M
+-4 7 V
+Gpstroke
+8659 6912 M
+-3 7 V
+Gpstroke
+8656 6919 M
+-4 7 V
+Gpstroke
+8652 6926 M
+-4 7 V
+Gpstroke
+8648 6933 M
+-4 7 V
+Gpstroke
+8644 6940 M
+-4 7 V
+Gpstroke
+8640 6947 M
+-5 7 V
+Gpstroke
+8635 6954 M
+-4 7 V
+Gpstroke
+8631 6961 M
+-5 7 V
+Gpstroke
+8626 6968 M
+-5 8 V
+Gpstroke
+8621 6976 M
+-4 7 V
+Gpstroke
+8617 6983 M
+-5 7 V
+Gpstroke
+8612 6990 M
+-5 8 V
+Gpstroke
+8607 6998 M
+-6 7 V
+Gpstroke
+8601 7005 M
+-5 8 V
+Gpstroke
+8596 7013 M
+-5 7 V
+Gpstroke
+8591 7020 M
+-6 8 V
+Gpstroke
+8585 7028 M
+-5 7 V
+Gpstroke
+8580 7035 M
+-6 8 V
+Gpstroke
+8574 7043 M
+-6 8 V
+Gpstroke
+8568 7051 M
+-6 8 V
+Gpstroke
+8562 7059 M
+-6 7 V
+Gpstroke
+8556 7066 M
+-7 8 V
+Gpstroke
+8549 7074 M
+-6 8 V
+Gpstroke
+8543 7082 M
+-6 8 V
+Gpstroke
+8537 7090 M
+-7 8 V
+Gpstroke
+8530 7098 M
+-7 8 V
+Gpstroke
+8523 7106 M
+-7 7 V
+Gpstroke
+8516 7113 M
+-7 8 V
+Gpstroke
+8509 7121 M
+-7 8 V
+Gpstroke
+8502 7129 M
+-7 8 V
+Gpstroke
+8495 7137 M
+-7 8 V
+Gpstroke
+8488 7145 M
+-8 9 V
+Gpstroke
+8480 7154 M
+-7 8 V
+Gpstroke
+8473 7162 M
+-8 8 V
+Gpstroke
+8465 7170 M
+-8 8 V
+Gpstroke
+8457 7178 M
+-7 8 V
+Gpstroke
+8450 7186 M
+-8 8 V
+Gpstroke
+8442 7194 M
+-9 8 V
+Gpstroke
+8433 7202 M
+-8 8 V
+Gpstroke
+8425 7210 M
+-8 9 V
+Gpstroke
+8417 7219 M
+-8 8 V
+Gpstroke
+8409 7227 M
+-9 8 V
+Gpstroke
+8400 7235 M
+-9 8 V
+Gpstroke
+8391 7243 M
+-8 8 V
+Gpstroke
+8383 7251 M
+-9 9 V
+Gpstroke
+8374 7260 M
+-9 8 V
+Gpstroke
+8365 7268 M
+-9 8 V
+Gpstroke
+8356 7276 M
+-9 8 V
+Gpstroke
+8347 7284 M
+-10 8 V
+Gpstroke
+8337 7292 M
+-9 9 V
+Gpstroke
+8328 7301 M
+-9 8 V
+Gpstroke
+8319 7309 M
+-10 8 V
+Gpstroke
+8309 7317 M
+-10 8 V
+Gpstroke
+8299 7325 M
+-9 8 V
+Gpstroke
+8290 7333 M
+-10 8 V
+Gpstroke
+8280 7341 M
+-10 9 V
+Gpstroke
+8270 7350 M
+-10 8 V
+Gpstroke
+8260 7358 M
+-10 8 V
+Gpstroke
+8250 7366 M
+-10 8 V
+Gpstroke
+8240 7374 M
+-11 8 V
+Gpstroke
+8229 7382 M
+-10 8 V
+Gpstroke
+8219 7390 M
+-10 8 V
+Gpstroke
+8209 7398 M
+-11 8 V
+Gpstroke
+8198 7406 M
+-11 8 V
+Gpstroke
+8187 7414 M
+-10 8 V
+Gpstroke
+8177 7422 M
+-11 7 V
+Gpstroke
+8166 7429 M
+-11 8 V
+Gpstroke
+8155 7437 M
+-11 8 V
+Gpstroke
+8144 7445 M
+-11 8 V
+Gpstroke
+8133 7453 M
+-11 8 V
+Gpstroke
+8122 7461 M
+-11 7 V
+Gpstroke
+8111 7468 M
+-11 8 V
+Gpstroke
+8100 7476 M
+-11 7 V
+Gpstroke
+8089 7483 M
+-11 8 V
+Gpstroke
+8078 7491 M
+-12 7 V
+Gpstroke
+8066 7498 M
+-11 8 V
+Gpstroke
+8055 7506 M
+-12 7 V
+Gpstroke
+8043 7513 M
+-11 8 V
+Gpstroke
+8032 7521 M
+-12 7 V
+Gpstroke
+8020 7528 M
+-11 7 V
+Gpstroke
+8009 7535 M
+-12 7 V
+Gpstroke
+7997 7542 M
+-11 7 V
+Gpstroke
+7986 7549 M
+-12 7 V
+Gpstroke
+7974 7556 M
+-12 7 V
+Gpstroke
+7962 7563 M
+-12 7 V
+Gpstroke
+7950 7570 M
+-12 7 V
+Gpstroke
+7938 7577 M
+-11 6 V
+Gpstroke
+7927 7583 M
+-12 7 V
+Gpstroke
+7915 7590 M
+-12 7 V
+Gpstroke
+7903 7597 M
+-12 6 V
+Gpstroke
+7891 7603 M
+-12 6 V
+Gpstroke
+7879 7609 M
+-12 7 V
+Gpstroke
+7867 7616 M
+-12 6 V
+Gpstroke
+7855 7622 M
+-12 6 V
+Gpstroke
+7843 7628 M
+-12 6 V
+Gpstroke
+7831 7634 M
+-12 6 V
+Gpstroke
+7819 7640 M
+-12 6 V
+Gpstroke
+7807 7646 M
+-12 6 V
+Gpstroke
+7795 7652 M
+-12 5 V
+Gpstroke
+7783 7657 M
+-12 6 V
+Gpstroke
+7771 7663 M
+-12 5 V
+Gpstroke
+7759 7668 M
+-12 5 V
+Gpstroke
+7747 7673 M
+-12 6 V
+Gpstroke
+7735 7679 M
+-12 5 V
+Gpstroke
+7723 7684 M
+-12 5 V
+Gpstroke
+7711 7689 M
+-12 5 V
+Gpstroke
+7699 7694 M
+-12 4 V
+Gpstroke
+7687 7698 M
+-11 5 V
+Gpstroke
+7676 7703 M
+-12 4 V
+Gpstroke
+7664 7707 M
+-12 5 V
+Gpstroke
+7652 7712 M
+-12 4 V
+Gpstroke
+7640 7716 M
+-11 4 V
+Gpstroke
+7629 7720 M
+-12 4 V
+Gpstroke
+7617 7724 M
+-12 4 V
+Gpstroke
+7605 7728 M
+-11 4 V
+Gpstroke
+7594 7732 M
+-12 3 V
+Gpstroke
+7582 7735 M
+-11 4 V
+Gpstroke
+7571 7739 M
+-12 3 V
+Gpstroke
+7559 7742 M
+-11 3 V
+Gpstroke
+7548 7745 M
+-11 3 V
+Gpstroke
+7537 7748 M
+-11 3 V
+Gpstroke
+7526 7751 M
+-11 3 V
+Gpstroke
+7515 7754 M
+-11 2 V
+Gpstroke
+7504 7756 M
+-11 3 V
+Gpstroke
+7493 7759 M
+-11 2 V
+Gpstroke
+7482 7761 M
+-11 2 V
+Gpstroke
+7471 7763 M
+-10 2 V
+Gpstroke
+7461 7765 M
+-11 2 V
+Gpstroke
+7450 7767 M
+-10 2 V
+Gpstroke
+7440 7769 M
+-11 1 V
+Gpstroke
+7429 7770 M
+-10 1 V
+Gpstroke
+7419 7771 M
+-10 2 V
+Gpstroke
+7409 7773 M
+-10 0 V
+Gpstroke
+7399 7773 M
+-10 1 V
+Gpstroke
+7389 7774 M
+-9 1 V
+Gpstroke
+7380 7775 M
+-10 0 V
+Gpstroke
+7370 7775 M
+-10 1 V
+Gpstroke
+7360 7776 M
+-9 0 V
+Gpstroke
+7351 7776 M
+-9 0 V
+Gpstroke
+7342 7776 M
+-9 -1 V
+Gpstroke
+7333 7775 M
+-9 0 V
+Gpstroke
+7324 7775 M
+-9 -1 V
+Gpstroke
+7315 7774 M
+-8 0 V
+Gpstroke
+7307 7774 M
+-9 -1 V
+Gpstroke
+7298 7773 M
+-8 -2 V
+Gpstroke
+7290 7771 M
+-8 -1 V
+Gpstroke
+7282 7770 M
+-8 -2 V
+Gpstroke
+7274 7768 M
+-8 -1 V
+Gpstroke
+7266 7767 M
+-8 -2 V
+Gpstroke
+7258 7765 M
+-7 -2 V
+Gpstroke
+7251 7763 M
+-7 -3 V
+Gpstroke
+7244 7760 M
+-7 -2 V
+Gpstroke
+7237 7758 M
+-7 -3 V
+Gpstroke
+7230 7755 M
+-7 -3 V
+Gpstroke
+7223 7752 M
+-6 -3 V
+Gpstroke
+7217 7749 M
+-6 -3 V
+Gpstroke
+7211 7746 M
+-7 -4 V
+Gpstroke
+7204 7742 M
+-5 -4 V
+Gpstroke
+7199 7738 M
+-6 -3 V
+Gpstroke
+7193 7735 M
+-5 -5 V
+Gpstroke
+7188 7730 M
+-6 -4 V
+Gpstroke
+7182 7726 M
+-5 -4 V
+Gpstroke
+7177 7722 M
+-4 -5 V
+Gpstroke
+7173 7717 M
+-5 -5 V
+Gpstroke
+7168 7712 M
+-4 -5 V
+Gpstroke
+7164 7707 M
+-4 -6 V
+Gpstroke
+7160 7701 M
+-4 -5 V
+Gpstroke
+7156 7696 M
+-4 -6 V
+Gpstroke
+7152 7690 M
+-3 -6 V
+Gpstroke
+7149 7684 M
+-3 -6 V
+Gpstroke
+7146 7678 M
+-3 -6 V
+Gpstroke
+7143 7672 M
+-3 -7 V
+Gpstroke
+7140 7665 M
+-2 -7 V
+Gpstroke
+7138 7658 M
+-2 -7 V
+Gpstroke
+7136 7651 M
+-2 -7 V
+Gpstroke
+7134 7644 M
+-1 -7 V
+Gpstroke
+7133 7637 M
+-2 -8 V
+Gpstroke
+7131 7629 M
+-1 -8 V
+Gpstroke
+7130 7621 M
+0 -8 V
+Gpstroke
+7130 7613 M
+-1 -8 V
+Gpstroke
+7129 7605 M
+0 -8 V
+Gpstroke
+7129 7597 M
+0 -9 V
+Gpstroke
+7129 7588 M
+0 -9 V
+Gpstroke
+7129 7579 M
+1 -9 V
+Gpstroke
+7130 7570 M
+1 -9 V
+Gpstroke
+7131 7561 M
+1 -10 V
+Gpstroke
+7132 7551 M
+2 -9 V
+Gpstroke
+7134 7542 M
+2 -10 V
+Gpstroke
+7136 7532 M
+2 -10 V
+Gpstroke
+7138 7522 M
+2 -10 V
+Gpstroke
+7140 7512 M
+3 -11 V
+Gpstroke
+7143 7501 M
+3 -11 V
+Gpstroke
+7146 7490 M
+4 -10 V
+Gpstroke
+7150 7480 M
+3 -11 V
+Gpstroke
+7153 7469 M
+4 -12 V
+Gpstroke
+7157 7457 M
+4 -11 V
+Gpstroke
+7161 7446 M
+5 -12 V
+Gpstroke
+7166 7434 M
+5 -11 V
+Gpstroke
+7171 7423 M
+5 -12 V
+Gpstroke
+7176 7411 M
+6 -13 V
+Gpstroke
+7182 7398 M
+5 -12 V
+Gpstroke
+7187 7386 M
+7 -12 V
+Gpstroke
+7194 7374 M
+6 -13 V
+Gpstroke
+7200 7361 M
+7 -13 V
+Gpstroke
+7207 7348 M
+7 -13 V
+Gpstroke
+7214 7335 M
+8 -13 V
+Gpstroke
+7222 7322 M
+7 -14 V
+Gpstroke
+7229 7308 M
+8 -13 V
+Gpstroke
+7237 7295 M
+9 -14 V
+Gpstroke
+7246 7281 M
+9 -14 V
+Gpstroke
+7255 7267 M
+9 -14 V
+Gpstroke
+7264 7253 M
+9 -14 V
+Gpstroke
+7273 7239 M
+10 -14 V
+Gpstroke
+7283 7225 M
+10 -15 V
+Gpstroke
+7293 7210 M
+10 -14 V
+Gpstroke
+7303 7196 M
+11 -15 V
+Gpstroke
+7314 7181 M
+11 -15 V
+Gpstroke
+7325 7166 M
+11 -15 V
+Gpstroke
+7336 7151 M
+12 -16 V
+Gpstroke
+7348 7135 M
+12 -15 V
+Gpstroke
+7360 7120 M
+12 -15 V
+Gpstroke
+7372 7105 M
+13 -16 V
+Gpstroke
+7385 7089 M
+12 -16 V
+Gpstroke
+7397 7073 M
+14 -16 V
+Gpstroke
+7411 7057 M
+13 -16 V
+Gpstroke
+7424 7041 M
+14 -16 V
+Gpstroke
+7438 7025 M
+14 -16 V
+Gpstroke
+7452 7009 M
+15 -16 V
+Gpstroke
+7467 6993 M
+15 -17 V
+Gpstroke
+7482 6976 M
+15 -16 V
+Gpstroke
+7497 6960 M
+15 -17 V
+Gpstroke
+7512 6943 M
+16 -17 V
+Gpstroke
+7528 6926 M
+16 -17 V
+Gpstroke
+7544 6909 M
+16 -17 V
+Gpstroke
+7560 6892 M
+17 -17 V
+Gpstroke
+7577 6875 M
+17 -17 V
+Gpstroke
+7594 6858 M
+17 -17 V
+Gpstroke
+7611 6841 M
+18 -17 V
+Gpstroke
+7629 6824 M
+17 -17 V
+Gpstroke
+7646 6807 M
+18 -18 V
+Gpstroke
+7664 6789 M
+19 -17 V
+Gpstroke
+7683 6772 M
+19 -18 V
+Gpstroke
+7702 6754 M
+18 -17 V
+Gpstroke
+7720 6737 M
+20 -18 V
+Gpstroke
+7740 6719 M
+19 -17 V
+Gpstroke
+7759 6702 M
+20 -18 V
+Gpstroke
+7779 6684 M
+20 -18 V
+Gpstroke
+7799 6666 M
+20 -18 V
+Gpstroke
+7819 6648 M
+21 -17 V
+Gpstroke
+7840 6631 M
+21 -18 V
+Gpstroke
+7861 6613 M
+21 -18 V
+Gpstroke
+7882 6595 M
+21 -18 V
+Gpstroke
+7903 6577 M
+21 -18 V
+Gpstroke
+7924 6559 M
+22 -17 V
+Gpstroke
+7946 6542 M
+22 -18 V
+Gpstroke
+7968 6524 M
+23 -18 V
+Gpstroke
+7991 6506 M
+22 -18 V
+Gpstroke
+8013 6488 M
+23 -18 V
+Gpstroke
+8036 6470 M
+23 -18 V
+Gpstroke
+8059 6452 M
+23 -17 V
+Gpstroke
+8082 6435 M
+23 -18 V
+Gpstroke
+8105 6417 M
+24 -18 V
+Gpstroke
+8129 6399 M
+23 -17 V
+Gpstroke
+8152 6382 M
+24 -18 V
+Gpstroke
+8176 6364 M
+24 -18 V
+Gpstroke
+8200 6346 M
+25 -17 V
+Gpstroke
+8225 6329 M
+24 -18 V
+Gpstroke
+8249 6311 M
+25 -17 V
+Gpstroke
+8274 6294 M
+25 -18 V
+Gpstroke
+8299 6276 M
+25 -17 V
+Gpstroke
+8324 6259 M
+25 -17 V
+Gpstroke
+8349 6242 M
+25 -17 V
+Gpstroke
+8374 6225 M
+25 -17 V
+Gpstroke
+8399 6208 M
+26 -17 V
+Gpstroke
+8425 6191 M
+26 -17 V
+Gpstroke
+8451 6174 M
+26 -17 V
+Gpstroke
+8477 6157 M
+26 -17 V
+Gpstroke
+8503 6140 M
+26 -16 V
+Gpstroke
+8529 6124 M
+26 -17 V
+Gpstroke
+8555 6107 M
+26 -16 V
+Gpstroke
+8581 6091 M
+27 -16 V
+Gpstroke
+8608 6075 M
+26 -17 V
+Gpstroke
+8634 6058 M
+27 -16 V
+Gpstroke
+8661 6042 M
+26 -16 V
+Gpstroke
+8687 6026 M
+27 -15 V
+Gpstroke
+8714 6011 M
+27 -16 V
+Gpstroke
+8741 5995 M
+27 -15 V
+Gpstroke
+8768 5980 M
+27 -16 V
+Gpstroke
+8795 5964 M
+27 -15 V
+Gpstroke
+8822 5949 M
+27 -15 V
+Gpstroke
+8849 5934 M
+27 -15 V
+Gpstroke
+8876 5919 M
+27 -15 V
+Gpstroke
+8903 5904 M
+27 -14 V
+Gpstroke
+8930 5890 M
+27 -15 V
+Gpstroke
+8957 5875 M
+27 -14 V
+Gpstroke
+8984 5861 M
+Gpstroke
+8984 5861 M
+28 -13 V
+Gpstroke
+9012 5848 M
+27 -14 V
+Gpstroke
+9039 5834 M
+27 -13 V
+Gpstroke
+9066 5821 M
+27 -13 V
+Gpstroke
+9093 5808 M
+27 -13 V
+Gpstroke
+9120 5795 M
+27 -13 V
+Gpstroke
+9147 5782 M
+27 -12 V
+Gpstroke
+9174 5770 M
+27 -12 V
+Gpstroke
+9201 5758 M
+27 -12 V
+Gpstroke
+9228 5746 M
+27 -12 V
+Gpstroke
+9255 5734 M
+26 -12 V
+Gpstroke
+9281 5722 M
+27 -11 V
+Gpstroke
+9308 5711 M
+27 -11 V
+Gpstroke
+9335 5700 M
+26 -11 V
+Gpstroke
+9361 5689 M
+27 -11 V
+Gpstroke
+9388 5678 M
+26 -10 V
+Gpstroke
+9414 5668 M
+26 -10 V
+Gpstroke
+9440 5658 M
+26 -10 V
+Gpstroke
+9466 5648 M
+26 -10 V
+Gpstroke
+9492 5638 M
+26 -10 V
+Gpstroke
+9518 5628 M
+26 -9 V
+Gpstroke
+9544 5619 M
+25 -9 V
+Gpstroke
+9569 5610 M
+26 -9 V
+Gpstroke
+9595 5601 M
+25 -8 V
+Gpstroke
+9620 5593 M
+25 -9 V
+Gpstroke
+9645 5584 M
+25 -8 V
+Gpstroke
+9670 5576 M
+25 -8 V
+Gpstroke
+9695 5568 M
+25 -7 V
+Gpstroke
+9720 5561 M
+24 -7 V
+Gpstroke
+9744 5554 M
+24 -7 V
+Gpstroke
+9768 5547 M
+25 -7 V
+Gpstroke
+9793 5540 M
+23 -7 V
+Gpstroke
+9816 5533 M
+24 -6 V
+Gpstroke
+9840 5527 M
+24 -6 V
+Gpstroke
+9864 5521 M
+23 -6 V
+Gpstroke
+9887 5515 M
+23 -5 V
+Gpstroke
+9910 5510 M
+23 -5 V
+Gpstroke
+9933 5505 M
+23 -5 V
+Gpstroke
+9956 5500 M
+22 -5 V
+Gpstroke
+9978 5495 M
+23 -4 V
+Gpstroke
+10001 5491 M
+22 -5 V
+Gpstroke
+10023 5486 M
+21 -4 V
+Gpstroke
+10044 5482 M
+22 -3 V
+Gpstroke
+10066 5479 M
+21 -4 V
+Gpstroke
+10087 5475 M
+21 -3 V
+Gpstroke
+10108 5472 M
+21 -2 V
+Gpstroke
+10129 5470 M
+21 -3 V
+Gpstroke
+10150 5467 M
+20 -2 V
+Gpstroke
+10170 5465 M
+20 -2 V
+Gpstroke
+10190 5463 M
+20 -2 V
+Gpstroke
+10210 5461 M
+19 -2 V
+Gpstroke
+10229 5459 M
+19 -1 V
+Gpstroke
+10248 5458 M
+19 -1 V
+Gpstroke
+10267 5457 M
+19 -1 V
+Gpstroke
+10286 5456 M
+18 0 V
+Gpstroke
+10304 5456 M
+18 0 V
+Gpstroke
+10322 5456 M
+18 0 V
+Gpstroke
+10340 5456 M
+18 0 V
+Gpstroke
+10358 5456 M
+17 1 V
+Gpstroke
+10375 5457 M
+17 1 V
+Gpstroke
+10392 5458 M
+17 1 V
+Gpstroke
+10409 5459 M
+16 1 V
+Gpstroke
+10425 5460 M
+16 2 V
+Gpstroke
+10441 5462 M
+16 2 V
+Gpstroke
+10457 5464 M
+15 2 V
+Gpstroke
+10472 5466 M
+15 2 V
+Gpstroke
+10487 5468 M
+15 3 V
+Gpstroke
+10502 5471 M
+15 2 V
+Gpstroke
+10517 5473 M
+14 4 V
+Gpstroke
+10531 5477 M
+14 3 V
+Gpstroke
+10545 5480 M
+13 3 V
+Gpstroke
+10558 5483 M
+13 4 V
+Gpstroke
+10571 5487 M
+13 4 V
+Gpstroke
+10584 5491 M
+13 5 V
+Gpstroke
+10597 5496 M
+12 4 V
+Gpstroke
+10609 5500 M
+12 5 V
+Gpstroke
+10621 5505 M
+12 5 V
+Gpstroke
+10633 5510 M
+11 5 V
+Gpstroke
+10644 5515 M
+11 5 V
+Gpstroke
+10655 5520 M
+11 6 V
+Gpstroke
+10666 5526 M
+10 6 V
+Gpstroke
+10676 5532 M
+10 6 V
+Gpstroke
+10686 5538 M
+10 6 V
+Gpstroke
+10696 5544 M
+9 7 V
+Gpstroke
+10705 5551 M
+9 6 V
+Gpstroke
+10714 5557 M
+9 7 V
+Gpstroke
+10723 5564 M
+8 7 V
+Gpstroke
+10731 5571 M
+9 8 V
+Gpstroke
+10740 5579 M
+7 7 V
+Gpstroke
+10747 5586 M
+8 8 V
+Gpstroke
+10755 5594 M
+7 8 V
+Gpstroke
+10762 5602 M
+7 8 V
+Gpstroke
+10769 5610 M
+6 8 V
+Gpstroke
+10775 5618 M
+6 9 V
+Gpstroke
+10781 5627 M
+6 8 V
+Gpstroke
+10787 5635 M
+6 9 V
+Gpstroke
+10793 5644 M
+5 9 V
+Gpstroke
+10798 5653 M
+5 9 V
+Gpstroke
+10803 5662 M
+4 10 V
+Gpstroke
+10807 5672 M
+5 9 V
+Gpstroke
+10812 5681 M
+4 10 V
+Gpstroke
+10816 5691 M
+3 9 V
+Gpstroke
+10819 5700 M
+4 10 V
+Gpstroke
+10823 5710 M
+3 10 V
+Gpstroke
+10826 5720 M
+2 11 V
+Gpstroke
+10828 5731 M
+3 10 V
+Gpstroke
+10831 5741 M
+2 11 V
+Gpstroke
+10833 5752 M
+2 10 V
+Gpstroke
+10835 5762 M
+1 11 V
+Gpstroke
+10836 5773 M
+2 11 V
+Gpstroke
+10838 5784 M
+1 11 V
+Gpstroke
+10839 5795 M
+0 11 V
+Gpstroke
+10839 5806 M
+1 12 V
+Gpstroke
+10840 5818 M
+0 11 V
+Gpstroke
+10840 5829 M
+0 12 V
+Gpstroke
+10840 5841 M
+-1 11 V
+Gpstroke
+10839 5852 M
+-1 12 V
+Gpstroke
+10838 5864 M
+-1 12 V
+Gpstroke
+10837 5876 M
+-1 12 V
+Gpstroke
+10836 5888 M
+-1 12 V
+Gpstroke
+10835 5900 M
+-2 12 V
+Gpstroke
+10833 5912 M
+-2 12 V
+Gpstroke
+10831 5924 M
+-3 13 V
+Gpstroke
+10828 5937 M
+-2 12 V
+Gpstroke
+10826 5949 M
+-3 12 V
+Gpstroke
+10823 5961 M
+-3 13 V
+Gpstroke
+10820 5974 M
+-3 13 V
+Gpstroke
+10817 5987 M
+-4 12 V
+Gpstroke
+10813 5999 M
+-4 13 V
+Gpstroke
+10809 6012 M
+-4 13 V
+Gpstroke
+10805 6025 M
+-4 13 V
+Gpstroke
+10801 6038 M
+-5 13 V
+Gpstroke
+10796 6051 M
+-5 13 V
+Gpstroke
+10791 6064 M
+-5 13 V
+Gpstroke
+10786 6077 M
+-5 13 V
+Gpstroke
+10781 6090 M
+-5 13 V
+Gpstroke
+10776 6103 M
+-6 14 V
+Gpstroke
+10770 6117 M
+-6 13 V
+Gpstroke
+10764 6130 M
+-6 13 V
+Gpstroke
+10758 6143 M
+-6 13 V
+Gpstroke
+10752 6156 M
+-6 14 V
+Gpstroke
+10746 6170 M
+-7 13 V
+Gpstroke
+10739 6183 M
+-7 13 V
+Gpstroke
+10732 6196 M
+-7 14 V
+Gpstroke
+10725 6210 M
+-7 13 V
+Gpstroke
+10718 6223 M
+-8 14 V
+Gpstroke
+10710 6237 M
+-7 13 V
+Gpstroke
+10703 6250 M
+-8 14 V
+Gpstroke
+10695 6264 M
+-8 13 V
+Gpstroke
+10687 6277 M
+-8 13 V
+Gpstroke
+10679 6290 M
+-8 14 V
+Gpstroke
+10671 6304 M
+-9 13 V
+Gpstroke
+10662 6317 M
+-8 14 V
+Gpstroke
+10654 6331 M
+-9 13 V
+Gpstroke
+10645 6344 M
+-9 14 V
+Gpstroke
+10636 6358 M
+-9 13 V
+Gpstroke
+10627 6371 M
+-9 13 V
+Gpstroke
+10618 6384 M
+-10 14 V
+Gpstroke
+10608 6398 M
+-9 13 V
+Gpstroke
+10599 6411 M
+-10 14 V
+Gpstroke
+10589 6425 M
+-9 13 V
+Gpstroke
+10580 6438 M
+-10 13 V
+Gpstroke
+10570 6451 M
+-10 13 V
+Gpstroke
+10560 6464 M
+-10 13 V
+Gpstroke
+10550 6477 M
+-11 14 V
+Gpstroke
+10539 6491 M
+-10 13 V
+Gpstroke
+10529 6504 M
+-10 13 V
+Gpstroke
+10519 6517 M
+-11 13 V
+Gpstroke
+10508 6530 M
+-11 13 V
+Gpstroke
+10497 6543 M
+-10 13 V
+Gpstroke
+10487 6556 M
+-11 13 V
+Gpstroke
+10476 6569 M
+-11 12 V
+Gpstroke
+10465 6581 M
+-11 13 V
+Gpstroke
+10454 6594 M
+-11 13 V
+Gpstroke
+10443 6607 M
+-11 13 V
+Gpstroke
+10432 6620 M
+-11 12 V
+Gpstroke
+10421 6632 M
+-12 13 V
+Gpstroke
+10409 6645 M
+-11 12 V
+Gpstroke
+10398 6657 M
+-11 12 V
+Gpstroke
+10387 6669 M
+-12 13 V
+Gpstroke
+10375 6682 M
+-11 12 V
+Gpstroke
+10364 6694 M
+-12 12 V
+Gpstroke
+10352 6706 M
+-12 12 V
+Gpstroke
+10340 6718 M
+-11 12 V
+Gpstroke
+10329 6730 M
+-12 12 V
+Gpstroke
+10317 6742 M
+-12 12 V
+Gpstroke
+10305 6754 M
+-12 12 V
+Gpstroke
+10293 6766 M
+-12 11 V
+Gpstroke
+10281 6777 M
+-11 12 V
+Gpstroke
+10270 6789 M
+-12 12 V
+Gpstroke
+10258 6801 M
+-12 11 V
+Gpstroke
+10246 6812 M
+-12 11 V
+Gpstroke
+10234 6823 M
+-12 12 V
+Gpstroke
+10222 6835 M
+-12 11 V
+Gpstroke
+10210 6846 M
+-12 11 V
+Gpstroke
+10198 6857 M
+-12 11 V
+Gpstroke
+10186 6868 M
+-12 11 V
+Gpstroke
+10174 6879 M
+-12 10 V
+Gpstroke
+10162 6889 M
+-12 11 V
+Gpstroke
+10150 6900 M
+-12 11 V
+Gpstroke
+10138 6911 M
+-12 10 V
+Gpstroke
+10126 6921 M
+-12 10 V
+Gpstroke
+10114 6931 M
+-12 11 V
+Gpstroke
+10102 6942 M
+-12 10 V
+Gpstroke
+10090 6952 M
+-12 10 V
+Gpstroke
+10078 6962 M
+-12 10 V
+Gpstroke
+10066 6972 M
+-12 10 V
+Gpstroke
+10054 6982 M
+-12 9 V
+Gpstroke
+10042 6991 M
+-12 10 V
+Gpstroke
+10030 7001 M
+-11 9 V
+Gpstroke
+10019 7010 M
+-12 10 V
+Gpstroke
+10007 7020 M
+-12 9 V
+Gpstroke
+9995 7029 M
+-12 9 V
+Gpstroke
+9983 7038 M
+-11 9 V
+Gpstroke
+9972 7047 M
+-12 9 V
+Gpstroke
+9960 7056 M
+-12 9 V
+Gpstroke
+9948 7065 M
+-11 9 V
+Gpstroke
+9937 7074 M
+-12 8 V
+Gpstroke
+9925 7082 M
+-11 9 V
+Gpstroke
+9914 7091 M
+-11 8 V
+Gpstroke
+9903 7099 M
+-12 9 V
+Gpstroke
+9891 7108 M
+-11 8 V
+Gpstroke
+9880 7116 M
+-11 8 V
+Gpstroke
+9869 7124 M
+-11 8 V
+Gpstroke
+9858 7132 M
+-12 7 V
+Gpstroke
+9846 7139 M
+-11 8 V
+Gpstroke
+9835 7147 M
+-11 8 V
+Gpstroke
+9824 7155 M
+-10 7 V
+Gpstroke
+9814 7162 M
+-11 7 V
+Gpstroke
+9803 7169 M
+-11 8 V
+Gpstroke
+9792 7177 M
+-11 7 V
+Gpstroke
+9781 7184 M
+-10 7 V
+Gpstroke
+9771 7191 M
+-11 6 V
+Gpstroke
+9760 7197 M
+-10 7 V
+Gpstroke
+9750 7204 M
+-11 7 V
+Gpstroke
+9739 7211 M
+-10 6 V
+Gpstroke
+9729 7217 M
+-10 7 V
+Gpstroke
+9719 7224 M
+-10 6 V
+Gpstroke
+9709 7230 M
+-10 6 V
+Gpstroke
+9699 7236 M
+-10 6 V
+Gpstroke
+9689 7242 M
+-10 6 V
+Gpstroke
+9679 7248 M
+-10 6 V
+Gpstroke
+9669 7254 M
+-9 5 V
+Gpstroke
+9660 7259 M
+-10 6 V
+Gpstroke
+9650 7265 M
+-9 5 V
+Gpstroke
+9641 7270 M
+-10 5 V
+Gpstroke
+9631 7275 M
+-9 6 V
+Gpstroke
+9622 7281 M
+-9 5 V
+Gpstroke
+9613 7286 M
+-9 5 V
+Gpstroke
+9604 7291 M
+-9 4 V
+Gpstroke
+9595 7295 M
+-9 5 V
+Gpstroke
+9586 7300 M
+-9 5 V
+Gpstroke
+9577 7305 M
+-8 4 V
+Gpstroke
+9569 7309 M
+-9 5 V
+Gpstroke
+9560 7314 M
+-8 4 V
+Gpstroke
+9552 7318 M
+-8 4 V
+Gpstroke
+9544 7322 M
+-9 4 V
+Gpstroke
+9535 7326 M
+-8 4 V
+Gpstroke
+9527 7330 M
+-8 4 V
+Gpstroke
+9519 7334 M
+-8 3 V
+Gpstroke
+9511 7337 M
+-7 4 V
+Gpstroke
+9504 7341 M
+-8 3 V
+Gpstroke
+9496 7344 M
+-8 4 V
+Gpstroke
+9488 7348 M
+-7 3 V
+Gpstroke
+9481 7351 M
+-7 3 V
+Gpstroke
+9474 7354 M
+-8 3 V
+Gpstroke
+9466 7357 M
+-7 3 V
+Gpstroke
+9459 7360 M
+-7 3 V
+Gpstroke
+9452 7363 M
+-6 3 V
+Gpstroke
+9446 7366 M
+-7 2 V
+Gpstroke
+9439 7368 M
+-7 3 V
+Gpstroke
+9432 7371 M
+-6 2 V
+Gpstroke
+9426 7373 M
+-7 2 V
+Gpstroke
+9419 7375 M
+-6 3 V
+Gpstroke
+9413 7378 M
+-6 2 V
+Gpstroke
+9407 7380 M
+-6 2 V
+Gpstroke
+9401 7382 M
+-6 2 V
+Gpstroke
+9395 7384 M
+-6 1 V
+Gpstroke
+9389 7385 M
+-5 2 V
+Gpstroke
+9384 7387 M
+-6 2 V
+Gpstroke
+9378 7389 M
+-5 1 V
+Gpstroke
+9373 7390 M
+-6 2 V
+Gpstroke
+9367 7392 M
+-5 1 V
+Gpstroke
+9362 7393 M
+-5 1 V
+Gpstroke
+9357 7394 M
+-5 1 V
+Gpstroke
+9352 7395 M
+-5 1 V
+Gpstroke
+9347 7396 M
+-4 1 V
+Gpstroke
+9343 7397 M
+-5 1 V
+Gpstroke
+9338 7398 M
+-4 1 V
+Gpstroke
+9334 7399 M
+-5 0 V
+Gpstroke
+9329 7399 M
+-4 1 V
+Gpstroke
+9325 7400 M
+-4 1 V
+Gpstroke
+9321 7401 M
+-4 0 V
+Gpstroke
+9317 7401 M
+-4 0 V
+Gpstroke
+9313 7401 M
+-4 0 V
+Gpstroke
+9309 7401 M
+-3 1 V
+Gpstroke
+9306 7402 M
+-4 0 V
+Gpstroke
+9302 7402 M
+-3 0 V
+Gpstroke
+9299 7402 M
+-3 0 V
+Gpstroke
+9296 7402 M
+-4 -1 V
+Gpstroke
+9292 7401 M
+-3 0 V
+Gpstroke
+9289 7401 M
+-3 0 V
+Gpstroke
+9286 7401 M
+-2 -1 V
+Gpstroke
+9284 7400 M
+-3 0 V
+Gpstroke
+9281 7400 M
+-3 -1 V
+Gpstroke
+9278 7399 M
+-2 0 V
+Gpstroke
+9276 7399 M
+-2 -1 V
+Gpstroke
+9274 7398 M
+-3 -1 V
+Gpstroke
+9271 7397 M
+-2 -1 V
+Gpstroke
+9269 7396 M
+-2 0 V
+Gpstroke
+9267 7396 M
+-2 -1 V
+Gpstroke
+9265 7395 M
+-1 -1 V
+Gpstroke
+9264 7394 M
+-2 -2 V
+Gpstroke
+9262 7392 M
+-2 -1 V
+Gpstroke
+9260 7391 M
+-1 -1 V
+Gpstroke
+9259 7390 M
+-1 -1 V
+Gpstroke
+9258 7389 M
+-2 -2 V
+Gpstroke
+9256 7387 M
+-1 -1 V
+Gpstroke
+9255 7386 M
+-1 -2 V
+Gpstroke
+9254 7384 M
+-1 -1 V
+Gpstroke
+9253 7383 M
+0 -2 V
+Gpstroke
+9253 7381 M
+-1 -1 V
+Gpstroke
+9252 7380 M
+-1 -2 V
+Gpstroke
+9251 7378 M
+0 -2 V
+Gpstroke
+9251 7376 M
+0 -2 V
+Gpstroke
+9251 7374 M
+-1 -2 V
+Gpstroke
+9250 7372 M
+0 -2 V
+Gpstroke
+9250 7370 M
+0 -1 V
+Gpstroke
+9250 7369 M
+0 -3 V
+Gpstroke
+9250 7366 M
+0 -2 V
+Gpstroke
+9250 7364 M
+1 -2 V
+Gpstroke
+9251 7362 M
+0 -2 V
+Gpstroke
+9251 7360 M
+0 -2 V
+Gpstroke
+9251 7358 M
+1 -2 V
+Gpstroke
+9252 7356 M
+1 -3 V
+Gpstroke
+9253 7353 M
+0 -2 V
+Gpstroke
+9253 7351 M
+1 -2 V
+Gpstroke
+9254 7349 M
+1 -3 V
+Gpstroke
+9255 7346 M
+1 -2 V
+Gpstroke
+9256 7344 M
+1 -3 V
+Gpstroke
+9257 7341 M
+1 -2 V
+Gpstroke
+9258 7339 M
+2 -3 V
+Gpstroke
+9260 7336 M
+1 -3 V
+Gpstroke
+9261 7333 M
+1 -2 V
+Gpstroke
+9262 7331 M
+2 -3 V
+Gpstroke
+9264 7328 M
+2 -3 V
+Gpstroke
+9266 7325 M
+1 -2 V
+Gpstroke
+9267 7323 M
+2 -3 V
+Gpstroke
+9269 7320 M
+2 -3 V
+Gpstroke
+9271 7317 M
+2 -3 V
+Gpstroke
+9273 7314 M
+2 -3 V
+Gpstroke
+9275 7311 M
+2 -3 V
+Gpstroke
+9277 7308 M
+2 -3 V
+Gpstroke
+9279 7305 M
+3 -3 V
+Gpstroke
+9282 7302 M
+2 -3 V
+Gpstroke
+9284 7299 M
+3 -3 V
+Gpstroke
+9287 7296 M
+2 -3 V
+Gpstroke
+9289 7293 M
+3 -3 V
+Gpstroke
+9292 7290 M
+2 -3 V
+Gpstroke
+9294 7287 M
+3 -3 V
+Gpstroke
+9297 7284 M
+3 -3 V
+Gpstroke
+9300 7281 M
+3 -3 V
+Gpstroke
+9303 7278 M
+3 -3 V
+Gpstroke
+9306 7275 M
+3 -3 V
+Gpstroke
+9309 7272 M
+3 -4 V
+Gpstroke
+9312 7268 M
+3 -3 V
+Gpstroke
+9315 7265 M
+3 -3 V
+Gpstroke
+9318 7262 M
+4 -3 V
+Gpstroke
+9322 7259 M
+3 -3 V
+Gpstroke
+9325 7256 M
+3 -4 V
+Gpstroke
+9328 7252 M
+4 -3 V
+Gpstroke
+9332 7249 M
+3 -3 V
+Gpstroke
+9335 7246 M
+4 -3 V
+Gpstroke
+9339 7243 M
+4 -4 V
+Gpstroke
+9343 7239 M
+4 -3 V
+Gpstroke
+9347 7236 M
+3 -3 V
+Gpstroke
+9350 7233 M
+4 -4 V
+Gpstroke
+9354 7229 M
+4 -3 V
+Gpstroke
+9358 7226 M
+4 -3 V
+Gpstroke
+9362 7223 M
+4 -4 V
+Gpstroke
+9366 7219 M
+4 -3 V
+Gpstroke
+9370 7216 M
+4 -3 V
+Gpstroke
+9374 7213 M
+4 -4 V
+Gpstroke
+9378 7209 M
+5 -3 V
+Gpstroke
+9383 7206 M
+4 -3 V
+Gpstroke
+9387 7203 M
+4 -4 V
+Gpstroke
+9391 7199 M
+4 -3 V
+Gpstroke
+9395 7196 M
+5 -3 V
+Gpstroke
+9400 7193 M
+4 -4 V
+Gpstroke
+9404 7189 M
+5 -3 V
+Gpstroke
+9409 7186 M
+4 -3 V
+Gpstroke
+9413 7183 M
+5 -4 V
+Gpstroke
+9418 7179 M
+5 -3 V
+Gpstroke
+9423 7176 M
+4 -3 V
+Gpstroke
+9427 7173 M
+5 -4 V
+Gpstroke
+9432 7169 M
+5 -3 V
+Gpstroke
+9437 7166 M
+4 -3 V
+Gpstroke
+9441 7163 M
+5 -4 V
+Gpstroke
+9446 7159 M
+5 -3 V
+Gpstroke
+9451 7156 M
+5 -3 V
+Gpstroke
+9456 7153 M
+5 -3 V
+Gpstroke
+9461 7150 M
+5 -4 V
+Gpstroke
+9466 7146 M
+5 -3 V
+Gpstroke
+9471 7143 M
+5 -3 V
+Gpstroke
+9476 7140 M
+5 -3 V
+Gpstroke
+9481 7137 M
+5 -3 V
+Gpstroke
+9486 7134 M
+5 -4 V
+Gpstroke
+9491 7130 M
+5 -3 V
+Gpstroke
+9496 7127 M
+5 -3 V
+Gpstroke
+9501 7124 M
+5 -3 V
+Gpstroke
+9506 7121 M
+6 -3 V
+Gpstroke
+9512 7118 M
+5 -3 V
+Gpstroke
+9517 7115 M
+5 -4 V
+Gpstroke
+9522 7111 M
+5 -3 V
+Gpstroke
+9527 7108 M
+6 -3 V
+Gpstroke
+9533 7105 M
+5 -3 V
+Gpstroke
+9538 7102 M
+5 -3 V
+Gpstroke
+9543 7099 M
+6 -3 V
+Gpstroke
+9549 7096 M
+5 -3 V
+Gpstroke
+9554 7093 M
+5 -3 V
+Gpstroke
+9559 7090 M
+6 -3 V
+Gpstroke
+9565 7087 M
+5 -3 V
+Gpstroke
+9570 7084 M
+5 -3 V
+Gpstroke
+9575 7081 M
+6 -3 V
+Gpstroke
+9581 7078 M
+5 -3 V
+Gpstroke
+9586 7075 M
+6 -3 V
+Gpstroke
+9592 7072 M
+5 -2 V
+Gpstroke
+9597 7070 M
+6 -3 V
+Gpstroke
+9603 7067 M
+5 -3 V
+Gpstroke
+9608 7064 M
+6 -3 V
+Gpstroke
+9614 7061 M
+5 -3 V
+Gpstroke
+9619 7058 M
+6 -2 V
+Gpstroke
+9625 7056 M
+5 -3 V
+Gpstroke
+9630 7053 M
+6 -3 V
+Gpstroke
+9636 7050 M
+5 -2 V
+Gpstroke
+9641 7048 M
+6 -3 V
+Gpstroke
+9647 7045 M
+5 -3 V
+Gpstroke
+9652 7042 M
+6 -2 V
+Gpstroke
+9658 7040 M
+6 -3 V
+Gpstroke
+9664 7037 M
+5 -3 V
+Gpstroke
+9669 7034 M
+6 -2 V
+Gpstroke
+9675 7032 M
+5 -3 V
+Gpstroke
+9680 7029 M
+6 -2 V
+Gpstroke
+9686 7027 M
+5 -3 V
+Gpstroke
+9691 7024 M
+6 -2 V
+Gpstroke
+9697 7022 M
+5 -2 V
+Gpstroke
+9702 7020 M
+6 -3 V
+Gpstroke
+9708 7017 M
+6 -2 V
+Gpstroke
+9714 7015 M
+5 -2 V
+Gpstroke
+9719 7013 M
+6 -3 V
+Gpstroke
+9725 7010 M
+5 -2 V
+Gpstroke
+9730 7008 M
+6 -2 V
+Gpstroke
+9736 7006 M
+5 -3 V
+Gpstroke
+9741 7003 M
+6 -2 V
+Gpstroke
+9747 7001 M
+5 -2 V
+Gpstroke
+9752 6999 M
+6 -2 V
+Gpstroke
+9758 6997 M
+5 -2 V
+Gpstroke
+9763 6995 M
+6 -2 V
+Gpstroke
+9769 6993 M
+5 -2 V
+Gpstroke
+9774 6991 M
+6 -2 V
+Gpstroke
+9780 6989 M
+5 -2 V
+Gpstroke
+9785 6987 M
+6 -2 V
+Gpstroke
+9791 6985 M
+5 -2 V
+Gpstroke
+9796 6983 M
+5 -2 V
+Gpstroke
+9801 6981 M
+6 -2 V
+Gpstroke
+9807 6979 M
+5 -2 V
+Gpstroke
+9812 6977 M
+6 -2 V
+Gpstroke
+9818 6975 M
+5 -2 V
+Gpstroke
+9823 6973 M
+5 -1 V
+Gpstroke
+9828 6972 M
+6 -2 V
+Gpstroke
+9834 6970 M
+5 -2 V
+Gpstroke
+9839 6968 M
+5 -2 V
+Gpstroke
+9844 6966 M
+6 -1 V
+Gpstroke
+9850 6965 M
+5 -2 V
+Gpstroke
+9855 6963 M
+5 -2 V
+Gpstroke
+9860 6961 M
+5 -1 V
+Gpstroke
+9865 6960 M
+6 -2 V
+Gpstroke
+9871 6958 M
+5 -1 V
+Gpstroke
+9876 6957 M
+5 -2 V
+Gpstroke
+9881 6955 M
+5 -1 V
+Gpstroke
+9886 6954 M
+5 -2 V
+Gpstroke
+9891 6952 M
+5 -1 V
+Gpstroke
+9896 6951 M
+6 -1 V
+Gpstroke
+9902 6950 M
+5 -2 V
+Gpstroke
+9907 6948 M
+5 -1 V
+Gpstroke
+9912 6947 M
+5 -1 V
+Gpstroke
+9917 6946 M
+5 -2 V
+Gpstroke
+9922 6944 M
+5 -1 V
+Gpstroke
+9927 6943 M
+5 -1 V
+Gpstroke
+9932 6942 M
+5 -1 V
+Gpstroke
+9937 6941 M
+5 -2 V
+Gpstroke
+9942 6939 M
+5 -1 V
+Gpstroke
+9947 6938 M
+5 -1 V
+Gpstroke
+9952 6937 M
+5 -1 V
+Gpstroke
+9957 6936 M
+4 -1 V
+Gpstroke
+9961 6935 M
+5 -1 V
+Gpstroke
+9966 6934 M
+5 -1 V
+Gpstroke
+9971 6933 M
+5 -1 V
+Gpstroke
+9976 6932 M
+5 -1 V
+Gpstroke
+9981 6931 M
+4 -1 V
+Gpstroke
+9985 6930 M
+5 -1 V
+Gpstroke
+9990 6929 M
+5 -1 V
+Gpstroke
+9995 6928 M
+4 0 V
+Gpstroke
+9999 6928 M
+5 -1 V
+Gpstroke
+10004 6927 M
+5 -1 V
+Gpstroke
+10009 6926 M
+4 -1 V
+Gpstroke
+10013 6925 M
+5 0 V
+Gpstroke
+10018 6925 M
+4 -1 V
+Gpstroke
+10022 6924 M
+5 -1 V
+Gpstroke
+10027 6923 M
+4 0 V
+Gpstroke
+10031 6923 M
+5 -1 V
+Gpstroke
+10036 6922 M
+4 -1 V
+Gpstroke
+10040 6921 M
+5 0 V
+Gpstroke
+10045 6921 M
+4 -1 V
+Gpstroke
+10049 6920 M
+5 0 V
+Gpstroke
+10054 6920 M
+4 -1 V
+Gpstroke
+10058 6919 M
+4 0 V
+Gpstroke
+10062 6919 M
+5 -1 V
+Gpstroke
+10067 6918 M
+4 0 V
+Gpstroke
+10071 6918 M
+4 -1 V
+Gpstroke
+10075 6917 M
+4 0 V
+Gpstroke
+10079 6917 M
+4 0 V
+Gpstroke
+10083 6917 M
+5 -1 V
+Gpstroke
+10088 6916 M
+4 0 V
+Gpstroke
+10092 6916 M
+4 0 V
+Gpstroke
+10096 6916 M
+4 0 V
+Gpstroke
+10100 6916 M
+4 -1 V
+Gpstroke
+10104 6915 M
+4 0 V
+Gpstroke
+10108 6915 M
+4 0 V
+Gpstroke
+10112 6915 M
+4 0 V
+Gpstroke
+10116 6915 M
+4 0 V
+Gpstroke
+10120 6915 M
+4 -1 V
+Gpstroke
+10124 6914 M
+4 0 V
+Gpstroke
+10128 6914 M
+4 0 V
+Gpstroke
+10132 6914 M
+3 0 V
+Gpstroke
+10135 6914 M
+4 0 V
+Gpstroke
+10139 6914 M
+4 0 V
+Gpstroke
+10143 6914 M
+4 0 V
+Gpstroke
+10147 6914 M
+3 0 V
+Gpstroke
+10150 6914 M
+4 0 V
+Gpstroke
+10154 6914 M
+4 0 V
+Gpstroke
+10158 6914 M
+3 0 V
+Gpstroke
+10161 6914 M
+4 1 V
+Gpstroke
+10165 6915 M
+4 0 V
+Gpstroke
+10169 6915 M
+3 0 V
+Gpstroke
+10172 6915 M
+4 0 V
+Gpstroke
+10176 6915 M
+3 0 V
+Gpstroke
+10179 6915 M
+4 0 V
+Gpstroke
+10183 6915 M
+3 1 V
+Gpstroke
+10186 6916 M
+4 0 V
+Gpstroke
+10190 6916 M
+3 0 V
+Gpstroke
+10193 6916 M
+3 0 V
+Gpstroke
+10196 6916 M
+4 1 V
+Gpstroke
+10200 6917 M
+3 0 V
+Gpstroke
+10203 6917 M
+3 0 V
+Gpstroke
+10206 6917 M
+4 1 V
+Gpstroke
+10210 6918 M
+3 0 V
+Gpstroke
+10213 6918 M
+3 0 V
+Gpstroke
+10216 6918 M
+3 1 V
+Gpstroke
+10219 6919 M
+3 0 V
+Gpstroke
+10222 6919 M
+4 1 V
+Gpstroke
+10226 6920 M
+3 0 V
+Gpstroke
+10229 6920 M
+3 1 V
+Gpstroke
+10232 6921 M
+3 0 V
+Gpstroke
+10235 6921 M
+3 1 V
+Gpstroke
+10238 6922 M
+3 0 V
+Gpstroke
+10241 6922 M
+3 1 V
+Gpstroke
+10244 6923 M
+3 0 V
+Gpstroke
+10247 6923 M
+3 1 V
+Gpstroke
+10250 6924 M
+3 0 V
+Gpstroke
+10253 6924 M
+3 1 V
+Gpstroke
+10256 6925 M
+3 0 V
+Gpstroke
+10259 6925 M
+2 1 V
+Gpstroke
+10261 6926 M
+3 1 V
+Gpstroke
+10264 6927 M
+3 0 V
+Gpstroke
+10267 6927 M
+3 1 V
+Gpstroke
+10270 6928 M
+3 1 V
+Gpstroke
+10273 6929 M
+2 0 V
+Gpstroke
+10275 6929 M
+3 1 V
+Gpstroke
+10278 6930 M
+3 1 V
+Gpstroke
+10281 6931 M
+2 0 V
+Gpstroke
+10283 6931 M
+3 1 V
+Gpstroke
+10286 6932 M
+3 1 V
+Gpstroke
+10289 6933 M
+2 0 V
+Gpstroke
+10291 6933 M
+3 1 V
+Gpstroke
+10294 6934 M
+2 1 V
+Gpstroke
+10296 6935 M
+3 1 V
+Gpstroke
+10299 6936 M
+2 1 V
+Gpstroke
+10301 6937 M
+3 0 V
+Gpstroke
+10304 6937 M
+2 1 V
+Gpstroke
+10306 6938 M
+3 1 V
+Gpstroke
+10309 6939 M
+2 1 V
+Gpstroke
+10311 6940 M
+3 1 V
+Gpstroke
+10314 6941 M
+2 0 V
+Gpstroke
+10316 6941 M
+2 1 V
+Gpstroke
+10318 6942 M
+3 1 V
+Gpstroke
+10321 6943 M
+2 1 V
+Gpstroke
+10323 6944 M
+2 1 V
+Gpstroke
+10325 6945 M
+3 1 V
+Gpstroke
+10328 6946 M
+2 1 V
+Gpstroke
+10330 6947 M
+2 0 V
+Gpstroke
+10332 6947 M
+2 1 V
+Gpstroke
+10334 6948 M
+3 1 V
+Gpstroke
+10337 6949 M
+2 1 V
+Gpstroke
+10339 6950 M
+2 1 V
+Gpstroke
+10341 6951 M
+2 1 V
+Gpstroke
+10343 6952 M
+2 1 V
+Gpstroke
+10345 6953 M
+2 1 V
+Gpstroke
+10347 6954 M
+2 1 V
+Gpstroke
+10349 6955 M
+3 1 V
+Gpstroke
+10352 6956 M
+2 1 V
+Gpstroke
+10354 6957 M
+2 1 V
+Gpstroke
+10356 6958 M
+2 1 V
+Gpstroke
+10358 6959 M
+2 1 V
+Gpstroke
+10360 6960 M
+2 1 V
+Gpstroke
+10362 6961 M
+2 0 V
+Gpstroke
+10364 6961 M
+2 1 V
+Gpstroke
+10366 6962 M
+2 1 V
+Gpstroke
+10368 6963 M
+2 1 V
+Gpstroke
+10370 6964 M
+2 1 V
+Gpstroke
+10372 6965 M
+1 1 V
+Gpstroke
+10373 6966 M
+2 1 V
+Gpstroke
+10375 6967 M
+2 1 V
+Gpstroke
+10377 6968 M
+2 1 V
+Gpstroke
+10379 6969 M
+2 1 V
+Gpstroke
+10381 6970 M
+2 1 V
+Gpstroke
+10383 6971 M
+2 1 V
+Gpstroke
+10385 6972 M
+1 1 V
+Gpstroke
+10386 6973 M
+2 1 V
+Gpstroke
+10388 6974 M
+2 1 V
+Gpstroke
+10390 6975 M
+2 1 V
+Gpstroke
+10392 6976 M
+2 2 V
+Gpstroke
+10394 6978 M
+1 1 V
+Gpstroke
+10395 6979 M
+2 1 V
+Gpstroke
+10397 6980 M
+2 1 V
+Gpstroke
+10399 6981 M
+2 1 V
+Gpstroke
+10401 6982 M
+1 1 V
+Gpstroke
+10402 6983 M
+2 1 V
+Gpstroke
+10404 6984 M
+2 1 V
+Gpstroke
+10406 6985 M
+1 1 V
+Gpstroke
+10407 6986 M
+2 1 V
+Gpstroke
+10409 6987 M
+2 1 V
+Gpstroke
+10411 6988 M
+1 1 V
+Gpstroke
+10412 6989 M
+2 1 V
+Gpstroke
+10414 6990 M
+2 1 V
+Gpstroke
+10416 6991 M
+1 1 V
+Gpstroke
+10417 6992 M
+2 1 V
+Gpstroke
+10419 6993 M
+1 1 V
+Gpstroke
+10420 6994 M
+2 1 V
+Gpstroke
+10422 6995 M
+2 1 V
+Gpstroke
+10424 6996 M
+1 1 V
+Gpstroke
+10425 6997 M
+2 1 V
+Gpstroke
+10427 6998 M
+1 1 V
+Gpstroke
+10428 6999 M
+2 1 V
+Gpstroke
+10430 7000 M
+1 1 V
+Gpstroke
+10431 7001 M
+2 1 V
+Gpstroke
+10433 7002 M
+1 1 V
+Gpstroke
+10434 7003 M
+2 1 V
+Gpstroke
+10436 7004 M
+1 1 V
+Gpstroke
+10437 7005 M
+2 1 V
+Gpstroke
+10439 7006 M
+1 1 V
+Gpstroke
+10440 7007 M
+2 1 V
+Gpstroke
+10442 7008 M
+1 1 V
+Gpstroke
+10443 7009 M
+2 1 V
+Gpstroke
+10445 7010 M
+1 1 V
+Gpstroke
+10446 7011 M
+2 1 V
+Gpstroke
+10448 7012 M
+1 1 V
+Gpstroke
+10449 7013 M
+2 1 V
+Gpstroke
+10451 7014 M
+1 1 V
+Gpstroke
+10452 7015 M
+2 1 V
+Gpstroke
+10454 7016 M
+1 1 V
+Gpstroke
+10455 7017 M
+1 1 V
+Gpstroke
+10456 7018 M
+2 1 V
+Gpstroke
+10458 7019 M
+1 1 V
+Gpstroke
+10459 7020 M
+2 1 V
+Gpstroke
+10461 7021 M
+1 1 V
+Gpstroke
+10462 7022 M
+2 1 V
+Gpstroke
+10464 7023 M
+1 1 V
+Gpstroke
+10465 7024 M
+1 1 V
+Gpstroke
+10466 7025 M
+2 1 V
+Gpstroke
+10468 7026 M
+1 0 V
+Gpstroke
+10469 7026 M
+2 1 V
+Gpstroke
+10471 7027 M
+1 1 V
+Gpstroke
+10472 7028 M
+1 1 V
+Gpstroke
+10473 7029 M
+2 1 V
+Gpstroke
+10475 7030 M
+1 1 V
+Gpstroke
+10476 7031 M
+2 1 V
+Gpstroke
+10478 7032 M
+1 1 V
+Gpstroke
+10479 7033 M
+1 1 V
+Gpstroke
+10480 7034 M
+2 1 V
+Gpstroke
+10482 7035 M
+1 1 V
+Gpstroke
+10483 7036 M
+2 0 V
+Gpstroke
+10485 7036 M
+1 1 V
+Gpstroke
+10486 7037 M
+1 1 V
+Gpstroke
+10487 7038 M
+2 1 V
+Gpstroke
+10489 7039 M
+1 1 V
+Gpstroke
+10490 7040 M
+2 1 V
+Gpstroke
+10492 7041 M
+1 1 V
+Gpstroke
+10493 7042 M
+1 0 V
+Gpstroke
+10494 7042 M
+2 1 V
+Gpstroke
+10496 7043 M
+1 1 V
+Gpstroke
+10497 7044 M
+1 1 V
+Gpstroke
+10498 7045 M
+2 1 V
+Gpstroke
+10500 7046 M
+1 1 V
+Gpstroke
+10501 7047 M
+2 0 V
+Gpstroke
+10503 7047 M
+1 1 V
+Gpstroke
+10504 7048 M
+1 1 V
+Gpstroke
+10505 7049 M
+2 1 V
+Gpstroke
+10507 7050 M
+1 1 V
+Gpstroke
+10508 7051 M
+2 0 V
+Gpstroke
+10510 7051 M
+1 1 V
+Gpstroke
+10511 7052 M
+1 1 V
+Gpstroke
+10512 7053 M
+2 1 V
+Gpstroke
+10514 7054 M
+1 1 V
+Gpstroke
+10515 7055 M
+2 0 V
+Gpstroke
+10517 7055 M
+1 1 V
+Gpstroke
+10518 7056 M
+1 1 V
+Gpstroke
+10519 7057 M
+2 1 V
+Gpstroke
+10521 7058 M
+1 0 V
+Gpstroke
+10522 7058 M
+2 1 V
+Gpstroke
+10524 7059 M
+1 1 V
+Gpstroke
+10525 7060 M
+1 0 V
+Gpstroke
+10526 7060 M
+2 1 V
+Gpstroke
+10528 7061 M
+1 1 V
+Gpstroke
+10529 7062 M
+2 1 V
+Gpstroke
+10531 7063 M
+1 0 V
+Gpstroke
+10532 7063 M
+1 1 V
+Gpstroke
+10533 7064 M
+2 1 V
+Gpstroke
+10535 7065 M
+1 0 V
+Gpstroke
+10536 7065 M
+2 1 V
+Gpstroke
+10538 7066 M
+1 1 V
+Gpstroke
+10539 7067 M
+2 0 V
+Gpstroke
+10541 7067 M
+1 1 V
+Gpstroke
+10542 7068 M
+2 1 V
+Gpstroke
+10544 7069 M
+1 0 V
+Gpstroke
+10545 7069 M
+1 1 V
+Gpstroke
+10546 7070 M
+2 1 V
+Gpstroke
+10548 7071 M
+1 0 V
+Gpstroke
+10549 7071 M
+2 1 V
+Gpstroke
+10551 7072 M
+1 0 V
+Gpstroke
+10552 7072 M
+2 1 V
+Gpstroke
+10554 7073 M
+1 1 V
+Gpstroke
+10555 7074 M
+2 0 V
+Gpstroke
+10557 7074 M
+1 1 V
+Gpstroke
+10558 7075 M
+2 0 V
+Gpstroke
+10560 7075 M
+1 1 V
+Gpstroke
+10561 7076 M
+2 0 V
+Gpstroke
+10563 7076 M
+1 1 V
+Gpstroke
+10564 7077 M
+2 1 V
+Gpstroke
+10566 7078 M
+1 0 V
+Gpstroke
+10567 7078 M
+2 1 V
+Gpstroke
+10569 7079 M
+1 0 V
+Gpstroke
+10570 7079 M
+2 1 V
+Gpstroke
+10572 7080 M
+1 0 V
+Gpstroke
+10573 7080 M
+2 1 V
+Gpstroke
+10575 7081 M
+2 0 V
+Gpstroke
+10577 7081 M
+1 1 V
+Gpstroke
+10578 7082 M
+2 0 V
+Gpstroke
+10580 7082 M
+1 1 V
+Gpstroke
+10581 7083 M
+2 0 V
+Gpstroke
+10583 7083 M
+1 1 V
+Gpstroke
+10584 7084 M
+2 0 V
+Gpstroke
+10586 7084 M
+2 1 V
+Gpstroke
+10588 7085 M
+1 0 V
+Gpstroke
+10589 7085 M
+2 1 V
+Gpstroke
+10591 7086 M
+1 0 V
+Gpstroke
+10592 7086 M
+2 1 V
+Gpstroke
+10594 7087 M
+2 0 V
+Gpstroke
+10596 7087 M
+1 1 V
+Gpstroke
+10597 7088 M
+2 0 V
+Gpstroke
+10599 7088 M
+1 0 V
+Gpstroke
+10600 7088 M
+2 1 V
+Gpstroke
+10602 7089 M
+2 0 V
+Gpstroke
+10604 7089 M
+1 1 V
+Gpstroke
+10605 7090 M
+2 0 V
+Gpstroke
+10607 7090 M
+2 0 V
+Gpstroke
+10609 7090 M
+1 1 V
+Gpstroke
+10610 7091 M
+2 0 V
+Gpstroke
+10612 7091 M
+2 1 V
+Gpstroke
+10614 7092 M
+1 0 V
+Gpstroke
+10615 7092 M
+2 0 V
+Gpstroke
+10617 7092 M
+2 1 V
+Gpstroke
+10619 7093 M
+1 0 V
+Gpstroke
+10620 7093 M
+2 1 V
+Gpstroke
+10622 7094 M
+2 0 V
+Gpstroke
+10624 7094 M
+1 0 V
+Gpstroke
+10625 7094 M
+2 1 V
+Gpstroke
+10627 7095 M
+2 0 V
+Gpstroke
+10629 7095 M
+2 0 V
+Gpstroke
+10631 7095 M
+1 1 V
+Gpstroke
+10632 7096 M
+2 0 V
+Gpstroke
+10634 7096 M
+2 0 V
+Gpstroke
+10636 7096 M
+2 1 V
+Gpstroke
+10638 7097 M
+1 0 V
+Gpstroke
+10639 7097 M
+2 0 V
+Gpstroke
+10641 7097 M
+2 1 V
+Gpstroke
+10643 7098 M
+2 0 V
+Gpstroke
+10645 7098 M
+1 0 V
+Gpstroke
+10646 7098 M
+2 1 V
+Gpstroke
+10648 7099 M
+2 0 V
+Gpstroke
+10650 7099 M
+2 0 V
+Gpstroke
+10652 7099 M
+2 0 V
+Gpstroke
+10654 7099 M
+1 1 V
+Gpstroke
+10655 7100 M
+2 0 V
+Gpstroke
+10657 7100 M
+2 0 V
+Gpstroke
+10659 7100 M
+2 0 V
+Gpstroke
+10661 7100 M
+2 1 V
+Gpstroke
+10663 7101 M
+1 0 V
+Gpstroke
+10664 7101 M
+2 0 V
+Gpstroke
+10666 7101 M
+2 1 V
+Gpstroke
+10668 7102 M
+2 0 V
+Gpstroke
+10670 7102 M
+2 0 V
+Gpstroke
+10672 7102 M
+2 0 V
+Gpstroke
+10674 7102 M
+2 1 V
+Gpstroke
+10676 7103 M
+1 0 V
+Gpstroke
+10677 7103 M
+2 0 V
+Gpstroke
+10679 7103 M
+2 0 V
+Gpstroke
+10681 7103 M
+2 0 V
+Gpstroke
+10683 7103 M
+2 1 V
+Gpstroke
+10685 7104 M
+2 0 V
+Gpstroke
+10687 7104 M
+2 0 V
+Gpstroke
+10689 7104 M
+2 0 V
+Gpstroke
+10691 7104 M
+2 1 V
+Gpstroke
+10693 7105 M
+2 0 V
+Gpstroke
+10695 7105 M
+2 0 V
+Gpstroke
+10697 7105 M
+1 0 V
+Gpstroke
+10698 7105 M
+2 0 V
+Gpstroke
+10700 7105 M
+2 1 V
+Gpstroke
+10702 7106 M
+2 0 V
+Gpstroke
+10704 7106 M
+2 0 V
+Gpstroke
+10706 7106 M
+2 0 V
+Gpstroke
+10708 7106 M
+2 0 V
+Gpstroke
+10710 7106 M
+2 0 V
+Gpstroke
+10712 7106 M
+2 1 V
+Gpstroke
+10714 7107 M
+2 0 V
+Gpstroke
+10716 7107 M
+2 0 V
+Gpstroke
+10718 7107 M
+2 0 V
+Gpstroke
+10720 7107 M
+2 0 V
+Gpstroke
+10722 7107 M
+2 0 V
+Gpstroke
+10724 7107 M
+2 1 V
+Gpstroke
+10726 7108 M
+2 0 V
+Gpstroke
+10728 7108 M
+2 0 V
+Gpstroke
+10730 7108 M
+2 0 V
+Gpstroke
+10732 7108 M
+2 0 V
+Gpstroke
+10734 7108 M
+2 0 V
+Gpstroke
+10736 7108 M
+2 1 V
+Gpstroke
+10738 7109 M
+2 0 V
+Gpstroke
+10740 7109 M
+2 0 V
+Gpstroke
+10742 7109 M
+2 0 V
+Gpstroke
+10744 7109 M
+2 0 V
+Gpstroke
+10746 7109 M
+2 0 V
+Gpstroke
+10748 7109 M
+2 0 V
+Gpstroke
+10750 7109 M
+2 1 V
+Gpstroke
+10752 7110 M
+2 0 V
+Gpstroke
+10754 7110 M
+3 0 V
+Gpstroke
+10757 7110 M
+2 0 V
+Gpstroke
+10759 7110 M
+2 0 V
+Gpstroke
+10761 7110 M
+2 0 V
+Gpstroke
+10763 7110 M
+2 0 V
+Gpstroke
+10765 7110 M
+2 0 V
+Gpstroke
+10767 7110 M
+2 1 V
+Gpstroke
+10769 7111 M
+2 0 V
+Gpstroke
+10771 7111 M
+2 0 V
+Gpstroke
+10773 7111 M
+2 0 V
+Gpstroke
+10775 7111 M
+2 0 V
+Gpstroke
+10777 7111 M
+3 0 V
+Gpstroke
+10780 7111 M
+2 0 V
+Gpstroke
+10782 7111 M
+2 0 V
+Gpstroke
+10784 7111 M
+2 1 V
+Gpstroke
+10786 7112 M
+2 0 V
+Gpstroke
+10788 7112 M
+2 0 V
+Gpstroke
+10790 7112 M
+2 0 V
+Gpstroke
+10792 7112 M
+2 0 V
+Gpstroke
+10794 7112 M
+3 0 V
+Gpstroke
+10797 7112 M
+2 0 V
+Gpstroke
+10799 7112 M
+2 0 V
+Gpstroke
+10801 7112 M
+2 0 V
+Gpstroke
+10803 7112 M
+2 1 V
+Gpstroke
+10805 7113 M
+2 0 V
+Gpstroke
+10807 7113 M
+2 0 V
+Gpstroke
+10809 7113 M
+3 0 V
+Gpstroke
+10812 7113 M
+2 0 V
+Gpstroke
+10814 7113 M
+2 0 V
+Gpstroke
+10816 7113 M
+2 0 V
+Gpstroke
+10818 7113 M
+2 0 V
+Gpstroke
+10820 7113 M
+2 0 V
+Gpstroke
+10822 7113 M
+3 0 V
+Gpstroke
+10825 7113 M
+2 1 V
+Gpstroke
+10827 7114 M
+2 0 V
+Gpstroke
+10829 7114 M
+2 0 V
+Gpstroke
+10831 7114 M
+2 0 V
+Gpstroke
+10833 7114 M
+2 0 V
+Gpstroke
+10835 7114 M
+3 0 V
+Gpstroke
+10838 7114 M
+2 0 V
+Gpstroke
+10840 7114 M
+2 0 V
+Gpstroke
+10842 7114 M
+2 0 V
+Gpstroke
+10844 7114 M
+2 0 V
+Gpstroke
+10846 7114 M
+3 1 V
+Gpstroke
+10849 7115 M
+2 0 V
+Gpstroke
+10851 7115 M
+2 0 V
+Gpstroke
+10853 7115 M
+2 0 V
+Gpstroke
+10855 7115 M
+2 0 V
+Gpstroke
+10857 7115 M
+3 0 V
+Gpstroke
+10860 7115 M
+2 0 V
+Gpstroke
+10862 7115 M
+2 0 V
+Gpstroke
+10864 7115 M
+2 0 V
+Gpstroke
+10866 7115 M
+3 0 V
+Gpstroke
+10869 7115 M
+2 1 V
+Gpstroke
+10871 7116 M
+2 0 V
+Gpstroke
+10873 7116 M
+2 0 V
+Gpstroke
+10875 7116 M
+2 0 V
+Gpstroke
+10877 7116 M
+3 0 V
+Gpstroke
+10880 7116 M
+2 0 V
+Gpstroke
+10882 7116 M
+2 0 V
+Gpstroke
+10884 7116 M
+2 0 V
+Gpstroke
+10886 7116 M
+3 0 V
+Gpstroke
+10889 7116 M
+2 0 V
+Gpstroke
+10891 7116 M
+2 1 V
+Gpstroke
+10893 7117 M
+2 0 V
+Gpstroke
+10895 7117 M
+3 0 V
+Gpstroke
+10898 7117 M
+2 0 V
+Gpstroke
+10900 7117 M
+2 0 V
+Gpstroke
+10902 7117 M
+2 0 V
+Gpstroke
+10904 7117 M
+3 0 V
+Gpstroke
+10907 7117 M
+2 0 V
+Gpstroke
+10909 7117 M
+2 0 V
+Gpstroke
+10911 7117 M
+2 1 V
+Gpstroke
+10913 7118 M
+3 0 V
+Gpstroke
+10916 7118 M
+2 0 V
+Gpstroke
+10918 7118 M
+2 0 V
+Gpstroke
+10920 7118 M
+2 0 V
+Gpstroke
+10922 7118 M
+3 0 V
+Gpstroke
+10925 7118 M
+2 0 V
+Gpstroke
+10927 7118 M
+2 0 V
+Gpstroke
+10929 7118 M
+2 0 V
+Gpstroke
+10931 7118 M
+3 1 V
+Gpstroke
+10934 7119 M
+2 0 V
+Gpstroke
+10936 7119 M
+2 0 V
+Gpstroke
+10938 7119 M
+2 0 V
+Gpstroke
+10940 7119 M
+3 0 V
+Gpstroke
+10943 7119 M
+2 0 V
+Gpstroke
+10945 7119 M
+2 0 V
+Gpstroke
+10947 7119 M
+2 0 V
+Gpstroke
+10949 7119 M
+3 1 V
+Gpstroke
+10952 7120 M
+2 0 V
+Gpstroke
+10954 7120 M
+2 0 V
+Gpstroke
+10956 7120 M
+2 0 V
+Gpstroke
+10958 7120 M
+3 0 V
+Gpstroke
+10961 7120 M
+2 0 V
+Gpstroke
+10963 7120 M
+2 0 V
+Gpstroke
+10965 7120 M
+2 0 V
+Gpstroke
+10967 7120 M
+3 1 V
+Gpstroke
+10970 7121 M
+2 0 V
+Gpstroke
+10972 7121 M
+2 0 V
+Gpstroke
+10974 7121 M
+3 0 V
+Gpstroke
+10977 7121 M
+2 0 V
+Gpstroke
+10979 7121 M
+2 0 V
+Gpstroke
+10981 7121 M
+2 0 V
+Gpstroke
+10983 7121 M
+3 0 V
+Gpstroke
+10986 7121 M
+2 1 V
+Gpstroke
+10988 7122 M
+2 0 V
+Gpstroke
+10990 7122 M
+2 0 V
+Gpstroke
+10992 7122 M
+3 0 V
+Gpstroke
+10995 7122 M
+2 0 V
+Gpstroke
+10997 7122 M
+2 0 V
+Gpstroke
+10999 7122 M
+2 0 V
+Gpstroke
+11001 7122 M
+3 1 V
+Gpstroke
+11004 7123 M
+2 0 V
+Gpstroke
+11006 7123 M
+2 0 V
+Gpstroke
+11008 7123 M
+2 0 V
+Gpstroke
+11010 7123 M
+3 0 V
+Gpstroke
+11013 7123 M
+2 0 V
+Gpstroke
+11015 7123 M
+2 1 V
+Gpstroke
+11017 7124 M
+2 0 V
+Gpstroke
+11019 7124 M
+3 0 V
+Gpstroke
+11022 7124 M
+2 0 V
+Gpstroke
+11024 7124 M
+2 0 V
+Gpstroke
+11026 7124 M
+3 0 V
+Gpstroke
+11029 7124 M
+2 1 V
+Gpstroke
+11031 7125 M
+2 0 V
+Gpstroke
+11033 7125 M
+2 0 V
+Gpstroke
+11035 7125 M
+3 0 V
+Gpstroke
+11038 7125 M
+2 0 V
+Gpstroke
+11040 7125 M
+2 0 V
+Gpstroke
+11042 7125 M
+2 1 V
+Gpstroke
+11044 7126 M
+3 0 V
+Gpstroke
+11047 7126 M
+2 0 V
+Gpstroke
+11049 7126 M
+2 0 V
+Gpstroke
+11051 7126 M
+2 0 V
+Gpstroke
+11053 7126 M
+3 0 V
+Gpstroke
+11056 7126 M
+2 1 V
+Gpstroke
+11058 7127 M
+2 0 V
+Gpstroke
+11060 7127 M
+2 0 V
+Gpstroke
+11062 7127 M
+3 0 V
+Gpstroke
+11065 7127 M
+2 0 V
+Gpstroke
+11067 7127 M
+2 0 V
+Gpstroke
+11069 7127 M
+2 1 V
+Gpstroke
+11071 7128 M
+3 0 V
+Gpstroke
+11074 7128 M
+2 0 V
+Gpstroke
+11076 7128 M
+2 0 V
+Gpstroke
+11078 7128 M
+2 0 V
+Gpstroke
+11080 7128 M
+3 1 V
+Gpstroke
+11083 7129 M
+2 0 V
+Gpstroke
+11085 7129 M
+2 0 V
+Gpstroke
+11087 7129 M
+2 0 V
+Gpstroke
+11089 7129 M
+2 0 V
+Gpstroke
+11091 7129 M
+3 1 V
+Gpstroke
+11094 7130 M
+2 0 V
+Gpstroke
+11096 7130 M
+2 0 V
+Gpstroke
+11098 7130 M
+2 0 V
+Gpstroke
+11100 7130 M
+3 0 V
+Gpstroke
+11103 7130 M
+2 1 V
+Gpstroke
+11105 7131 M
+2 0 V
+Gpstroke
+11107 7131 M
+2 0 V
+Gpstroke
+11109 7131 M
+3 0 V
+Gpstroke
+11112 7131 M
+2 0 V
+Gpstroke
+11114 7131 M
+2 1 V
+Gpstroke
+11116 7132 M
+2 0 V
+Gpstroke
+11118 7132 M
+2 0 V
+Gpstroke
+11120 7132 M
+3 0 V
+Gpstroke
+11123 7132 M
+2 0 V
+Gpstroke
+11125 7132 M
+2 1 V
+Gpstroke
+11127 7133 M
+2 0 V
+Gpstroke
+11129 7133 M
+3 0 V
+Gpstroke
+11132 7133 M
+2 0 V
+Gpstroke
+11134 7133 M
+2 1 V
+Gpstroke
+11136 7134 M
+2 0 V
+Gpstroke
+11138 7134 M
+2 0 V
+Gpstroke
+11140 7134 M
+3 0 V
+Gpstroke
+11143 7134 M
+2 0 V
+Gpstroke
+11145 7134 M
+2 1 V
+Gpstroke
+11147 7135 M
+2 0 V
+Gpstroke
+11149 7135 M
+2 0 V
+Gpstroke
+11151 7135 M
+3 0 V
+Gpstroke
+11154 7135 M
+2 1 V
+Gpstroke
+11156 7136 M
+2 0 V
+Gpstroke
+11158 7136 M
+2 0 V
+Gpstroke
+11160 7136 M
+2 0 V
+Gpstroke
+11162 7136 M
+3 1 V
+Gpstroke
+11165 7137 M
+2 0 V
+Gpstroke
+11167 7137 M
+2 0 V
+Gpstroke
+11169 7137 M
+2 0 V
+Gpstroke
+11171 7137 M
+2 0 V
+Gpstroke
+11173 7137 M
+3 1 V
+Gpstroke
+11176 7138 M
+2 0 V
+Gpstroke
+11178 7138 M
+2 0 V
+Gpstroke
+11180 7138 M
+2 0 V
+Gpstroke
+11182 7138 M
+2 1 V
+Gpstroke
+11184 7139 M
+3 0 V
+Gpstroke
+11187 7139 M
+2 0 V
+Gpstroke
+11189 7139 M
+2 0 V
+Gpstroke
+11191 7139 M
+2 1 V
+Gpstroke
+11193 7140 M
+2 0 V
+Gpstroke
+11195 7140 M
+3 0 V
+Gpstroke
+11198 7140 M
+2 0 V
+Gpstroke
+11200 7140 M
+2 1 V
+Gpstroke
+11202 7141 M
+2 0 V
+Gpstroke
+11204 7141 M
+2 0 V
+Gpstroke
+11206 7141 M
+2 0 V
+Gpstroke
+11208 7141 M
+3 1 V
+Gpstroke
+11211 7142 M
+2 0 V
+Gpstroke
+11213 7142 M
+2 0 V
+Gpstroke
+11215 7142 M
+2 0 V
+Gpstroke
+11217 7142 M
+2 1 V
+Gpstroke
+11219 7143 M
+2 0 V
+Gpstroke
+11221 7143 M
+3 0 V
+Gpstroke
+11224 7143 M
+2 0 V
+Gpstroke
+11226 7143 M
+2 1 V
+Gpstroke
+11228 7144 M
+2 0 V
+Gpstroke
+11230 7144 M
+2 0 V
+Gpstroke
+11232 7144 M
+2 0 V
+Gpstroke
+11234 7144 M
+3 1 V
+Gpstroke
+11237 7145 M
+2 0 V
+Gpstroke
+11239 7145 M
+2 0 V
+Gpstroke
+11241 7145 M
+2 1 V
+Gpstroke
+11243 7146 M
+2 0 V
+Gpstroke
+11245 7146 M
+2 0 V
+Gpstroke
+11247 7146 M
+3 0 V
+Gpstroke
+11250 7146 M
+2 1 V
+Gpstroke
+11252 7147 M
+2 0 V
+Gpstroke
+11254 7147 M
+2 0 V
+Gpstroke
+11256 7147 M
+2 0 V
+Gpstroke
+11258 7147 M
+2 1 V
+Gpstroke
+11260 7148 M
+2 0 V
+Gpstroke
+11262 7148 M
+3 0 V
+Gpstroke
+11265 7148 M
+2 1 V
+Gpstroke
+11267 7149 M
+2 0 V
+Gpstroke
+11269 7149 M
+2 0 V
+Gpstroke
+11271 7149 M
+2 0 V
+Gpstroke
+11273 7149 M
+2 1 V
+Gpstroke
+11275 7150 M
+2 0 V
+Gpstroke
+11277 7150 M
+3 0 V
+Gpstroke
+11280 7150 M
+2 0 V
+Gpstroke
+11282 7150 M
+2 1 V
+Gpstroke
+11284 7151 M
+2 0 V
+Gpstroke
+11286 7151 M
+2 0 V
+Gpstroke
+11288 7151 M
+2 1 V
+Gpstroke
+11290 7152 M
+2 0 V
+Gpstroke
+11292 7152 M
+3 0 V
+Gpstroke
+11295 7152 M
+2 0 V
+Gpstroke
+11297 7152 M
+2 1 V
+Gpstroke
+11299 7153 M
+2 0 V
+Gpstroke
+11301 7153 M
+2 0 V
+Gpstroke
+11303 7153 M
+2 1 V
+Gpstroke
+11305 7154 M
+2 0 V
+Gpstroke
+11307 7154 M
+2 0 V
+Gpstroke
+11309 7154 M
+3 0 V
+Gpstroke
+11312 7154 M
+2 1 V
+Gpstroke
+11314 7155 M
+2 0 V
+Gpstroke
+11316 7155 M
+2 0 V
+Gpstroke
+11318 7155 M
+2 1 V
+Gpstroke
+11320 7156 M
+2 0 V
+Gpstroke
+11322 7156 M
+2 0 V
+Gpstroke
+11324 7156 M
+2 0 V
+Gpstroke
+11326 7156 M
+3 1 V
+Gpstroke
+11329 7157 M
+2 0 V
+Gpstroke
+11331 7157 M
+2 0 V
+Gpstroke
+11333 7157 M
+2 1 V
+Gpstroke
+11335 7158 M
+2 0 V
+Gpstroke
+11337 7158 M
+2 0 V
+Gpstroke
+11339 7158 M
+2 0 V
+Gpstroke
+11341 7158 M
+2 1 V
+Gpstroke
+11343 7159 M
+2 0 V
+Gpstroke
+11345 7159 M
+3 0 V
+Gpstroke
+11348 7159 M
+2 1 V
+Gpstroke
+11350 7160 M
+2 0 V
+Gpstroke
+11352 7160 M
+2 0 V
+Gpstroke
+11354 7160 M
+2 0 V
+Gpstroke
+11356 7160 M
+2 1 V
+Gpstroke
+11358 7161 M
+2 0 V
+Gpstroke
+11360 7161 M
+2 0 V
+Gpstroke
+11362 7161 M
+2 1 V
+Gpstroke
+11364 7162 M
+2 0 V
+Gpstroke
+11366 7162 M
+3 0 V
+Gpstroke
+11369 7162 M
+2 0 V
+Gpstroke
+11371 7162 M
+2 1 V
+Gpstroke
+11373 7163 M
+2 0 V
+Gpstroke
+11375 7163 M
+2 0 V
+Gpstroke
+11377 7163 M
+2 1 V
+Gpstroke
+11379 7164 M
+2 0 V
+Gpstroke
+11381 7164 M
+2 0 V
+Gpstroke
+11383 7164 M
+2 0 V
+Gpstroke
+11385 7164 M
+3 1 V
+Gpstroke
+11388 7165 M
+2 0 V
+Gpstroke
+11390 7165 M
+2 0 V
+Gpstroke
+11392 7165 M
+2 1 V
+Gpstroke
+11394 7166 M
+2 0 V
+Gpstroke
+11396 7166 M
+2 0 V
+Gpstroke
+11398 7166 M
+2 1 V
+Gpstroke
+11400 7167 M
+2 0 V
+Gpstroke
+11402 7167 M
+2 0 V
+Gpstroke
+11404 7167 M
+2 0 V
+Gpstroke
+11406 7167 M
+2 1 V
+Gpstroke
+11408 7168 M
+3 0 V
+Gpstroke
+11411 7168 M
+2 0 V
+Gpstroke
+11413 7168 M
+2 1 V
+Gpstroke
+11415 7169 M
+2 0 V
+Gpstroke
+11417 7169 M
+2 0 V
+Gpstroke
+11419 7169 M
+2 0 V
+Gpstroke
+11421 7169 M
+2 1 V
+Gpstroke
+11423 7170 M
+2 0 V
+Gpstroke
+11425 7170 M
+2 0 V
+Gpstroke
+11427 7170 M
+2 1 V
+Gpstroke
+11429 7171 M
+2 0 V
+Gpstroke
+11431 7171 M
+3 0 V
+Gpstroke
+11434 7171 M
+2 1 V
+Gpstroke
+11436 7172 M
+2 0 V
+Gpstroke
+11438 7172 M
+2 0 V
+Gpstroke
+11440 7172 M
+2 0 V
+Gpstroke
+11442 7172 M
+2 1 V
+Gpstroke
+11444 7173 M
+2 0 V
+Gpstroke
+11446 7173 M
+2 0 V
+Gpstroke
+11448 7173 M
+2 1 V
+Gpstroke
+11450 7174 M
+2 0 V
+Gpstroke
+11452 7174 M
+2 0 V
+Gpstroke
+11454 7174 M
+2 0 V
+Gpstroke
+11456 7174 M
+3 1 V
+Gpstroke
+11459 7175 M
+2 0 V
+Gpstroke
+11461 7175 M
+2 0 V
+Gpstroke
+11463 7175 M
+2 1 V
+Gpstroke
+11465 7176 M
+2 0 V
+Gpstroke
+11467 7176 M
+2 0 V
+Gpstroke
+11469 7176 M
+2 1 V
+Gpstroke
+11471 7177 M
+2 0 V
+Gpstroke
+11473 7177 M
+2 0 V
+Gpstroke
+11475 7177 M
+2 0 V
+Gpstroke
+11477 7177 M
+2 1 V
+Gpstroke
+11479 7178 M
+2 0 V
+Gpstroke
+11481 7178 M
+3 0 V
+Gpstroke
+11484 7178 M
+2 1 V
+Gpstroke
+11486 7179 M
+2 0 V
+Gpstroke
+11488 7179 M
+2 0 V
+Gpstroke
+11490 7179 M
+2 0 V
+Gpstroke
+11492 7179 M
+2 1 V
+Gpstroke
+11494 7180 M
+2 0 V
+Gpstroke
+11496 7180 M
+2 0 V
+Gpstroke
+11498 7180 M
+2 1 V
+Gpstroke
+11500 7181 M
+2 0 V
+Gpstroke
+11502 7181 M
+2 0 V
+Gpstroke
+11504 7181 M
+2 0 V
+Gpstroke
+11506 7181 M
+2 1 V
+Gpstroke
+11508 7182 M
+3 0 V
+Gpstroke
+11511 7182 M
+2 0 V
+Gpstroke
+11513 7182 M
+2 1 V
+Gpstroke
+11515 7183 M
+2 0 V
+Gpstroke
+11517 7183 M
+2 0 V
+Gpstroke
+11519 7183 M
+2 0 V
+Gpstroke
+11521 7183 M
+2 1 V
+Gpstroke
+11523 7184 M
+2 0 V
+Gpstroke
+11525 7184 M
+2 0 V
+Gpstroke
+11527 7184 M
+2 1 V
+Gpstroke
+11529 7185 M
+2 0 V
+Gpstroke
+11531 7185 M
+2 0 V
+Gpstroke
+11533 7185 M
+3 0 V
+Gpstroke
+11536 7185 M
+2 1 V
+Gpstroke
+11538 7186 M
+2 0 V
+Gpstroke
+11540 7186 M
+2 0 V
+Gpstroke
+11542 7186 M
+2 1 V
+Gpstroke
+11544 7187 M
+2 0 V
+Gpstroke
+11546 7187 M
+2 0 V
+Gpstroke
+11548 7187 M
+2 0 V
+Gpstroke
+11550 7187 M
+2 1 V
+Gpstroke
+11552 7188 M
+2 0 V
+Gpstroke
+11554 7188 M
+2 0 V
+Gpstroke
+11556 7188 M
+2 1 V
+Gpstroke
+11558 7189 M
+2 0 V
+Gpstroke
+11560 7189 M
+3 0 V
+Gpstroke
+11563 7189 M
+2 0 V
+Gpstroke
+11565 7189 M
+2 1 V
+Gpstroke
+11567 7190 M
+2 0 V
+Gpstroke
+11569 7190 M
+2 0 V
+Gpstroke
+11571 7190 M
+2 1 V
+Gpstroke
+11573 7191 M
+2 0 V
+Gpstroke
+11575 7191 M
+2 0 V
+Gpstroke
+11577 7191 M
+2 0 V
+Gpstroke
+11579 7191 M
+2 1 V
+Gpstroke
+11581 7192 M
+2 0 V
+Gpstroke
+11583 7192 M
+2 0 V
+Gpstroke
+11585 7192 M
+2 1 V
+Gpstroke
+11587 7193 M
+3 0 V
+Gpstroke
+11590 7193 M
+2 0 V
+Gpstroke
+11592 7193 M
+2 0 V
+Gpstroke
+11594 7193 M
+2 1 V
+Gpstroke
+11596 7194 M
+2 0 V
+Gpstroke
+11598 7194 M
+2 0 V
+Gpstroke
+11600 7194 M
+2 0 V
+Gpstroke
+11602 7194 M
+2 1 V
+Gpstroke
+11604 7195 M
+2 0 V
+Gpstroke
+11606 7195 M
+2 0 V
+Gpstroke
+11608 7195 M
+2 1 V
+Gpstroke
+11610 7196 M
+2 0 V
+Gpstroke
+11612 7196 M
+3 0 V
+Gpstroke
+11615 7196 M
+2 0 V
+Gpstroke
+11617 7196 M
+2 1 V
+Gpstroke
+11619 7197 M
+2 0 V
+Gpstroke
+11621 7197 M
+2 0 V
+Gpstroke
+11623 7197 M
+2 0 V
+Gpstroke
+11625 7197 M
+2 1 V
+Gpstroke
+11627 7198 M
+2 0 V
+Gpstroke
+11629 7198 M
+2 0 V
+Gpstroke
+11631 7198 M
+2 1 V
+Gpstroke
+11633 7199 M
+2 0 V
+Gpstroke
+11635 7199 M
+2 0 V
+Gpstroke
+11637 7199 M
+3 0 V
+Gpstroke
+11640 7199 M
+2 1 V
+Gpstroke
+11642 7200 M
+2 0 V
+Gpstroke
+11644 7200 M
+2 0 V
+Gpstroke
+11646 7200 M
+2 0 V
+Gpstroke
+11648 7200 M
+2 1 V
+Gpstroke
+11650 7201 M
+2 0 V
+Gpstroke
+11652 7201 M
+2 0 V
+Gpstroke
+11654 7201 M
+2 1 V
+Gpstroke
+11656 7202 M
+2 0 V
+Gpstroke
+11658 7202 M
+2 0 V
+Gpstroke
+11660 7202 M
+2 0 V
+Gpstroke
+11662 7202 M
+3 1 V
+Gpstroke
+11665 7203 M
+2 0 V
+Gpstroke
+11667 7203 M
+2 0 V
+Gpstroke
+11669 7203 M
+2 0 V
+Gpstroke
+11671 7203 M
+2 1 V
+Gpstroke
+11673 7204 M
+2 0 V
+Gpstroke
+11675 7204 M
+2 0 V
+Gpstroke
+11677 7204 M
+2 1 V
+Gpstroke
+11679 7205 M
+2 0 V
+Gpstroke
+11681 7205 M
+2 0 V
+Gpstroke
+11683 7205 M
+2 0 V
+Gpstroke
+11685 7205 M
+3 1 V
+Gpstroke
+11688 7206 M
+2 0 V
+Gpstroke
+11690 7206 M
+2 0 V
+Gpstroke
+11692 7206 M
+2 0 V
+Gpstroke
+11694 7206 M
+2 1 V
+Gpstroke
+11696 7207 M
+2 0 V
+Gpstroke
+11698 7207 M
+2 0 V
+Gpstroke
+11700 7207 M
+2 0 V
+Gpstroke
+11702 7207 M
+2 1 V
+Gpstroke
+11704 7208 M
+2 0 V
+Gpstroke
+11706 7208 M
+2 0 V
+Gpstroke
+11708 7208 M
+3 1 V
+Gpstroke
+11711 7209 M
+2 0 V
+Gpstroke
+11713 7209 M
+2 0 V
+Gpstroke
+11715 7209 M
+2 0 V
+Gpstroke
+11717 7209 M
+2 1 V
+Gpstroke
+11719 7210 M
+2 0 V
+Gpstroke
+11721 7210 M
+2 0 V
+Gpstroke
+11723 7210 M
+2 0 V
+Gpstroke
+11725 7210 M
+2 1 V
+Gpstroke
+11727 7211 M
+2 0 V
+Gpstroke
+11729 7211 M
+2 0 V
+Gpstroke
+11731 7211 M
+3 0 V
+Gpstroke
+11734 7211 M
+2 1 V
+Gpstroke
+11736 7212 M
+2 0 V
+Gpstroke
+11738 7212 M
+2 0 V
+Gpstroke
+11740 7212 M
+2 0 V
+Gpstroke
+11742 7212 M
+2 1 V
+Gpstroke
+11744 7213 M
+2 0 V
+Gpstroke
+11746 7213 M
+2 0 V
+Gpstroke
+11748 7213 M
+2 1 V
+Gpstroke
+11750 7214 M
+2 0 V
+Gpstroke
+11752 7214 M
+3 0 V
+Gpstroke
+11755 7214 M
+2 0 V
+Gpstroke
+11757 7214 M
+2 1 V
+Gpstroke
+11759 7215 M
+2 0 V
+Gpstroke
+11761 7215 M
+2 0 V
+Gpstroke
+11763 7215 M
+2 0 V
+Gpstroke
+11765 7215 M
+2 1 V
+Gpstroke
+11767 7216 M
+2 0 V
+Gpstroke
+11769 7216 M
+2 0 V
+Gpstroke
+11771 7216 M
+2 0 V
+Gpstroke
+11773 7216 M
+2 1 V
+Gpstroke
+11775 7217 M
+3 0 V
+Gpstroke
+11778 7217 M
+2 0 V
+Gpstroke
+11780 7217 M
+2 0 V
+Gpstroke
+11782 7217 M
+2 1 V
+Gpstroke
+11784 7218 M
+2 0 V
+Gpstroke
+11786 7218 M
+2 0 V
+Gpstroke
+11788 7218 M
+2 0 V
+Gpstroke
+11790 7218 M
+2 1 V
+Gpstroke
+11792 7219 M
+2 0 V
+Gpstroke
+11794 7219 M
+2 0 V
+Gpstroke
+11796 7219 M
+3 0 V
+Gpstroke
+11799 7219 M
+2 1 V
+Gpstroke
+11801 7220 M
+2 0 V
+Gpstroke
+11803 7220 M
+2 0 V
+Gpstroke
+11805 7220 M
+2 1 V
+Gpstroke
+11807 7221 M
+2 0 V
+Gpstroke
+11809 7221 M
+2 0 V
+Gpstroke
+11811 7221 M
+2 0 V
+Gpstroke
+11813 7221 M
+2 1 V
+Gpstroke
+11815 7222 M
+3 0 V
+Gpstroke
+11818 7222 M
+2 0 V
+Gpstroke
+11820 7222 M
+2 0 V
+Gpstroke
+11822 7222 M
+2 1 V
+Gpstroke
+11824 7223 M
+2 0 V
+Gpstroke
+11826 7223 M
+2 0 V
+Gpstroke
+11828 7223 M
+2 0 V
+Gpstroke
+11830 7223 M
+2 1 V
+Gpstroke
+11832 7224 M
+2 0 V
+Gpstroke
+11834 7224 M
+2 0 V
+Gpstroke
+11836 7224 M
+3 0 V
+Gpstroke
+11839 7224 M
+2 1 V
+Gpstroke
+11841 7225 M
+2 0 V
+Gpstroke
+11843 7225 M
+2 0 V
+Gpstroke
+11845 7225 M
+2 0 V
+Gpstroke
+11847 7225 M
+2 1 V
+Gpstroke
+11849 7226 M
+2 0 V
+Gpstroke
+11851 7226 M
+2 0 V
+Gpstroke
+11853 7226 M
+2 0 V
+Gpstroke
+11855 7226 M
+3 1 V
+Gpstroke
+11858 7227 M
+2 0 V
+Gpstroke
+11860 7227 M
+2 0 V
+Gpstroke
+11862 7227 M
+2 0 V
+Gpstroke
+11864 7227 M
+2 1 V
+Gpstroke
+11866 7228 M
+2 0 V
+Gpstroke
+11868 7228 M
+2 0 V
+Gpstroke
+11870 7228 M
+2 0 V
+Gpstroke
+11872 7228 M
+2 1 V
+Gpstroke
+11874 7229 M
+3 0 V
+Gpstroke
+11877 7229 M
+2 0 V
+Gpstroke
+11879 7229 M
+2 0 V
+Gpstroke
+11881 7229 M
+2 1 V
+Gpstroke
+11883 7230 M
+2 0 V
+Gpstroke
+11885 7230 M
+2 0 V
+Gpstroke
+11887 7230 M
+2 0 V
+Gpstroke
+11889 7230 M
+2 1 V
+Gpstroke
+11891 7231 M
+2 0 V
+Gpstroke
+11893 7231 M
+3 0 V
+Gpstroke
+11896 7231 M
+2 0 V
+Gpstroke
+11898 7231 M
+2 1 V
+Gpstroke
+11900 7232 M
+2 0 V
+Gpstroke
+11902 7232 M
+2 0 V
+Gpstroke
+11904 7232 M
+2 0 V
+Gpstroke
+11906 7232 M
+2 1 V
+Gpstroke
+11908 7233 M
+2 0 V
+Gpstroke
+11910 7233 M
+2 0 V
+Gpstroke
+11912 7233 M
+3 0 V
+Gpstroke
+11915 7233 M
+2 1 V
+Gpstroke
+11917 7234 M
+2 0 V
+Gpstroke
+11919 7234 M
+2 0 V
+Gpstroke
+11921 7234 M
+2 0 V
+Gpstroke
+11923 7234 M
+2 1 V
+Gpstroke
+11925 7235 M
+2 0 V
+Gpstroke
+11927 7235 M
+2 0 V
+Gpstroke
+11929 7235 M
+2 0 V
+Gpstroke
+11931 7235 M
+3 1 V
+Gpstroke
+11934 7236 M
+2 0 V
+Gpstroke
+11936 7236 M
+2 0 V
+Gpstroke
+11938 7236 M
+2 1 V
+Gpstroke
+11940 7237 M
+2 0 V
+Gpstroke
+11942 7237 M
+2 0 V
+Gpstroke
+11944 7237 M
+2 0 V
+Gpstroke
+11946 7237 M
+2 1 V
+Gpstroke
+11948 7238 M
+2 0 V
+Gpstroke
+11950 7238 M
+3 0 V
+Gpstroke
+11953 7238 M
+2 0 V
+Gpstroke
+11955 7238 M
+2 1 V
+Gpstroke
+11957 7239 M
+2 0 V
+Gpstroke
+11959 7239 M
+2 0 V
+Gpstroke
+11961 7239 M
+2 0 V
+Gpstroke
+11963 7239 M
+2 1 V
+Gpstroke
+11965 7240 M
+2 0 V
+Gpstroke
+11967 7240 M
+2 0 V
+Gpstroke
+11969 7240 M
+3 0 V
+Gpstroke
+11972 7240 M
+2 1 V
+Gpstroke
+11974 7241 M
+2 0 V
+Gpstroke
+11976 7241 M
+2 0 V
+Gpstroke
+11978 7241 M
+2 0 V
+Gpstroke
+11980 7241 M
+2 1 V
+Gpstroke
+11982 7242 M
+2 0 V
+Gpstroke
+11984 7242 M
+2 0 V
+Gpstroke
+11986 7242 M
+3 0 V
+Gpstroke
+11989 7242 M
+2 1 V
+Gpstroke
+11991 7243 M
+2 0 V
+Gpstroke
+11993 7243 M
+2 0 V
+Gpstroke
+11995 7243 M
+2 0 V
+Gpstroke
+11997 7243 M
+2 1 V
+Gpstroke
+11999 7244 M
+2 0 V
+Gpstroke
+12001 7244 M
+2 0 V
+Gpstroke
+12003 7244 M
+2 0 V
+Gpstroke
+12005 7244 M
+3 1 V
+Gpstroke
+12008 7245 M
+2 0 V
+Gpstroke
+12010 7245 M
+2 0 V
+Gpstroke
+12012 7245 M
+2 0 V
+Gpstroke
+12014 7245 M
+2 1 V
+Gpstroke
+12016 7246 M
+2 0 V
+Gpstroke
+12018 7246 M
+2 0 V
+Gpstroke
+12020 7246 M
+2 0 V
+Gpstroke
+12022 7246 M
+2 1 V
+Gpstroke
+12024 7247 M
+3 0 V
+Gpstroke
+12027 7247 M
+2 0 V
+Gpstroke
+12029 7247 M
+2 0 V
+Gpstroke
+12031 7247 M
+2 1 V
+Gpstroke
+12033 7248 M
+2 0 V
+Gpstroke
+12035 7248 M
+2 0 V
+Gpstroke
+12037 7248 M
+2 0 V
+Gpstroke
+12039 7248 M
+2 1 V
+Gpstroke
+12041 7249 M
+3 0 V
+Gpstroke
+12044 7249 M
+2 0 V
+Gpstroke
+12046 7249 M
+2 0 V
+Gpstroke
+12048 7249 M
+2 1 V
+Gpstroke
+12050 7250 M
+2 0 V
+Gpstroke
+12052 7250 M
+2 0 V
+Gpstroke
+12054 7250 M
+2 0 V
+Gpstroke
+12056 7250 M
+2 1 V
+Gpstroke
+12058 7251 M
+2 0 V
+Gpstroke
+12060 7251 M
+3 0 V
+Gpstroke
+12063 7251 M
+2 0 V
+Gpstroke
+12065 7251 M
+2 1 V
+Gpstroke
+12067 7252 M
+2 0 V
+Gpstroke
+12069 7252 M
+2 0 V
+Gpstroke
+12071 7252 M
+2 0 V
+Gpstroke
+12073 7252 M
+2 1 V
+Gpstroke
+12075 7253 M
+2 0 V
+Gpstroke
+12077 7253 M
+3 0 V
+Gpstroke
+12080 7253 M
+2 0 V
+Gpstroke
+12082 7253 M
+2 1 V
+Gpstroke
+12084 7254 M
+2 0 V
+Gpstroke
+12086 7254 M
+2 0 V
+Gpstroke
+12088 7254 M
+2 0 V
+Gpstroke
+12090 7254 M
+2 1 V
+Gpstroke
+12092 7255 M
+2 0 V
+Gpstroke
+12094 7255 M
+2 0 V
+Gpstroke
+12096 7255 M
+3 0 V
+Gpstroke
+12099 7255 M
+2 1 V
+Gpstroke
+12101 7256 M
+2 0 V
+Gpstroke
+12103 7256 M
+2 0 V
+Gpstroke
+12105 7256 M
+2 1 V
+Gpstroke
+12107 7257 M
+2 0 V
+Gpstroke
+12109 7257 M
+2 0 V
+Gpstroke
+12111 7257 M
+2 0 V
+Gpstroke
+12113 7257 M
+3 1 V
+Gpstroke
+12116 7258 M
+2 0 V
+Gpstroke
+12118 7258 M
+2 0 V
+Gpstroke
+12120 7258 M
+2 0 V
+Gpstroke
+12122 7258 M
+2 1 V
+Gpstroke
+12124 7259 M
+2 0 V
+Gpstroke
+12126 7259 M
+2 0 V
+Gpstroke
+12128 7259 M
+2 0 V
+Gpstroke
+12130 7259 M
+2 1 V
+Gpstroke
+12132 7260 M
+3 0 V
+Gpstroke
+12135 7260 M
+2 0 V
+Gpstroke
+12137 7260 M
+2 0 V
+Gpstroke
+12139 7260 M
+2 1 V
+Gpstroke
+12141 7261 M
+2 0 V
+Gpstroke
+12143 7261 M
+2 0 V
+Gpstroke
+12145 7261 M
+2 0 V
+Gpstroke
+12147 7261 M
+2 1 V
+Gpstroke
+12149 7262 M
+2 0 V
+Gpstroke
+12151 7262 M
+3 0 V
+Gpstroke
+12154 7262 M
+2 0 V
+Gpstroke
+12156 7262 M
+2 1 V
+Gpstroke
+12158 7263 M
+2 0 V
+Gpstroke
+12160 7263 M
+2 0 V
+Gpstroke
+12162 7263 M
+2 0 V
+Gpstroke
+12164 7263 M
+2 1 V
+Gpstroke
+12166 7264 M
+2 0 V
+Gpstroke
+12168 7264 M
+3 0 V
+Gpstroke
+12171 7264 M
+2 0 V
+Gpstroke
+12173 7264 M
+2 1 V
+Gpstroke
+12175 7265 M
+2 0 V
+Gpstroke
+12177 7265 M
+2 0 V
+Gpstroke
+12179 7265 M
+2 0 V
+Gpstroke
+12181 7265 M
+2 1 V
+Gpstroke
+12183 7266 M
+2 0 V
+Gpstroke
+12185 7266 M
+2 0 V
+Gpstroke
+12187 7266 M
+3 0 V
+Gpstroke
+12190 7266 M
+2 1 V
+Gpstroke
+12192 7267 M
+2 0 V
+Gpstroke
+12194 7267 M
+2 0 V
+Gpstroke
+12196 7267 M
+2 1 V
+Gpstroke
+12198 7268 M
+2 0 V
+Gpstroke
+12200 7268 M
+2 0 V
+Gpstroke
+12202 7268 M
+2 0 V
+Gpstroke
+12204 7268 M
+3 1 V
+Gpstroke
+12207 7269 M
+2 0 V
+Gpstroke
+12209 7269 M
+2 0 V
+Gpstroke
+12211 7269 M
+2 0 V
+Gpstroke
+12213 7269 M
+2 1 V
+Gpstroke
+12215 7270 M
+2 0 V
+Gpstroke
+12217 7270 M
+2 0 V
+Gpstroke
+12219 7270 M
+2 0 V
+Gpstroke
+12221 7270 M
+2 1 V
+Gpstroke
+12223 7271 M
+3 0 V
+Gpstroke
+12226 7271 M
+2 0 V
+Gpstroke
+12228 7271 M
+2 0 V
+Gpstroke
+12230 7271 M
+2 1 V
+Gpstroke
+12232 7272 M
+2 0 V
+Gpstroke
+12234 7272 M
+2 0 V
+Gpstroke
+12236 7272 M
+2 0 V
+Gpstroke
+12238 7272 M
+2 1 V
+Gpstroke
+12240 7273 M
+2 0 V
+Gpstroke
+12242 7273 M
+3 0 V
+Gpstroke
+12245 7273 M
+2 0 V
+Gpstroke
+12247 7273 M
+2 1 V
+Gpstroke
+12249 7274 M
+2 0 V
+Gpstroke
+12251 7274 M
+2 0 V
+Gpstroke
+12253 7274 M
+2 0 V
+Gpstroke
+12255 7274 M
+2 1 V
+Gpstroke
+12257 7275 M
+2 0 V
+Gpstroke
+12259 7275 M
+2 0 V
+Gpstroke
+12261 7275 M
+3 1 V
+Gpstroke
+12264 7276 M
+2 0 V
+Gpstroke
+12266 7276 M
+2 0 V
+Gpstroke
+12268 7276 M
+2 0 V
+Gpstroke
+12270 7276 M
+2 1 V
+Gpstroke
+12272 7277 M
+2 0 V
+Gpstroke
+12274 7277 M
+2 0 V
+Gpstroke
+12276 7277 M
+2 0 V
+Gpstroke
+12278 7277 M
+3 1 V
+Gpstroke
+12281 7278 M
+2 0 V
+Gpstroke
+12283 7278 M
+2 0 V
+Gpstroke
+12285 7278 M
+2 0 V
+Gpstroke
+12287 7278 M
+2 1 V
+Gpstroke
+12289 7279 M
+2 0 V
+Gpstroke
+12291 7279 M
+2 0 V
+Gpstroke
+12293 7279 M
+2 0 V
+Gpstroke
+12295 7279 M
+2 1 V
+Gpstroke
+12297 7280 M
+3 0 V
+Gpstroke
+12300 7280 M
+2 0 V
+Gpstroke
+12302 7280 M
+2 0 V
+Gpstroke
+12304 7280 M
+2 1 V
+Gpstroke
+12306 7281 M
+2 0 V
+Gpstroke
+12308 7281 M
+2 0 V
+Gpstroke
+12310 7281 M
+2 0 V
+Gpstroke
+12312 7281 M
+2 1 V
+Gpstroke
+12314 7282 M
+2 0 V
+Gpstroke
+12316 7282 M
+3 0 V
+Gpstroke
+12319 7282 M
+2 1 V
+Gpstroke
+12321 7283 M
+2 0 V
+Gpstroke
+12323 7283 M
+2 0 V
+Gpstroke
+12325 7283 M
+2 0 V
+Gpstroke
+12327 7283 M
+2 1 V
+Gpstroke
+12329 7284 M
+2 0 V
+Gpstroke
+12331 7284 M
+2 0 V
+Gpstroke
+12333 7284 M
+2 0 V
+Gpstroke
+12335 7284 M
+3 1 V
+Gpstroke
+12338 7285 M
+2 0 V
+Gpstroke
+12340 7285 M
+2 0 V
+Gpstroke
+12342 7285 M
+2 0 V
+Gpstroke
+12344 7285 M
+2 1 V
+Gpstroke
+12346 7286 M
+2 0 V
+Gpstroke
+12348 7286 M
+2 0 V
+Gpstroke
+12350 7286 M
+2 0 V
+Gpstroke
+12352 7286 M
+2 1 V
+Gpstroke
+12354 7287 M
+3 0 V
+Gpstroke
+12357 7287 M
+2 0 V
+Gpstroke
+12359 7287 M
+2 0 V
+Gpstroke
+12361 7287 M
+2 1 V
+Gpstroke
+12363 7288 M
+2 0 V
+Gpstroke
+12365 7288 M
+2 0 V
+Gpstroke
+12367 7288 M
+2 0 V
+Gpstroke
+12369 7288 M
+2 1 V
+Gpstroke
+12371 7289 M
+2 0 V
+Gpstroke
+12373 7289 M
+3 0 V
+Gpstroke
+12376 7289 M
+2 1 V
+Gpstroke
+12378 7290 M
+2 0 V
+Gpstroke
+12380 7290 M
+2 0 V
+Gpstroke
+12382 7290 M
+2 0 V
+Gpstroke
+12384 7290 M
+2 1 V
+Gpstroke
+12386 7291 M
+2 0 V
+Gpstroke
+12388 7291 M
+2 0 V
+Gpstroke
+12390 7291 M
+2 0 V
+Gpstroke
+12392 7291 M
+3 1 V
+Gpstroke
+12395 7292 M
+2 0 V
+Gpstroke
+12397 7292 M
+2 0 V
+Gpstroke
+12399 7292 M
+2 0 V
+Gpstroke
+12401 7292 M
+2 1 V
+Gpstroke
+12403 7293 M
+2 0 V
+Gpstroke
+12405 7293 M
+2 0 V
+Gpstroke
+12407 7293 M
+2 0 V
+Gpstroke
+12409 7293 M
+2 1 V
+Gpstroke
+12411 7294 M
+3 0 V
+Gpstroke
+12414 7294 M
+2 0 V
+Gpstroke
+12416 7294 M
+2 0 V
+Gpstroke
+12418 7294 M
+2 1 V
+Gpstroke
+12420 7295 M
+2 0 V
+Gpstroke
+12422 7295 M
+2 0 V
+Gpstroke
+12424 7295 M
+2 1 V
+Gpstroke
+12426 7296 M
+2 0 V
+Gpstroke
+12428 7296 M
+2 0 V
+Gpstroke
+12430 7296 M
+3 0 V
+Gpstroke
+12433 7296 M
+2 1 V
+Gpstroke
+12435 7297 M
+2 0 V
+Gpstroke
+12437 7297 M
+2 0 V
+Gpstroke
+12439 7297 M
+2 0 V
+Gpstroke
+12441 7297 M
+2 1 V
+Gpstroke
+12443 7298 M
+2 0 V
+Gpstroke
+12445 7298 M
+2 0 V
+Gpstroke
+12447 7298 M
+2 0 V
+Gpstroke
+12449 7298 M
+3 1 V
+Gpstroke
+12452 7299 M
+2 0 V
+Gpstroke
+12454 7299 M
+2 0 V
+Gpstroke
+12456 7299 M
+2 0 V
+Gpstroke
+12458 7299 M
+2 1 V
+Gpstroke
+12460 7300 M
+2 0 V
+Gpstroke
+12462 7300 M
+2 0 V
+Gpstroke
+12464 7300 M
+2 0 V
+Gpstroke
+12466 7300 M
+2 1 V
+Gpstroke
+12468 7301 M
+3 0 V
+Gpstroke
+12471 7301 M
+2 0 V
+Gpstroke
+12473 7301 M
+2 1 V
+Gpstroke
+12475 7302 M
+2 0 V
+Gpstroke
+12477 7302 M
+2 0 V
+Gpstroke
+12479 7302 M
+2 0 V
+Gpstroke
+12481 7302 M
+2 1 V
+Gpstroke
+12483 7303 M
+2 0 V
+Gpstroke
+12485 7303 M
+2 0 V
+Gpstroke
+12487 7303 M
+3 0 V
+Gpstroke
+12490 7303 M
+2 1 V
+Gpstroke
+12492 7304 M
+2 0 V
+Gpstroke
+12494 7304 M
+2 0 V
+Gpstroke
+12496 7304 M
+2 0 V
+Gpstroke
+12498 7304 M
+2 1 V
+Gpstroke
+12500 7305 M
+2 0 V
+Gpstroke
+12502 7305 M
+2 0 V
+Gpstroke
+12504 7305 M
+2 0 V
+Gpstroke
+12506 7305 M
+3 1 V
+Gpstroke
+12509 7306 M
+2 0 V
+Gpstroke
+12511 7306 M
+2 0 V
+Gpstroke
+12513 7306 M
+2 0 V
+Gpstroke
+12515 7306 M
+2 1 V
+Gpstroke
+12517 7307 M
+2 0 V
+Gpstroke
+12519 7307 M
+2 0 V
+Gpstroke
+12521 7307 M
+2 1 V
+Gpstroke
+12523 7308 M
+2 0 V
+Gpstroke
+12525 7308 M
+3 0 V
+Gpstroke
+12528 7308 M
+2 0 V
+Gpstroke
+12530 7308 M
+2 1 V
+Gpstroke
+12532 7309 M
+2 0 V
+Gpstroke
+12534 7309 M
+2 0 V
+Gpstroke
+12536 7309 M
+2 0 V
+Gpstroke
+12538 7309 M
+2 1 V
+Gpstroke
+12540 7310 M
+2 0 V
+Gpstroke
+12542 7310 M
+2 0 V
+Gpstroke
+12544 7310 M
+2 0 V
+Gpstroke
+12546 7310 M
+3 1 V
+Gpstroke
+12549 7311 M
+2 0 V
+Gpstroke
+12551 7311 M
+2 0 V
+Gpstroke
+12553 7311 M
+2 0 V
+Gpstroke
+12555 7311 M
+2 1 V
+Gpstroke
+12557 7312 M
+2 0 V
+Gpstroke
+12559 7312 M
+2 0 V
+Gpstroke
+12561 7312 M
+2 0 V
+Gpstroke
+12563 7312 M
+2 1 V
+Gpstroke
+12565 7313 M
+3 0 V
+Gpstroke
+12568 7313 M
+2 0 V
+Gpstroke
+12570 7313 M
+2 1 V
+Gpstroke
+12572 7314 M
+2 0 V
+Gpstroke
+12574 7314 M
+2 0 V
+Gpstroke
+12576 7314 M
+2 0 V
+Gpstroke
+12578 7314 M
+2 1 V
+Gpstroke
+12580 7315 M
+2 0 V
+Gpstroke
+12582 7315 M
+2 0 V
+Gpstroke
+12584 7315 M
+3 0 V
+Gpstroke
+12587 7315 M
+2 1 V
+Gpstroke
+12589 7316 M
+2 0 V
+Gpstroke
+12591 7316 M
+2 0 V
+Gpstroke
+12593 7316 M
+2 0 V
+Gpstroke
+12595 7316 M
+2 1 V
+Gpstroke
+12597 7317 M
+2 0 V
+Gpstroke
+12599 7317 M
+2 0 V
+Gpstroke
+12601 7317 M
+2 0 V
+Gpstroke
+12603 7317 M
+3 1 V
+Gpstroke
+12606 7318 M
+2 0 V
+Gpstroke
+12608 7318 M
+2 0 V
+Gpstroke
+12610 7318 M
+2 0 V
+Gpstroke
+12612 7318 M
+2 1 V
+Gpstroke
+12614 7319 M
+2 0 V
+Gpstroke
+12616 7319 M
+2 0 V
+Gpstroke
+12618 7319 M
+2 1 V
+Gpstroke
+12620 7320 M
+2 0 V
+Gpstroke
+12622 7320 M
+3 0 V
+Gpstroke
+12625 7320 M
+2 0 V
+Gpstroke
+12627 7320 M
+2 1 V
+Gpstroke
+12629 7321 M
+2 0 V
+Gpstroke
+12631 7321 M
+2 0 V
+Gpstroke
+12633 7321 M
+2 0 V
+Gpstroke
+12635 7321 M
+2 1 V
+Gpstroke
+12637 7322 M
+2 0 V
+Gpstroke
+12639 7322 M
+2 0 V
+Gpstroke
+12641 7322 M
+3 0 V
+Gpstroke
+12644 7322 M
+2 1 V
+Gpstroke
+12646 7323 M
+2 0 V
+Gpstroke
+12648 7323 M
+2 0 V
+Gpstroke
+12650 7323 M
+2 0 V
+Gpstroke
+12652 7323 M
+2 1 V
+Gpstroke
+12654 7324 M
+2 0 V
+Gpstroke
+12656 7324 M
+2 0 V
+Gpstroke
+12658 7324 M
+2 0 V
+Gpstroke
+12660 7324 M
+2 1 V
+Gpstroke
+12662 7325 M
+3 0 V
+Gpstroke
+12665 7325 M
+2 0 V
+Gpstroke
+12667 7325 M
+2 1 V
+Gpstroke
+12669 7326 M
+2 0 V
+Gpstroke
+12671 7326 M
+2 0 V
+Gpstroke
+12673 7326 M
+2 0 V
+Gpstroke
+12675 7326 M
+2 1 V
+Gpstroke
+12677 7327 M
+2 0 V
+Gpstroke
+12679 7327 M
+2 0 V
+Gpstroke
+12681 7327 M
+3 0 V
+Gpstroke
+12684 7327 M
+2 1 V
+Gpstroke
+12686 7328 M
+2 0 V
+Gpstroke
+12688 7328 M
+2 0 V
+Gpstroke
+12690 7328 M
+2 0 V
+Gpstroke
+12692 7328 M
+2 1 V
+Gpstroke
+12694 7329 M
+2 0 V
+Gpstroke
+12696 7329 M
+2 0 V
+Gpstroke
+12698 7329 M
+2 0 V
+Gpstroke
+12700 7329 M
+3 1 V
+Gpstroke
+12703 7330 M
+2 0 V
+Gpstroke
+12705 7330 M
+2 0 V
+Gpstroke
+12707 7330 M
+2 0 V
+Gpstroke
+12709 7330 M
+2 1 V
+Gpstroke
+12711 7331 M
+2 0 V
+Gpstroke
+12713 7331 M
+2 0 V
+Gpstroke
+12715 7331 M
+2 1 V
+Gpstroke
+12717 7332 M
+2 0 V
+Gpstroke
+12719 7332 M
+3 0 V
+Gpstroke
+12722 7332 M
+2 0 V
+Gpstroke
+12724 7332 M
+2 1 V
+Gpstroke
+12726 7333 M
+2 0 V
+Gpstroke
+12728 7333 M
+2 0 V
+Gpstroke
+12730 7333 M
+2 0 V
+Gpstroke
+12732 7333 M
+2 1 V
+Gpstroke
+12734 7334 M
+2 0 V
+Gpstroke
+12736 7334 M
+2 0 V
+Gpstroke
+12738 7334 M
+3 0 V
+Gpstroke
+12741 7334 M
+2 1 V
+Gpstroke
+12743 7335 M
+2 0 V
+Gpstroke
+12745 7335 M
+2 0 V
+Gpstroke
+12747 7335 M
+2 0 V
+Gpstroke
+12749 7335 M
+2 1 V
+Gpstroke
+12751 7336 M
+2 0 V
+Gpstroke
+12753 7336 M
+2 0 V
+Gpstroke
+12755 7336 M
+2 0 V
+Gpstroke
+12757 7336 M
+3 1 V
+Gpstroke
+12760 7337 M
+2 0 V
+Gpstroke
+12762 7337 M
+2 0 V
+Gpstroke
+12764 7337 M
+2 0 V
+Gpstroke
+12766 7337 M
+2 1 V
+Gpstroke
+12768 7338 M
+2 0 V
+Gpstroke
+12770 7338 M
+2 0 V
+Gpstroke
+12772 7338 M
+2 1 V
+Gpstroke
+12774 7339 M
+2 0 V
+Gpstroke
+12776 7339 M
+2 0 V
+Gpstroke
+12778 7339 M
+3 0 V
+Gpstroke
+12781 7339 M
+2 1 V
+Gpstroke
+12783 7340 M
+2 0 V
+Gpstroke
+12785 7340 M
+2 0 V
+Gpstroke
+12787 7340 M
+2 0 V
+Gpstroke
+12789 7340 M
+2 1 V
+Gpstroke
+12791 7341 M
+2 0 V
+Gpstroke
+12793 7341 M
+2 0 V
+Gpstroke
+12795 7341 M
+2 0 V
+Gpstroke
+12797 7341 M
+3 1 V
+Gpstroke
+12800 7342 M
+2 0 V
+Gpstroke
+12802 7342 M
+2 0 V
+Gpstroke
+12804 7342 M
+2 0 V
+Gpstroke
+12806 7342 M
+2 1 V
+Gpstroke
+12808 7343 M
+2 0 V
+Gpstroke
+12810 7343 M
+2 0 V
+Gpstroke
+12812 7343 M
+2 0 V
+Gpstroke
+12814 7343 M
+2 1 V
+Gpstroke
+12816 7344 M
+3 0 V
+Gpstroke
+12819 7344 M
+2 0 V
+Gpstroke
+12821 7344 M
+2 1 V
+Gpstroke
+12823 7345 M
+2 0 V
+Gpstroke
+12825 7345 M
+2 0 V
+Gpstroke
+12827 7345 M
+2 0 V
+Gpstroke
+12829 7345 M
+2 1 V
+Gpstroke
+12831 7346 M
+2 0 V
+Gpstroke
+12833 7346 M
+2 0 V
+Gpstroke
+12835 7346 M
+3 0 V
+Gpstroke
+12838 7346 M
+2 1 V
+Gpstroke
+12840 7347 M
+2 0 V
+Gpstroke
+12842 7347 M
+2 0 V
+Gpstroke
+12844 7347 M
+2 0 V
+Gpstroke
+12846 7347 M
+2 1 V
+Gpstroke
+12848 7348 M
+2 0 V
+Gpstroke
+12850 7348 M
+2 0 V
+Gpstroke
+12852 7348 M
+2 0 V
+Gpstroke
+12854 7348 M
+3 1 V
+Gpstroke
+12857 7349 M
+2 0 V
+Gpstroke
+12859 7349 M
+2 0 V
+Gpstroke
+12861 7349 M
+2 0 V
+Gpstroke
+12863 7349 M
+2 1 V
+Gpstroke
+12865 7350 M
+2 0 V
+Gpstroke
+12867 7350 M
+2 0 V
+Gpstroke
+12869 7350 M
+2 0 V
+Gpstroke
+12871 7350 M
+2 1 V
+Gpstroke
+12873 7351 M
+3 0 V
+Gpstroke
+12876 7351 M
+2 0 V
+Gpstroke
+12878 7351 M
+2 1 V
+Gpstroke
+12880 7352 M
+2 0 V
+Gpstroke
+12882 7352 M
+2 0 V
+Gpstroke
+12884 7352 M
+2 0 V
+Gpstroke
+12886 7352 M
+2 1 V
+Gpstroke
+12888 7353 M
+2 0 V
+Gpstroke
+12890 7353 M
+2 0 V
+Gpstroke
+12892 7353 M
+3 0 V
+Gpstroke
+12895 7353 M
+2 1 V
+Gpstroke
+12897 7354 M
+2 0 V
+Gpstroke
+12899 7354 M
+2 0 V
+Gpstroke
+12901 7354 M
+2 0 V
+Gpstroke
+12903 7354 M
+2 1 V
+Gpstroke
+12905 7355 M
+2 0 V
+Gpstroke
+12907 7355 M
+2 0 V
+Gpstroke
+12909 7355 M
+2 0 V
+Gpstroke
+12911 7355 M
+3 1 V
+Gpstroke
+12914 7356 M
+2 0 V
+Gpstroke
+12916 7356 M
+2 0 V
+Gpstroke
+12918 7356 M
+2 0 V
+Gpstroke
+12920 7356 M
+2 1 V
+Gpstroke
+12922 7357 M
+2 0 V
+Gpstroke
+12924 7357 M
+2 0 V
+Gpstroke
+12926 7357 M
+2 0 V
+Gpstroke
+12928 7357 M
+2 1 V
+Gpstroke
+12930 7358 M
+3 0 V
+Gpstroke
+12933 7358 M
+2 0 V
+Gpstroke
+12935 7358 M
+2 1 V
+Gpstroke
+12937 7359 M
+2 0 V
+Gpstroke
+12939 7359 M
+2 0 V
+Gpstroke
+12941 7359 M
+2 0 V
+Gpstroke
+12943 7359 M
+2 1 V
+Gpstroke
+12945 7360 M
+2 0 V
+Gpstroke
+12947 7360 M
+2 0 V
+Gpstroke
+12949 7360 M
+2 0 V
+Gpstroke
+12951 7360 M
+3 1 V
+Gpstroke
+12954 7361 M
+2 0 V
+Gpstroke
+12956 7361 M
+2 0 V
+Gpstroke
+12958 7361 M
+2 0 V
+Gpstroke
+12960 7361 M
+2 1 V
+Gpstroke
+12962 7362 M
+2 0 V
+Gpstroke
+12964 7362 M
+2 0 V
+Gpstroke
+12966 7362 M
+2 0 V
+Gpstroke
+12968 7362 M
+2 1 V
+Gpstroke
+12970 7363 M
+3 0 V
+Gpstroke
+12973 7363 M
+2 0 V
+Gpstroke
+12975 7363 M
+2 0 V
+Gpstroke
+12977 7363 M
+2 1 V
+Gpstroke
+12979 7364 M
+2 0 V
+Gpstroke
+12981 7364 M
+2 0 V
+Gpstroke
+12983 7364 M
+2 0 V
+Gpstroke
+12985 7364 M
+2 1 V
+Gpstroke
+12987 7365 M
+2 0 V
+Gpstroke
+12989 7365 M
+3 0 V
+Gpstroke
+12992 7365 M
+2 1 V
+Gpstroke
+12994 7366 M
+2 0 V
+Gpstroke
+12996 7366 M
+2 0 V
+Gpstroke
+12998 7366 M
+2 0 V
+Gpstroke
+13000 7366 M
+2 1 V
+Gpstroke
+13002 7367 M
+2 0 V
+Gpstroke
+13004 7367 M
+2 0 V
+Gpstroke
+13006 7367 M
+2 0 V
+Gpstroke
+13008 7367 M
+3 1 V
+Gpstroke
+13011 7368 M
+2 0 V
+Gpstroke
+13013 7368 M
+2 0 V
+Gpstroke
+13015 7368 M
+2 0 V
+Gpstroke
+13017 7368 M
+2 1 V
+Gpstroke
+13019 7369 M
+2 0 V
+Gpstroke
+13021 7369 M
+2 0 V
+Gpstroke
+13023 7369 M
+2 0 V
+Gpstroke
+13025 7369 M
+2 1 V
+Gpstroke
+13027 7370 M
+3 0 V
+Gpstroke
+13030 7370 M
+2 0 V
+Gpstroke
+13032 7370 M
+2 0 V
+Gpstroke
+13034 7370 M
+2 1 V
+Gpstroke
+13036 7371 M
+2 0 V
+Gpstroke
+13038 7371 M
+2 0 V
+Gpstroke
+13040 7371 M
+2 0 V
+Gpstroke
+13042 7371 M
+2 1 V
+Gpstroke
+13044 7372 M
+2 0 V
+Gpstroke
+13046 7372 M
+3 0 V
+Gpstroke
+13049 7372 M
+2 1 V
+Gpstroke
+13051 7373 M
+2 0 V
+Gpstroke
+13053 7373 M
+2 0 V
+Gpstroke
+13055 7373 M
+2 0 V
+Gpstroke
+13057 7373 M
+2 1 V
+Gpstroke
+13059 7374 M
+2 0 V
+Gpstroke
+13061 7374 M
+2 0 V
+Gpstroke
+13063 7374 M
+2 0 V
+Gpstroke
+13065 7374 M
+3 1 V
+Gpstroke
+13068 7375 M
+2 0 V
+Gpstroke
+13070 7375 M
+2 0 V
+Gpstroke
+13072 7375 M
+2 0 V
+Gpstroke
+13074 7375 M
+2 1 V
+Gpstroke
+13076 7376 M
+2 0 V
+Gpstroke
+13078 7376 M
+2 0 V
+Gpstroke
+13080 7376 M
+2 0 V
+Gpstroke
+13082 7376 M
+2 1 V
+Gpstroke
+13084 7377 M
+3 0 V
+Gpstroke
+13087 7377 M
+2 0 V
+Gpstroke
+13089 7377 M
+2 0 V
+Gpstroke
+13091 7377 M
+2 1 V
+Gpstroke
+13093 7378 M
+2 0 V
+Gpstroke
+13095 7378 M
+2 0 V
+Gpstroke
+13097 7378 M
+2 0 V
+Gpstroke
+13099 7378 M
+2 1 V
+Gpstroke
+13101 7379 M
+2 0 V
+Gpstroke
+13103 7379 M
+3 0 V
+Gpstroke
+13106 7379 M
+2 1 V
+Gpstroke
+13108 7380 M
+2 0 V
+Gpstroke
+13110 7380 M
+2 0 V
+Gpstroke
+13112 7380 M
+2 0 V
+Gpstroke
+13114 7380 M
+2 1 V
+Gpstroke
+13116 7381 M
+2 0 V
+Gpstroke
+13118 7381 M
+2 0 V
+Gpstroke
+13120 7381 M
+2 0 V
+Gpstroke
+13122 7381 M
+3 1 V
+Gpstroke
+13125 7382 M
+2 0 V
+Gpstroke
+13127 7382 M
+2 0 V
+Gpstroke
+13129 7382 M
+2 0 V
+Gpstroke
+13131 7382 M
+2 1 V
+Gpstroke
+13133 7383 M
+2 0 V
+Gpstroke
+13135 7383 M
+2 0 V
+Gpstroke
+13137 7383 M
+2 0 V
+Gpstroke
+13139 7383 M
+2 1 V
+Gpstroke
+13141 7384 M
+3 0 V
+Gpstroke
+13144 7384 M
+2 0 V
+Gpstroke
+13146 7384 M
+2 0 V
+Gpstroke
+13148 7384 M
+2 1 V
+Gpstroke
+13150 7385 M
+2 0 V
+Gpstroke
+13152 7385 M
+2 0 V
+Gpstroke
+13154 7385 M
+2 0 V
+Gpstroke
+13156 7385 M
+2 1 V
+Gpstroke
+13158 7386 M
+2 0 V
+Gpstroke
+13160 7386 M
+3 0 V
+Gpstroke
+13163 7386 M
+2 1 V
+Gpstroke
+13165 7387 M
+2 0 V
+Gpstroke
+13167 7387 M
+2 0 V
+Gpstroke
+13169 7387 M
+2 0 V
+Gpstroke
+13171 7387 M
+2 1 V
+Gpstroke
+13173 7388 M
+2 0 V
+Gpstroke
+13175 7388 M
+2 0 V
+Gpstroke
+13177 7388 M
+2 0 V
+Gpstroke
+13179 7388 M
+3 1 V
+Gpstroke
+13182 7389 M
+2 0 V
+Gpstroke
+13184 7389 M
+2 0 V
+Gpstroke
+13186 7389 M
+2 0 V
+Gpstroke
+13188 7389 M
+2 1 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15188 2954 M
+6748 1916 L
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+2812 4142 M
+6748 1916 L
+Gpstroke
+LTb
+LTb
+LTb
+1.000 Gpsetpointsize
+grestore
+end
+showpage
+%%%%EOF
